@@ -3,9 +3,9 @@ import requestsExample from '../utils/requests.json'
 
 const Requests=({setOfferedServices})=>{
 
-    const reply=async(request)=>{
+    const reply=(request)=>{
         alert('added')
-        await setOfferedServices(prevRequests=>[...prevRequests,request])
+        setOfferedServices(prevRequests=>[...prevRequests,request])
     }
 
     return(
@@ -15,11 +15,11 @@ const Requests=({setOfferedServices})=>{
                 <Card style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
                     <Card.Body>
                     <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
-                        <Card.Title>{request.addedAt}</Card.Title>
-                        <Card.Title>{request.position}</Card.Title>
+                        <Card.Title className='text-info'>{request.addedAt}</Card.Title>
+                        <Card.Title className='text-info'>{request.position}</Card.Title>
                     </div>
-                    <Card.Text className='row justify-content-start mx-5'>{request.interventionRequested}</Card.Text>
-                    <Button variant="success rounded-pill" onClick={()=>reply(request)}>Reply</Button>
+                    <Card.Text className='row justify-content-start text-info mx-5'>{request.interventionRequested}</Card.Text>
+                    <Button variant="info rounded-pill text-dark" onClick={()=>reply(request)}>Reply</Button>
                     </Card.Body>
                 </Card>
             )

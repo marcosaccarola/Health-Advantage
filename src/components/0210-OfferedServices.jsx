@@ -1,7 +1,12 @@
-import { Card } from "react-bootstrap"
+import { Card,Button } from "react-bootstrap"
 
 
 const OfferedServices=({offeredServices})=>{
+
+    const sendMessage=(reply)=>{
+        alert('message sent')
+    }
+
     return(
         <div>
             OFFERED SERVICES:
@@ -9,10 +14,18 @@ const OfferedServices=({offeredServices})=>{
                 <Card style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
                     <Card.Body>
                     <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
-                        <Card.Title>{reply.addedAt}</Card.Title>
-                        <Card.Title>{reply.position}</Card.Title>
+                        <Card.Title className='text-info'>{reply.addedAt}</Card.Title>
+                        <Card.Title className='text-info'>{reply.position}</Card.Title>
                     </div>
-                    <Card.Text className='row justify-content-start mx-5'>{reply.interventionRequested}</Card.Text>
+                    <div className='row justify-content-between mx-5 mt-4 mb-3 text-light'>
+                        <Button variant="info rounded-pill text-dark px-5" >
+                            <Card.Title>{reply.interventionRequested}</Card.Title>
+                        </Button>
+                        {/* <div className='bg-info rounded-pill px-5'>
+                            <Card.Title>{reply.interventionRequested}</Card.Title>
+                        </div> */}
+                        <Button variant="info rounded-pill text-dark" onClick={()=>sendMessage(reply)}>Send message</Button>
+                    </div>
                     </Card.Body>
                 </Card>
             ))}
