@@ -4,10 +4,11 @@ import OfferedServices from "./0210-OfferedServices"
 import Requests from "./0300-Requests"
 
 const Dashboard=({currentUser,currentPosition})=>{
-    const[offeredServices,setOfferedServices]=useState()
+    const[offeredServices,setOfferedServices]=useState([])
 
     return(
         <div className='mt-5'>
+            USER's DASHBOARD
             <Card style={{ width: '80rem' }} className='text-light bg-info'>
             <Card.Body>
                 {/* <Card.Subtitle className="mb-2 text-muted">Good afternoon</Card.Subtitle> */}
@@ -16,7 +17,7 @@ const Dashboard=({currentUser,currentPosition})=>{
                 <Card.Title>{currentPosition}</Card.Title>
                 </div>
                 <Card.Text>
-                    {offeredServices
+                    {(offeredServices.length!==0)
                         ?<OfferedServices offeredServices={offeredServices}/>
                         :<div className='row justify-content-start mx-5 mb-4 text-light'>
                             you have not yet offered your services, consult the list of service requests below and click reply
