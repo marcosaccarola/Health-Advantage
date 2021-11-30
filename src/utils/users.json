@@ -1,0 +1,30 @@
+[
+    {
+        "userId":"marco",
+        "email":"marco.user@gmail.com",
+        "password":"12345678",
+        "zipcode":30125,
+        "photo":"",
+        "firstName":"Marco",
+        "lastName":"Saccarola",
+        "age":42,
+        "educationalQualification":"Laurea in Scienze Infermieristiche",
+        "professionalRole":"nurse",
+        "order":"Ordine degli Infermieri di Bologna",
+        "specializations":"animazione villaggi turistici"
+    },
+    {
+        "userId":"ottavio",
+        "email":"ottavio.user@gmail.com",
+        "password":"89898989",
+        "zipcode":30128,
+        "photo":"",
+        "firstName":"Ottavio",
+        "lastName":"Randelli",
+        "age":62,
+        "educationalQualification":"Laurea in Scienze Infermieristiche",
+        "professionalRole":"nurse",
+        "order":"Ordine degli Infermieri di Trento",
+        "specializations":"bagnino stagionale"
+    }
+]

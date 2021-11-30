@@ -3,8 +3,11 @@ import { Card,Button } from "react-bootstrap"
 
 const OfferedServices=({offeredServices})=>{
 
+    const openInfo=(reply)=>{
+        alert(`info about ${reply.userId}`)
+    }
     const sendMessage=(reply)=>{
-        alert('message sent')
+        alert(`message sent at ${reply.userId}`)
     }
 
     return(
@@ -18,13 +21,17 @@ const OfferedServices=({offeredServices})=>{
                         <Card.Title className='text-info'>{reply.position}</Card.Title>
                     </div>
                     <div className='row justify-content-between mx-5 mt-4 mb-3 text-light'>
-                        <Button variant="info rounded-pill text-dark px-5" >
+                        <Button 
+                            variant="info rounded-pill text-dark px-5" 
+                            onClick={()=>openInfo(reply)}>
                             <Card.Title>{reply.interventionRequested}</Card.Title>
                         </Button>
                         {/* <div className='bg-info rounded-pill px-5'>
                             <Card.Title>{reply.interventionRequested}</Card.Title>
                         </div> */}
-                        <Button variant="info rounded-pill text-dark" onClick={()=>sendMessage(reply)}>Send message</Button>
+                        <Button 
+                            variant="info rounded-pill text-dark" 
+                            onClick={()=>sendMessage(reply)}>Send message</Button>
                     </div>
                     </Card.Body>
                 </Card>

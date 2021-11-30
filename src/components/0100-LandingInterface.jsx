@@ -2,11 +2,11 @@ import { Card,Row,Col } from "react-bootstrap"
 import bg from '../assets/dave-hoefler-unsplash-medium.jpg'
 import LoginRegisterForm from "./0110-LoginRegistrationForm"
 
-const LandingInterface=()=>{
+const LandingInterface=({setCurrentUser})=>{
     return(
         <div>
             <Card style={{ width: '70%'}} className='text-light bg-info mx-auto'>
-                <LoginRegisterForm />
+                <LoginRegisterForm setCurrentUser={setCurrentUser} />
             <Card.Img variant="top" src={bg}/>
             <Card.Body>
                 <Card.Title>Values:</Card.Title>
