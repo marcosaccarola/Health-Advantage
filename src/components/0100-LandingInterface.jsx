@@ -1,6 +1,6 @@
 import { Card,Row,Col } from "react-bootstrap"
 import bg from '../assets/dave-hoefler-unsplash-medium.jpg'
-import LoginRegisterForm from "./011-LoginRegistrationForm"
+import LoginRegisterForm from "./0110-LoginRegistrationForm"
 
 const LandingInterface=()=>{
     return(
