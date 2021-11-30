@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Card } from "react-bootstrap"
 import OfferedServices from "./0210-OfferedServices"
-import Requests from "./0220-Requests"
+import ListOfRequests from "./0220-Requests"
 
 const Dashboard=({currentUser,currentPosition})=>{
     const[offeredServices,setOfferedServices]=useState([])
@@ -17,11 +17,11 @@ const Dashboard=({currentUser,currentPosition})=>{
                 <Card.Title>{currentPosition}</Card.Title>
                 </div>
                 <Card.Text>
-                    {(offeredServices.length!==0)
-                        ?<OfferedServices offeredServices={offeredServices}/>
-                        :<div className='row justify-content-start mx-5 mb-4 text-dark'>
+                    {(offeredServices.length===0)
+                        ?<div className='row justify-content-start mx-5 mb-4 text-dark'>
                             you have not yet offered your services, consult the list of service requests below and click reply
                         </div>
+                        :<OfferedServices offeredServices={offeredServices}/>
                     }
                 </Card.Text>
                 {/* <Card.Link href="#">Card Link</Card.Link>
@@ -29,7 +29,7 @@ const Dashboard=({currentUser,currentPosition})=>{
             </Card.Body>
             </Card>
 
-            <Requests setOfferedServices={setOfferedServices} />
+            <ListOfRequests offeredServices={offeredServices} setOfferedServices={setOfferedServices} />
         </div>
     )
 }

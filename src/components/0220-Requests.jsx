@@ -1,17 +1,16 @@
 import { Card,Button } from 'react-bootstrap'
 import requestsExample from '../utils/requests.json'
 
-const Requests=({setOfferedServices})=>{
+const ListOfRequests=({offeredServices,setOfferedServices})=>{
 
-    const reply=(request)=>{
-        alert('added')
+    const offerYourService=(request)=>{
         setOfferedServices(prevRequests=>[...prevRequests,request])
     }
 
     return(
         <div className='mt-5'>
             A LIST OF REQUESTS
-            {requestsExample.map((request)=>(                
+            {requestsExample.map((request)=>               
                 <Card style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
                     <Card.Body>
                     <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
@@ -19,13 +18,21 @@ const Requests=({setOfferedServices})=>{
                         <Card.Title className='text-info'>{request.position}</Card.Title>
                     </div>
                     <Card.Text className='row justify-content-start text-info mx-5'>{request.interventionRequested}</Card.Text>
-                    <Button variant="info rounded-pill text-dark" onClick={()=>reply(request)}>Reply</Button>
+                        {
+                            (offeredServices.indexOf(request)===-1)
+                            ?(<Button variant="info rounded-pill text-dark" onClick={()=>offerYourService(request)}>
+                                offer your service
+                            </Button>)
+                            :(<Button variant="info rounded-pill text-dark ml-auto" onClick={()=>offerYourService(request)}>
+                                withdraw your offer
+                            </Button>)
+                        }
                     </Card.Body>
-                </Card>
+                </Card>       
             )
-            )}
+            }
         </div>
     )
 }
 
-export default Requests
+export default ListOfRequests

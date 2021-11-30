@@ -6,14 +6,14 @@ const LoginRegisterForm=({setCurrentUser})=>{
     const[emailListener,setEmailListener]=useState('')
     const handleChangeEmail=(e)=>{
         setEmailListener(e.target.value)
-        matchChecker()
+        checkBothIfMatch()
     }
     const[pwListener,setPwListener]=useState('')
     const handleChangePw=(e)=>{
         setPwListener(e.target.value)
-        matchChecker()
+        checkBothIfMatch()
     }
-    const matchChecker=()=>{
+    const checkBothIfMatch=()=>{
         const matchUser=usersDataForAFakeLogin.find((obj)=>(obj.email===emailListener&&obj.password===pwListener))
         if(matchUser){
             setCurrentUser(matchUser)
