@@ -1,9 +1,9 @@
-import LandingInterface from "./001-LandingInterface"
+import LandingInterface from "./0100-LandingInterface"
 
 const Home=()=>{
     return (
         <div>
-            HI I AM THE HOME PAGE
+            PURPLE CROSS HOME PAGE
             <LandingInterface />
         </div>
     )

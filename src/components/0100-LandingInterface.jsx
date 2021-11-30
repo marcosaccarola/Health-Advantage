@@ -1,10 +1,12 @@
 import { Card,Row,Col } from "react-bootstrap"
 import bg from '../assets/dave-hoefler-unsplash-medium.jpg'
+import LoginRegisterForm from "./011-LoginRegistrationForm"
 
 const LandingInterface=()=>{
     return(
         <div>
-            <Card style={{ width: '70%' }} className='text-light bg-info mx-auto'>
+            <Card style={{ width: '70%'}} className='text-light bg-info mx-auto'>
+                <LoginRegisterForm />
             <Card.Img variant="top" src={bg}/>
             <Card.Body>
                 <Card.Title>Values:</Card.Title>
