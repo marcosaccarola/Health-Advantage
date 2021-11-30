@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Card,Button } from 'react-bootstrap'
 import requestsExample from '../utils/requests.json'
 
@@ -5,6 +6,9 @@ const ListOfRequests=({offeredServices,setOfferedServices})=>{
 
     const offerYourService=(request)=>{
         setOfferedServices(prevRequests=>[...prevRequests,request])
+    }
+    const withdrawYourService=(request)=>{
+        setOfferedServices(offeredServices.filter((r)=>r!==request))
     }
 
     return(
@@ -23,7 +27,7 @@ const ListOfRequests=({offeredServices,setOfferedServices})=>{
                             ?(<Button variant="info rounded-pill text-dark" onClick={()=>offerYourService(request)}>
                                 offer your service
                             </Button>)
-                            :(<Button variant="info rounded-pill text-dark ml-auto" onClick={()=>offerYourService(request)}>
+                            :(<Button variant="info rounded-pill text-dark ml-auto" onClick={()=>withdrawYourService(request)}>
                                 withdraw your offer
                             </Button>)
                         }
