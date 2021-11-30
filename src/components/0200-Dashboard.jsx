@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Card } from "react-bootstrap"
 import OfferedServices from "./0210-OfferedServices"
-import Requests from "./0300-Requests"
+import Requests from "./0220-Requests"
 
 const Dashboard=({currentUser,currentPosition})=>{
     const[offeredServices,setOfferedServices]=useState([])
@@ -28,6 +28,7 @@ const Dashboard=({currentUser,currentPosition})=>{
                 <Card.Link href="#">Another Link</Card.Link> */}
             </Card.Body>
             </Card>
+            
             <Requests setOfferedServices={setOfferedServices} />
         </div>
     )
