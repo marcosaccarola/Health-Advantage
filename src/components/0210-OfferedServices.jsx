@@ -1,4 +1,5 @@
 import { Card,Button } from "react-bootstrap"
+import SendInfoToPatient from "./0211-SendInfoToPatient"
 
 
 const OfferedServices=({offeredServices})=>{
@@ -31,9 +32,10 @@ const OfferedServices=({offeredServices})=>{
                         </div> */}
                         <Button 
                             variant="info rounded-pill text-dark" 
-                            onClick={()=>sendMessage(reply)}>Send message</Button>
+                            onClick={()=>sendMessage(reply)}>Send info to patient</Button>
                     </div>
                     </Card.Body>
+                    {reply.answers.length!==0&&<SendInfoToPatient reply={reply} />}
                 </Card>
             ))}
         </div>

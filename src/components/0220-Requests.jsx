@@ -24,12 +24,16 @@ const ListOfRequests=({offeredServices,setOfferedServices})=>{
                     <Card.Text className='row justify-content-start text-info mx-5'>{request.interventionRequested}</Card.Text>
                         {
                             (offeredServices.indexOf(request)===-1)
-                            ?(<Button variant="info rounded-pill text-dark" onClick={()=>offerYourService(request)}>
+                            ?(
+                            <Button variant="info rounded-pill text-dark" onClick={()=>offerYourService(request)}>
                                 offer your service
                             </Button>)
-                            :(<Button variant="info rounded-pill text-dark ml-auto" onClick={()=>withdrawYourService(request)}>
+                            :(
+                            <div className='row justify-content-end mr-5'>
+                            <Button variant="info rounded-pill text-dark" onClick={()=>withdrawYourService(request)}>
                                 withdraw your offer
-                            </Button>)
+                            </Button>
+                            </div>)
                         }
                     </Card.Body>
                 </Card>       
