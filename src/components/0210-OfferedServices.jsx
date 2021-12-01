@@ -24,14 +24,11 @@ const OfferedServices=({offeredServices,currentUser})=>{
                         <Button 
                             variant="info rounded-pill text-dark px-5" 
                             onClick={()=>openInfo(reply)}>
-                            <Card.Title>{reply.interventionRequested}</Card.Title>
+                            <Card.Title>Intervent type: <div className='text-light'>{reply.interventionRequested}</div></Card.Title>
                         </Button>
-                        {/* <div className='bg-info rounded-pill px-5'>
-                            <Card.Title>{reply.interventionRequested}</Card.Title>
-                        </div> */}
                         <Button 
                             variant="info rounded-pill text-dark" 
-                            onClick={()=>sendMessage(reply)}>Send info to patient</Button>
+                            onClick={()=>sendMessage(reply)}>Send a message to patient</Button>
                     </div>
                     </Card.Body>
                     {reply.answers.map(answer=>answer.userId===currentUser.userId

@@ -11,7 +11,6 @@ const Dashboard=({currentUser,currentPosition})=>{
             USER's DASHBOARD
             <Card style={{ width: '80rem' }} className='text-light bg-info'>
             <Card.Body>
-                {/* <Card.Subtitle className="mb-2 text-muted">Good afternoon</Card.Subtitle> */}
                 <div className='row justify-content-between mx-5 mt-4 mb-5 text-dark'>
                 <Card.Title>{currentUser.email}</Card.Title>
                 <Card.Title>{currentPosition}</Card.Title>
@@ -24,8 +23,6 @@ const Dashboard=({currentUser,currentPosition})=>{
                         :<OfferedServices offeredServices={offeredServices} currentUser={currentUser}/>
                     }
                 </Card.Text>
-                {/* <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link> */}
             </Card.Body>
             </Card>
 
