@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { Card } from "react-bootstrap"
 
-const SendInfoToPatient=({answer})=>{
+const Message=({answer})=>{
     useEffect(() => {
         console.log(answer)
     },[])
@@ -18,4 +18,4 @@ const SendInfoToPatient=({answer})=>{
     )
 }
 
-export default SendInfoToPatient
+export default Message

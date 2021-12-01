@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Card,Button } from "react-bootstrap"
-import SendInfoToPatient from "./0211-SendInfoToPatient"
+import Messages from "./0211-Messages"
 
 const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
 
@@ -25,7 +25,7 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
                         <Button 
                             variant="info rounded-pill text-dark px-5" 
                             onClick={()=>handleInterventInfo(reply)}>
-                            <Card.Title>Intervent type: <div className='text-light'>{reply.interventionRequested}</div></Card.Title>
+                            <Card.Title>Intervent info:<div className='text-light'>{reply.interventionRequested}</div></Card.Title>
                         </Button>
                         <Button 
                             variant="info rounded-pill text-dark" 
@@ -44,7 +44,7 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
                     </Card.Body>
                 {reply.answers.map(answer=>answer.userId===currentUser.userId
                     &&
-                    <SendInfoToPatient answer={answer} />
+                    <Messages answer={answer} />
                 )}
                 </Card>
             ))}
