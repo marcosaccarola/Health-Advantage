@@ -7,14 +7,16 @@ const LandingInterface=({setCurrentUser})=>{
 
     const[showRegistrationForm,setShowRegistrationForm]=useState(false)
     const handleRegistrationComponent=()=>{
-        showRegistrationForm===false?setShowRegistrationForm(true):setShowRegistrationForm(false)&&setShowProfessionalsForm(false)
-        console.log('REGISTRATION:',showRegistrationForm,'PROFESSIONAL:',showProfessionalsForm)
+        showRegistrationForm===false?setShowRegistrationForm(true):closeEverything()
     }
+        const closeEverything=()=>{
+            setShowRegistrationForm(false)
+            setShowProfessionalsForm(false)
+        }
     
     const[showProfessionalsForm,setShowProfessionalsForm]=useState(false)
     const handleProfessionalsForm=()=>{
         showProfessionalsForm===false?setShowProfessionalsForm(true):setShowProfessionalsForm(false)
-        console.log(showRegistrationForm,showProfessionalsForm)
     }
 
     return(
@@ -58,25 +60,48 @@ const LandingInterface=({setCurrentUser})=>{
                     <Form.Control type="number" placeholder="enter your zipcode here" />
                 </Form.Group>
             {showProfessionalsForm===true&&
-            <>
+            <div>
+                    {/* <div className='text-left'> */}
+                    <Form.Text>mandatory personal data</Form.Text>
+                    {/* </div> */}
                 <Form.Group controlId="exampleForm.ControlInput1">
-                {/* <Form.Label>Email address</Form.Label> */}
-                    <Form.Control type="email" placeholder="your email" />
+                    <Form.Control type="text" placeholder="first name" />
+                </Form.Group>
+                <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Control type="text" placeholder="last name" />
+                </Form.Group>
+                <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Control type="number" placeholder="age" />
+                </Form.Group>
+                <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Control type="text" placeholder="profession" />
+                </Form.Group>
+                <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Control type="text" placeholder="educational qualification" />
+                </Form.Group>
+                <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Control type="text" placeholder="medical board" />
                 </Form.Group>
 
-                <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Control type="password" placeholder="choose a password" />
+                    {/* <div className='text-left'> */}
+                    <Form.Text>optional personal data</Form.Text>
+                    {/* </div> */}
+                <Form.Group controlId="exampleForm.ControlTextarea1">
+                    <Form.Control as="textarea" placeholder='a few words about your services and a passport photo will increase the chances of patients choosing you by 65%!' rows={3} />
                 </Form.Group>
-
-                <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Control type="number" placeholder="enter your zipcode here" />
+                <Form.Group controlId="formFile">
+                    <Form.Control type="file" size="sm" />
                 </Form.Group>
-            </>
+            </div>
             }
 
                 <div className='row justify-content-between mx-5 my-5'>
-                <Button variant="success">Register now for free</Button>
-                <Button variant="warning" onClick={handleProfessionalsForm}>I am a healthcare professional</Button>
+                <Button variant="success">
+                    Register now for free
+                </Button>
+                <Button variant="warning" onClick={handleProfessionalsForm}>
+                    {showProfessionalsForm===false?'I am a healthcare professional':'I am NOT a healthcare professional, I am a patient'}
+                </Button>
                 </div>
 
             </Form>
