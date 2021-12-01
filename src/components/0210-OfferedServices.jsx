@@ -12,7 +12,8 @@ const OfferedServices=({offeredServices,currentUser})=>{
 
     return(
         <div>
-            OFFERED SERVICES:
+
+
             {offeredServices.map((reply)=>(
                 <Card style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
                     <Card.Body>
