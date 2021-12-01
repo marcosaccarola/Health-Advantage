@@ -4,11 +4,17 @@ import bg from '../assets/dave-hoefler-unsplash-medium.jpg'
 import LoginRegisterForm from "./0110-LoginRegistrationForm"
 
 const LandingInterface=({setCurrentUser})=>{
-    const[showRegistration,setShowRegistration]=useState(false)
 
+    const[showRegistrationForm,setShowRegistrationForm]=useState(false)
     const handleRegistrationComponent=()=>{
-        showRegistration===false?setShowRegistration(true):setShowRegistration(false)
-        console.log(showRegistration)
+        showRegistrationForm===false?setShowRegistrationForm(true):setShowRegistrationForm(false)&&setShowProfessionalsForm(false)
+        console.log('REGISTRATION:',showRegistrationForm,'PROFESSIONAL:',showProfessionalsForm)
+    }
+    
+    const[showProfessionalsForm,setShowProfessionalsForm]=useState(false)
+    const handleProfessionalsForm=()=>{
+        showProfessionalsForm===false?setShowProfessionalsForm(true):setShowProfessionalsForm(false)
+        console.log(showRegistrationForm,showProfessionalsForm)
     }
 
     return(
@@ -24,7 +30,7 @@ const LandingInterface=({setCurrentUser})=>{
                     <span className='text-warning'>Sign up in 45 seconds!</span>
                 </a>
                 </Card.Title>
-        {showRegistration===false?
+        {showRegistrationForm===false?
                 <Card.Text>
                     <Row>
                         <Col xs={4}>value icon and text</Col>
@@ -37,7 +43,7 @@ const LandingInterface=({setCurrentUser})=>{
                         <Col xs={4}>value icon and text</Col>
                     </Row>
                 </Card.Text>
-            :
+        :
             <Form className='mx-5 my-4'>
                 <Form.Group controlId="exampleForm.ControlInput1">
                 {/* <Form.Label>Email address</Form.Label> */}
@@ -51,10 +57,26 @@ const LandingInterface=({setCurrentUser})=>{
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Control type="number" placeholder="enter your zipcode here" />
                 </Form.Group>
+            {showProfessionalsForm===true&&
+            <>
+                <Form.Group controlId="exampleForm.ControlInput1">
+                {/* <Form.Label>Email address</Form.Label> */}
+                    <Form.Control type="email" placeholder="your email" />
+                </Form.Group>
+
+                <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Control type="password" placeholder="choose a password" />
+                </Form.Group>
+
+                <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Control type="number" placeholder="enter your zipcode here" />
+                </Form.Group>
+            </>
+            }
 
                 <div className='row justify-content-between mx-5 my-5'>
                 <Button variant="success">Register now for free</Button>
-                <Button variant="warning">I am a healthcare professional</Button>
+                <Button variant="warning" onClick={handleProfessionalsForm}>I am a healthcare professional</Button>
                 </div>
 
             </Form>
