@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Card,Row,Col,Form } from "react-bootstrap"
+import { Card,Row,Col,Form,Button } from "react-bootstrap"
 import bg from '../assets/dave-hoefler-unsplash-medium.jpg'
 import LoginRegisterForm from "./0110-LoginRegistrationForm"
 
@@ -13,11 +13,11 @@ const LandingInterface=({setCurrentUser})=>{
 
     return(
         <div>
-            <Card style={{ width: '70%'}} className='text-light bg-info mx-auto mt-3 mb-5'>
+            <Card style={{ width: '70%'}} className='text-light bg-info mx-auto mt-2 mb-5'>
                 <LoginRegisterForm setCurrentUser={setCurrentUser} />
             <Card.Img variant="top" src={bg}/>
             <Card.Body>
-                <Card.Title>
+                <Card.Title className='mt-2 mb-5'>
                 <a className='text-light' onClick={handleRegistrationComponent}>
                     <span className='text-warning'>Purple Cross</span> connects home healthcare professionals with patients, <span className='text-warning'>forever free</span>.
                     <br/>
@@ -38,35 +38,25 @@ const LandingInterface=({setCurrentUser})=>{
                     </Row>
                 </Card.Text>
             :
-            <Form>
+            <Form className='mx-5 my-4'>
                 <Form.Group controlId="exampleForm.ControlInput1">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="name@example.com" />
+                {/* <Form.Label>Email address</Form.Label> */}
+                    <Form.Control type="email" placeholder="your email" />
                 </Form.Group>
-                <Form.Group controlId="exampleForm.ControlSelect1">
-                <Form.Label>Example select</Form.Label>
-                <Form.Control as="select">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </Form.Control>
+
+                <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Control type="password" placeholder="choose a password" />
                 </Form.Group>
-                <Form.Group controlId="exampleForm.ControlSelect2">
-                <Form.Label>Example multiple select</Form.Label>
-                <Form.Control as="select" multiple>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </Form.Control>
+
+                <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Control type="number" placeholder="enter your zipcode here" />
                 </Form.Group>
-                <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Example textarea</Form.Label>
-                <Form.Control as="textarea" rows={3} />
-                </Form.Group>
+
+                <div className='row justify-content-between mx-5 my-5'>
+                <Button variant="success">Register now for free</Button>
+                <Button variant="warning">I am a healthcare professional</Button>
+                </div>
+
             </Form>
         }
             </Card.Body>
