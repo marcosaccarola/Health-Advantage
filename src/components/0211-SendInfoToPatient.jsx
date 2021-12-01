@@ -1,11 +1,21 @@
+import { useEffect } from "react"
 import { Card } from "react-bootstrap"
 
-const sendInfoToPatient=({reply})=>{
+const SendInfoToPatient=({answer})=>{
+    useEffect(() => {
+        console.log(answer)
+    },[])
     return(
-        <Card className='bg-dark text-info ml-5 mr-auto'>
-            {reply.answers}
-        </Card>  
+        <div>
+            {answer.comments.map((c)=>(
+            <Card className='bg-dark text-info border-info mx-3 my-3'>
+                <Card.Text className='mx-2 row justify-text-start'>
+                    {c.userName} : {c.text}
+                </Card.Text>
+            </Card> ) 
+            )}
+        </div>
     )
 }
 
-export default sendInfoToPatient
+export default SendInfoToPatient

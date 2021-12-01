@@ -1,8 +1,7 @@
 import { Card,Button } from "react-bootstrap"
 import SendInfoToPatient from "./0211-SendInfoToPatient"
 
-
-const OfferedServices=({offeredServices})=>{
+const OfferedServices=({offeredServices,currentUser})=>{
 
     const openInfo=(reply)=>{
         alert(`info about ${reply.userId}`)
@@ -35,7 +34,9 @@ const OfferedServices=({offeredServices})=>{
                             onClick={()=>sendMessage(reply)}>Send info to patient</Button>
                     </div>
                     </Card.Body>
-                    {reply.answers.length!==0&&<SendInfoToPatient reply={reply} />}
+                    {reply.answers.map(answer=>answer.userId===currentUser.userId
+                    &&
+                    <SendInfoToPatient answer={answer} />)}
                 </Card>
             ))}
         </div>

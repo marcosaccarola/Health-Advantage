@@ -40,7 +40,13 @@
     "userId":"vodka",
     "position":30138,
     "interventionRequested":"vodka tonic",
-    "answers":[],
+    "answers":[
+        {"userId":"marco","comments":[
+            {"userName":"marco","text":"please text me at my cellphone number"},
+            {"userName":"beppe","text":"no more needed"}
+            ]},
+        {"userId":"ottavio","comments":["damn I cannot survive to another vodka"]}
+    ],
     "addedAt":"last month",
     "updatedAt":""
     }
