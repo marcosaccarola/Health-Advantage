@@ -40,6 +40,7 @@
     "userId":"vodka",
     "position":30138,
     "interventionRequested":"vodka tonic",
+    "moreInfo":"as soon as possible",
     "answers":[
         {"userId":"marco","comments":[
             {"userName":"marco","text":"please text me at my cellphone number"},
