@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Card,Button } from "react-bootstrap"
 import SendInfoToPatient from "./0211-SendInfoToPatient"
 
-const OfferedServices=({offeredServices,currentUser})=>{
+const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
 
     const[showInterventInfo,setShowInterventInfo]=useState(false)
     const handleInterventInfo=(reply)=>{
@@ -53,4 +53,4 @@ const OfferedServices=({offeredServices,currentUser})=>{
 
 }
 
-export default OfferedServices
+export default InterventionsTakenInCharge

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Card } from "react-bootstrap"
-import OfferedServices from "./0210-OfferedServices"
+import InterventionsTakenInCharge from "./0210-InterventionsTakenInCharge"
 import ListOfRequests from "./0220-Requests"
 
 const Dashboard=({currentUser,currentPosition})=>{
@@ -20,7 +20,7 @@ const Dashboard=({currentUser,currentPosition})=>{
                         ?<div className='row justify-content-start mx-5 mb-4 text-dark'>
                             you have not yet offered your services, consult the list of service requests below and click reply
                         </div>
-                        :<OfferedServices offeredServices={offeredServices} currentUser={currentUser}/>
+                        :<InterventionsTakenInCharge offeredServices={offeredServices} currentUser={currentUser}/>
                     }
                 </Card.Text>
             </Card.Body>
