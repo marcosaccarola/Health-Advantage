@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Card,Button } from "react-bootstrap"
-import Messages from "./0211-Messages"
+import MoreInterventionInfo from "./0211-MoreInterventionInfo"
+import Messages from "./0212-Messages"
 
 const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
 
@@ -32,14 +33,7 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
                             onClick={()=>sendMessage(reply)}>Send a message to patient</Button>
                     </div>
                 {showInterventInfo===true&&
-                    <Card className='border-info bg-info text-dark'>
-                        <Card.Body>
-                            <Card.Title className='text-left'>Intervent type: </Card.Title>
-                            <Card.Title className='text-left text-light mx-4'>{reply.interventionRequested}</Card.Title>
-                            <Card.Title className='text-left mt-5'>Info:</Card.Title>
-                            <Card.Title className='text-left mx-4'>{reply.moreInfo}</Card.Title>
-                        </Card.Body>
-                    </Card>
+                    <MoreInterventionInfo reply={reply} />
                 }
                     </Card.Body>
                 {reply.answers.map(answer=>answer.userId===currentUser.userId
