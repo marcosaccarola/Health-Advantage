@@ -1,13 +1,18 @@
 import { Card } from "react-bootstrap"
 
-const Message=()=>{
+const Message=({currentUserAnswer})=>{
     return(
         <div>
-            <Card className='border-info bg-info text-dark'>
-                <Card.Body>
-                    <Card.Title className='text-left'>USER</Card.Title>
-                    <Card.Title className='text-left text-light mx-4'>TEXT</Card.Title>
-                </Card.Body>
+            <Card className='border-info bg-info text-dark mx-5 my-3'>
+            {currentUserAnswer.comments.map(c=>
+                    <Card className='border-info bg-dark text-info my-2'>
+                        <Card.Body>
+                            <Card.Title className='text-left'>{c.userName}</Card.Title>
+                            <Card.Title className='text-left mx-4'>{c.text}</Card.Title>
+                        </Card.Body>
+                    </Card>
+                )
+            }
             </Card>
         </div>
     )
