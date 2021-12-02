@@ -40,7 +40,7 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
                             variant="info rounded-pill text-dark" 
                             onClick={()=>sendMessage(reply)}>Send a message to patient</Button>
                     </div>
-                {(openedMoreInterventInfo.indexOf(reply.interventId)!==-1)&&
+                {openedMoreInterventInfo.indexOf(reply.requestId)!==-1&&
                     <Card className='border-info bg-info text-dark'>
                         <Card.Body>
                             <Card.Title className='text-left'>Intervent type: </Card.Title>
