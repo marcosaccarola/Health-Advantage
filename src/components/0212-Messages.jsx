@@ -40,7 +40,7 @@ const Messages=({reply,currentUser})=>{
                 //     </Card.Body>
                 // </Card>
             :
-                <Card className='border-info bg-info text-dark'>
+                <Card className='border-info bg-dark text-info mx-5 my-2'>
                     <Card.Body>
                         <Card.Title className='text-left'>no messages here</Card.Title>
                     </Card.Body>

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Form } from "react-bootstrap"
-import usersDataForAFakeLogin from '../utils/users.json'
+import practitioners from '../utils/practitioners.json'
 
 const LoginRegisterForm=({setCurrentUser})=>{
     const[emailListener,setEmailListener]=useState('')
@@ -14,7 +14,7 @@ const LoginRegisterForm=({setCurrentUser})=>{
         checkBothIfMatch()
     }
     const checkBothIfMatch=()=>{
-        const matchUser=usersDataForAFakeLogin.find((obj)=>(obj.email===emailListener&&obj.password===pwListener))
+        const matchUser=practitioners.find((obj)=>(obj.email===emailListener&&obj.password===pwListener))
         if(matchUser){
             setCurrentUser(matchUser)
         }

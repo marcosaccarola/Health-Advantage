@@ -1,0 +1,40 @@
+[
+    {
+        "userId":"marcovxcbjlguhfk",
+        "email":"marco.userExample@gmail.com",
+        "password":"12345678",
+        "zipcode":30125,
+        "type":"practitioner",
+        "firstName":"Marco",
+        "lastName":"Ginepri",
+        "age":42,
+        "profession":"nurse",
+        "educationalQualification":"Laurea Scienze Infermieristiche",
+        "medicalBoard":"Ordine degli Infermieri di Bologna",
+        "bio":"I am testing the application (marco)",
+        "photo":"",
+        "specializations":"specializations text example (marco)",
+        "InterventionsTakenInCharge":[],
+        "addedAt":"2021-02-02T06:12:26.668Z",
+        "updatedAt":"2021-02-02T06:12:48.930Z"
+    },
+    {
+        "userId":"ottavionzdlfisgu",
+        "email":"ottavio.userExample@gmail.com",
+        "password":"12345678",
+        "zipcode":30125,
+        "type":"practitioner",
+        "firstName":"Ottavio",
+        "lastName":"Ottaviani",
+        "age":42,
+        "profession":"doctor",
+        "educationalQualification":"Studente Scienze Infermieristiche",
+        "medicalBoard":"Ordine dei Medici di Trento n.2987415",
+        "bio":"bio text example (ottavio)",
+        "photo":"",
+        "specializations":"specializations text example (ottavio)",
+        "InterventionsTakenInCharge":[],
+        "addedAt":"2021-02-02T06:12:26.668Z",
+        "updatedAt":"2021-02-02T06:12:48.930Z"
+    }
+]
