@@ -4,7 +4,7 @@
     "userId":"pressure",
     "position":30124,
     "interventionRequested":"blood pressure measurement",
-    "answers":["ottavio"],
+    "answers":[],
     "addedAt":"today",
     "updatedAt":""
     },
@@ -13,7 +13,7 @@
     "userId":"arm",
     "position":30126,
     "interventionRequested":"arm dressing",
-    "answers":["Giamaicol"],
+    "answers":[],
     "addedAt":"yesterday",
     "updatedAt":""
     },
