@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Card,Row,Col,Form,Button } from "react-bootstrap"
 import bg from '../assets/dave-hoefler-unsplash-medium.jpg'
 import LoginRegisterForm from "./0110-LoginRegistrationForm"
+import RegistrationForm from "./0120-RegistrationForm"
 
 const LandingInterface=({setCurrentUser})=>{
 
@@ -47,53 +48,8 @@ const LandingInterface=({setCurrentUser})=>{
                 </Card.Text>
         :
             <Form className='mx-5 my-4'>
-                <Form.Group controlId="exampleForm.ControlInput1">
-                {/* <Form.Label>Email address</Form.Label> */}
-                    <Form.Control type="email" placeholder="your email" />
-                </Form.Group>
 
-                <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Control type="password" placeholder="choose a password" />
-                </Form.Group>
-
-                <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Control type="number" placeholder="enter your zipcode here" />
-                </Form.Group>
-            {showProfessionalsForm===true&&
-            <div>
-                    {/* <div className='text-left'> */}
-                    <Form.Text>mandatory personal data</Form.Text>
-                    {/* </div> */}
-                <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Control type="text" placeholder="first name" />
-                </Form.Group>
-                <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Control type="text" placeholder="last name" />
-                </Form.Group>
-                <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Control type="number" placeholder="age" />
-                </Form.Group>
-                <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Control type="text" placeholder="profession" />
-                </Form.Group>
-                <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Control type="text" placeholder="educational qualification" />
-                </Form.Group>
-                <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Control type="text" placeholder="medical board" />
-                </Form.Group>
-
-                    {/* <div className='text-left'> */}
-                    <Form.Text>optional personal data</Form.Text>
-                    {/* </div> */}
-                <Form.Group controlId="exampleForm.ControlTextarea1">
-                    <Form.Control as="textarea" placeholder='a few words about your services and a passport photo will increase the chances of patients choosing you by 65%!' rows={3} />
-                </Form.Group>
-                <Form.Group controlId="formFile">
-                    <Form.Control type="file" size="sm" />
-                </Form.Group>
-            </div>
-            }
+                <RegistrationForm showProfessionalsForm={showProfessionalsForm} />
 
                 <div className='row justify-content-between mx-5 my-5'>
                 <Button variant="success">
