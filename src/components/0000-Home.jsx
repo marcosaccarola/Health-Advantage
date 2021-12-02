@@ -1,6 +1,7 @@
 import LandingInterface from "./0100-LandingInterface"
 import {useState} from 'react'
 import Dashboard from "./0200-Dashboard"
+import {Button} from "react-bootstrap"
 
 const Home=()=>{
     const[currentUser,setCurrentUser]=useState(
@@ -29,6 +30,15 @@ const Home=()=>{
 
     return (
         <div>
+            {currentUser&&
+            <div className='row justify-content-end mt-5'>
+                <Button
+                    variant="info rounded-pill text-dark px-5"
+                    onClick={()=>setCurrentUser()}
+                    >Logout</Button>
+            </div>
+            }
+
             {currentUser
                 ?<Dashboard currentUser={currentUser} />
                 :<LandingInterface setCurrentUser={setCurrentUser} />
