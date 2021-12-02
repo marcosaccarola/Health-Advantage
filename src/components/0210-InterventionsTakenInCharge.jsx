@@ -33,7 +33,14 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
                             onClick={()=>sendMessage(reply)}>Send a message to patient</Button>
                     </div>
                 {showInterventInfo===true&&
-                    <MoreInterventionInfo reply={reply} />
+                    <Card className='border-info bg-info text-dark'>
+                        <Card.Body>
+                            <Card.Title className='text-left'>Intervent type: </Card.Title>
+                            <Card.Title className='text-left text-light mx-4'>{reply.interventionRequested}</Card.Title>
+                            <Card.Title className='text-left mt-5'>Info:</Card.Title>
+                            <Card.Title className='text-left mx-4'>{reply.moreInfo}</Card.Title>
+                        </Card.Body>
+                    </Card>
                 }
                     </Card.Body>
                 {reply.answers.map(answer=>answer.userId===currentUser.userId
