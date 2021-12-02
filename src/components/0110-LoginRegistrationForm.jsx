@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Form } from "react-bootstrap"
 import practitioners from '../dbExample/practitioners.json'
+import patients from '../dbExample/patients.json'
 
 const LoginRegisterForm=({setCurrentUser})=>{
     const[emailListener,setEmailListener]=useState('')
@@ -14,7 +15,10 @@ const LoginRegisterForm=({setCurrentUser})=>{
         checkBothIfMatch()
     }
     const checkBothIfMatch=()=>{
-        const matchUser=practitioners.find((obj)=>(obj.email===emailListener&&obj.password===pwListener))
+        const matchUser=
+            practitioners.find((obj)=>(obj.email===emailListener&&obj.password===pwListener))
+            ||
+            patients.find((obj)=>(obj.email===emailListener&&obj.password===pwListener))
         if(matchUser){
             setCurrentUser(matchUser)
         }
