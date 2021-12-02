@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { Card,Row,Col,Form,Button } from "react-bootstrap"
 import bg from '../assets/dave-hoefler-unsplash-medium.jpg'
-import LoginRegisterForm from "./0110-LoginRegistrationForm"
+import LoginRegisterForm from "./0110-LoginForm"
 import RegistrationForm from "./0120-RegistrationForm"
+import patients from '../dbExample/patients.json'
+import practitioners from '../dbExample/practitioners.json'
 
 const LandingInterface=({setCurrentUser})=>{
 
@@ -18,6 +20,12 @@ const LandingInterface=({setCurrentUser})=>{
     const[showProfessionalsForm,setShowProfessionalsForm]=useState(false)
     const handleProfessionalsForm=()=>{
         showProfessionalsForm===false?setShowProfessionalsForm(true):setShowProfessionalsForm(false)
+    }
+
+    const[newUser,setNewUser]=useState()
+    const sendNewUser=()=>{
+        newUser.type='patient'?patients.push(newUser):practitioners.push(newUser)
+        setCurrentUser(newUser)
     }
 
     return(
@@ -49,10 +57,10 @@ const LandingInterface=({setCurrentUser})=>{
         :
             <Form className='mx-5 my-4'>
 
-                <RegistrationForm showProfessionalsForm={showProfessionalsForm} />
+                <RegistrationForm showProfessionalsForm={showProfessionalsForm} setNewUser={setNewUser} />
 
                 <div className='row justify-content-between mx-5 my-5'>
-                <Button variant="success">
+                <Button variant="success" onClick={sendNewUser}>
                     Register now for free
                 </Button>
                 <Button variant="warning" onClick={handleProfessionalsForm}>

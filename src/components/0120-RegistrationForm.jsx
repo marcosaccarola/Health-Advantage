@@ -1,6 +1,6 @@
 import { Form } from "react-bootstrap"
 
-const RegistrationFormPractitioners=({showProfessionalsForm})=>{
+const RegistrationFormPractitioners=({showProfessionalsForm,setNewUser})=>{
     return(
         <div>
                 <Form.Group controlId="exampleForm.ControlInput1">
