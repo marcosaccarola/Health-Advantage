@@ -14,7 +14,15 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
         openedMoreInterventInfo.indexOf(id)===-1
             ?setOpenedMoreInterventInfo(prevState=>[...prevState,id])
             :setOpenedMoreInterventInfo(prevState=>prevState.filter(e=>e!==id))
-        console.log('ARRAY',openedMoreInterventInfo)
+        console.log('INFO',openedMoreInterventInfo)
+    }
+
+    const[messagesIsOpen,setMessageIsOpen]=useState([])
+    const handleMessages=(id)=>{
+        messagesIsOpen.indexOf(id)===-1
+            ?setMessageIsOpen(prevState=>[...prevState,id])
+            :setMessageIsOpen(prevState=>prevState.filter(e=>e!==id))
+        console.log('MESSAGES',messagesIsOpen)
     }
 
     const sendMessage=(reply)=>{
@@ -38,7 +46,7 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
                         </Button>
                         <Button 
                             variant="info rounded-pill text-dark" 
-                            onClick={()=>sendMessage(reply)}>Send a message to patient</Button>
+                            onClick={()=>handleMessages(reply.requestId)}>Send a message to patient</Button>
                     </div>
                 {openedMoreInterventInfo.indexOf(reply.requestId)!==-1&&
                     <Card className='border-info bg-info text-dark'>
@@ -50,11 +58,22 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
                         </Card.Body>
                     </Card>
                 }
+                {messagesIsOpen.indexOf(reply.requestId)!==-1&&
+                    <Card className='border-info bg-info text-dark'>
+                        <Card.Body>
+                            <Card.Title className='text-left'>Intervent type: </Card.Title>
+                            <Card.Title className='text-left text-light mx-4'>{reply.interventionRequested}</Card.Title>
+                            <Card.Title className='text-left mt-5'>Info:</Card.Title>
+                            <Card.Title className='text-left mx-4'>{reply.moreInfo}</Card.Title>
+                        </Card.Body>
+                    </Card>
+
+                }
                     </Card.Body>
-                {reply.answers.map(answer=>answer.userId===currentUser.userId
+                {/* {reply.answers.map(answer=>answer.userId===currentUser.userId
                     &&
                     <Messages answer={answer} />
-                )}
+                )} */}
                 </Card>
             ))}
         </div>
