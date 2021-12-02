@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Form } from "react-bootstrap"
-import practitioners from '../utils/practitioners.json'
+import practitioners from '../dbExample/practitioners.json'
 
 const LoginRegisterForm=({setCurrentUser})=>{
     const[emailListener,setEmailListener]=useState('')

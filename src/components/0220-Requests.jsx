@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Card,Button } from 'react-bootstrap'
-import requestsExample from '../utils/requests.json'
+import requestToIntervention from '../dbExample/requestToIntervention.json'
 
 const ListOfRequests=({offeredServices,setOfferedServices})=>{
 
@@ -14,7 +14,7 @@ const ListOfRequests=({offeredServices,setOfferedServices})=>{
     return(
         <div className='mt-5'>
             A LIST OF REQUESTS
-            {requestsExample.map((request)=>               
+            {requestToIntervention.map((request)=>               
                 <Card style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
                     <Card.Body>
                     <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
