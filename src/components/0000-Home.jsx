@@ -3,8 +3,7 @@ import {useState} from 'react'
 import Dashboard from "./0200-Dashboard"
 
 const Home=()=>{
-    const[currentUser,setCurrentUser]=useState()
-    /*
+    const[currentUser,setCurrentUser]=useState(
     {
         "userId":"marcovxcbjlguhfk",
         "email":"test@gmail.com",
@@ -23,14 +22,15 @@ const Home=()=>{
         "InterventionsTakenInCharge":[],
         "addedAt":"2021-02-02T06:12:26.668Z",
         "updatedAt":"2021-02-02T06:12:48.930Z"
-    },
-    */
+    }
+    )
+
     const[currentPosition,setCurrentPosition]=useState(30135)
 
     return (
         <div>
             {currentUser
-                ?<Dashboard currentUser={currentUser} currentPosition={currentPosition} />
+                ?<Dashboard currentUser={currentUser} />
                 :<LandingInterface setCurrentUser={setCurrentUser} />
             }
         </div>

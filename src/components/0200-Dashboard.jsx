@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap"
 import InterventionsTakenInCharge from "./0210-InterventionsTakenInCharge"
 import ListOfRequests from "./0220-Requests"
 
-const Dashboard=({currentUser,currentPosition})=>{
+const Dashboard=({currentUser})=>{
     const[offeredServices,setOfferedServices]=useState([])
 
     return(
@@ -13,7 +13,7 @@ const Dashboard=({currentUser,currentPosition})=>{
             <Card.Body>
                 <div className='row justify-content-between mx-5 mt-4 mb-5 text-dark'>
                 <Card.Title>{currentUser.email}</Card.Title>
-                <Card.Title>{currentPosition}</Card.Title>
+                <Card.Title>{currentUser.zipcode}</Card.Title>
                 </div>
                 <Card.Text>
                     {(offeredServices.length===0)
