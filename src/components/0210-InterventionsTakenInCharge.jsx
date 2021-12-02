@@ -14,6 +14,7 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
         openedMoreInterventInfo.indexOf(id)===-1
             ?setOpenedMoreInterventInfo(prevState=>[...prevState,id])
             :setOpenedMoreInterventInfo(prevState=>prevState.filter(e=>e!==id))
+
     }
 
     const[messagesIsOpen,setMessageIsOpen]=useState([])

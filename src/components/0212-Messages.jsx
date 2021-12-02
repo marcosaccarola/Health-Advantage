@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Card } from "react-bootstrap"
+import Message from "./0212a-Message"
 
 // const Messages=({answer})=>{
 //     useEffect(() => {
@@ -29,14 +30,15 @@ const Messages=({reply,currentUser})=>{
         <div>
             {currentUserAnswer
             ?
-                <Card className='border-info bg-info text-dark'>
-                    <Card.Body>
-                        <Card.Title className='text-left'>USER</Card.Title>
-                        <Card.Title className='text-left text-light mx-4'></Card.Title>
-                        <Card.Title className='text-left mt-5'>TEXT</Card.Title>
-                        <Card.Title className='text-left mx-4'></Card.Title>
-                    </Card.Body>
-                </Card>
+                <Message currentUserAnswer={currentUserAnswer} />
+                // <Card className='border-info bg-info text-dark'>
+                //     <Card.Body>
+                //         <Card.Title className='text-left'>USER</Card.Title>
+                //         <Card.Title className='text-left text-light mx-4'></Card.Title>
+                //         <Card.Title className='text-left mt-5'>TEXT</Card.Title>
+                //         <Card.Title className='text-left mx-4'></Card.Title>
+                //     </Card.Body>
+                // </Card>
             :
                 <Card className='border-info bg-info text-dark'>
                     <Card.Body>
