@@ -5,10 +5,18 @@ import Messages from "./0212-Messages"
 
 const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
 
-    const[showInterventInfo,setShowInterventInfo]=useState(false)
-    const handleInterventInfo=(reply)=>{
-        showInterventInfo===false?setShowInterventInfo(true):setShowInterventInfo(false)
+    // const[showInterventInfo,setShowInterventInfo]=useState(false)
+    // const handleInterventInfo=(reply)=>{
+    //     showInterventInfo===false?setShowInterventInfo(true):setShowInterventInfo(false)
+    // }
+    const[openedMoreInterventInfo,setOpenedMoreInterventInfo]=useState([])
+    const handleInterventInfo=(id)=>{
+        openedMoreInterventInfo.indexOf(id)===-1
+            ?setOpenedMoreInterventInfo(prevState=>[...prevState,id])
+            :setOpenedMoreInterventInfo(prevState=>prevState.filter(e=>e!==id))
+        console.log('ARRAY',openedMoreInterventInfo)
     }
+
     const sendMessage=(reply)=>{
         alert(`message sent at ${reply.userId}`)
     }
@@ -16,7 +24,7 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
     return(
         <div>
             {offeredServices.map((reply)=>(
-                <Card style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
+                <Card key={reply.requestId} style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
                     <Card.Body>
                     <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
                         <Card.Title className='text-info'>{reply.addedAt}</Card.Title>
@@ -25,14 +33,14 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
                     <div className='row justify-content-between mx-5 mt-4 mb-3 text-light'>
                         <Button 
                             variant="info rounded-pill text-dark px-5" 
-                            onClick={()=>handleInterventInfo(reply)}>
+                            onClick={()=>handleInterventInfo(reply.requestId)}>
                             <Card.Title>Intervent info:<div className='text-light'>{reply.interventionRequested}</div></Card.Title>
                         </Button>
                         <Button 
                             variant="info rounded-pill text-dark" 
                             onClick={()=>sendMessage(reply)}>Send a message to patient</Button>
                     </div>
-                {showInterventInfo===true&&
+                {(openedMoreInterventInfo.indexOf(reply.interventId)!==-1)&&
                     <Card className='border-info bg-info text-dark'>
                         <Card.Body>
                             <Card.Title className='text-left'>Intervent type: </Card.Title>
