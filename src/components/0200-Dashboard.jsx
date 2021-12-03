@@ -46,7 +46,7 @@ const Dashboard=({currentUser,requests,setRequests})=>{
                         </div>
                         :
                         <div>
-                        <RequestedInterventions requestedServices={requestedServices} currentUser={currentUser} requests={requests}/>
+                            <RequestedInterventions requestedServices={requestedServices} currentUser={currentUser} requests={requests}/>
                         </div>
                     }
                 </Card.Text>

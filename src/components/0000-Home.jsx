@@ -6,19 +6,7 @@ import requestsToIntervention from '../dbExample/requestsToIntervention.json'
 
 const Home=()=>{
     const[currentUser,setCurrentUser]=useState(
-    {
-        "userId":"franca66574812",
-        "email":"franca.test@gmail.com",
-        "password":"12345678",
-        "zipcode":24151,
-        "type":"patient",
-        "firstName":"Franca",
-        "lastName":"Francofolin",
-        "info":"just looking for aperitif",
-        "photo":"",
-        "addedAt":"2021-02-02T06:12:26.668Z",
-        "updatedAt":"2021-02-02T06:12:48.930Z"
-    }
+
     )
 
     const[currentPosition,setCurrentPosition]=useState(30135)
