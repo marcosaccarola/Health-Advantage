@@ -27,7 +27,6 @@ const LandingInterface=({setCurrentUser})=>{
         newUser.type='patient'?patients.push(newUser):practitioners.push(newUser)
         setCurrentUser(newUser)
     }
-
     return(
         <div>
             <Card style={{ width: '70%'}} className='text-light bg-info mx-auto mt-2 mb-5'>
@@ -57,7 +56,10 @@ const LandingInterface=({setCurrentUser})=>{
         :
             <Form className='mx-5 my-4'>
 
-                <RegistrationForm showProfessionalsForm={showProfessionalsForm} setNewUser={setNewUser} />
+                <RegistrationForm 
+                    showProfessionalsForm={showProfessionalsForm} 
+                    setNewUser={setNewUser}
+                    />
 
                 <div className='row justify-content-between mx-5 my-5'>
                 <Button variant="success" onClick={sendNewUser}>

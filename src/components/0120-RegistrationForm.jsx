@@ -2,6 +2,13 @@ import { useEffect, useState } from "react"
 import { Form } from "react-bootstrap"
 
 const RegistrationForm=({showProfessionalsForm,setNewUser})=>{
+    const personalDataSaver=()=>{
+        setNewUser({
+            "email":email,
+            "password":pw,
+            "zipcode":zipcode
+        })
+    }
     const[email,setEmail]=useState()
     const[pw,setPw]=useState()
     const[zipcode,setZipcode]=useState()
@@ -22,19 +29,19 @@ const RegistrationForm=({showProfessionalsForm,setNewUser})=>{
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Control
                         type="email" placeholder="your email" 
-                        onChange={(e)=>setEmail(e.target.value)} />
+                        onChange={(e)=>(setEmail(e.target.value),personalDataSaver())} />
                 </Form.Group>
 
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Control 
                         type="password" placeholder="choose a password"
-                        onChange={(e)=>setPw(e.target.value)} />
+                        onChange={((e)=>setPw(e.target.value))} />
                 </Form.Group>
 
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Control 
                         type="number" placeholder="enter your zipcode here"
-                        onChange={(e)=>setZipcode(e.target.value)} />
+                        onChange={((e)=>setZipcode(e.target.value))} />
                 </Form.Group>
             {showProfessionalsForm===true&&
             <div>      
@@ -43,32 +50,32 @@ const RegistrationForm=({showProfessionalsForm,setNewUser})=>{
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Control 
                         type="text" placeholder="first name"
-                        onChange={(e)=>setFirstName(e.target.value)} />
+                        onChange={((e)=>setFirstName(e.target.value))} />
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Control 
                         type="text" placeholder="last name"
-                        onChange={(e)=>setLastName(e.target.value)} />
+                        onChange={((e)=>setLastName(e.target.value))} />
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Control 
                         type="number" placeholder="age"
-                        onChange={(e)=>setAge(e.target.value)} />
+                        onChange={((e)=>setAge(e.target.value))} />
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Control 
                         type="text" placeholder="profession"
-                        onChange={(e)=>setProfession(e.target.value)} />
+                        onChange={((e)=>setProfession(e.target.value))} />
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Control 
                         type="text" placeholder="educational qualification"
-                        onChange={(e)=>setEdu(e.target.value)} />
+                        onChange={(e)=>(setEdu(e.target.value))} />
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Control 
                         type="text" placeholder="medical board"
-                        onChange={(e)=>setBoard(e.target.value)} />
+                        onChange={(e)=>(setBoard(e.target.value))} />
                 </Form.Group>
 
                     <Form.Text>optional personal data</Form.Text>
@@ -78,7 +85,7 @@ const RegistrationForm=({showProfessionalsForm,setNewUser})=>{
                         as="textarea" 
                         placeholder='a few words about your services and a passport photo will increase the chances of patients choosing you by 65%!' 
                         rows={3}
-                        onChange={(e)=>setBio(e.target.value)} />
+                        onChange={(e)=>(setBio(e.target.value))} />
                 </Form.Group>
                 <Form.Group controlId="formFile">
                     <Form.Control type="file" size="sm" />
