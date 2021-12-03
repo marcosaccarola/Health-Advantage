@@ -33,7 +33,7 @@ const Home=()=>{
             {currentUser&&
             <div className='row justify-content-end mt-5'>
                 <Button
-                    variant="info rounded-pill text-dark px-5"
+                    variant={currentUser.type==='pactitioner'?"info rounded-pill text-dark px-5":"warning rounded-pill text-dark px-5"}
                     onClick={()=>setCurrentUser()}
                     >Logout</Button>
             </div>

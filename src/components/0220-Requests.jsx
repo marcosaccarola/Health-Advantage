@@ -13,7 +13,6 @@ const ListOfRequests=({offeredServices,setOfferedServices})=>{
 
     return(
         <div className='mt-5'>
-            A LIST OF REQUESTS
             {requestToIntervention.map((request)=>               
                 <Card style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
                     <Card.Body>
