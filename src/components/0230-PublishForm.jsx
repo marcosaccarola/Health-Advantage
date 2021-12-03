@@ -1,12 +1,51 @@
-import {Button} from "react-bootstrap"
+import { useState } from "react"
+import {Button, Card, Form} from "react-bootstrap"
 
 const PublishForm=({currentUser})=>{
+    const[formIsOpen,setFormIsOpen]=useState(false)
+    const handleForm=()=>{
+        formIsOpen===false?setFormIsOpen(true):setFormIsOpen(false)
+    }
+
+    const[zipcode,setZipcode]=useState()
+    const[intervention,setIntervention]=useState()
+    const[info,setInfo]=useState()
+
     return(
         <div>
             <Button
-            variant="warning rounded-pill text-dark px-5 my-5"
-            // onClick={()=>}
-            >Publish</Button>
+                variant="warning rounded-pill text-dark px-5 my-5"
+                onClick={handleForm}
+                >{formIsOpen===false?'Publish':'Cancel'}
+            </Button>
+            {formIsOpen===true&&
+                <Card>
+                    <Form.Group controlId="exampleForm.ControlInput1">
+                        <Form.Control 
+                            type="number" placeholder="zipcode of the intervention site"
+                            onChange={((e)=>setZipcode(e.target.value))} />
+                    </Form.Group>
+
+                    <Form.Group controlId="exampleForm.ControlInput1">
+                        <Form.Control
+                            type="text" placeholder="type of intervention (e.g. blood pressure measurement, medication, injection)" 
+                            onChange={(e)=>setIntervention(e.target.value)} />
+                    </Form.Group>
+
+                    <Form.Group controlId="exampleForm.ControlInput1">
+                        <Form.Control 
+                            type="text" placeholder="more info (e.g. days of the week and times of preference, skills required)"
+                            onChange={((e)=>setInfo(e.target.value))} />
+                    </Form.Group>
+
+                    <Button
+                        variant="success text-dark px-5"
+                        onClick={handleForm}
+                        >Publish
+                    </Button>
+
+                </Card>
+            }
         </div>
     )
 }

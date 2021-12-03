@@ -6,21 +6,15 @@ import {Button} from "react-bootstrap"
 const Home=()=>{
     const[currentUser,setCurrentUser]=useState(
     {
-        "userId":"marcovxcbjlguhfk",
-        "email":"test@gmail.com",
+        "userId":"franca66574812",
+        "email":"franca.test@gmail.com",
         "password":"12345678",
-        "zipcode":30125,
-        "type":"practitioner",
-        "firstName":"Marco",
-        "lastName":"Ginepri",
-        "age":42,
-        "profession":"nurse",
-        "educationalQualification":"Laurea Scienze Infermieristiche",
-        "medicalBoard":"Ordine degli Infermieri di Bologna",
-        "bio":"I am testing the application (marco)",
+        "zipcode":24151,
+        "type":"patient",
+        "firstName":"Franca",
+        "lastName":"Francofolin",
+        "info":"just looking for aperitif",
         "photo":"",
-        "specializations":"specializations text example (marco)",
-        "InterventionsTakenInCharge":[],
         "addedAt":"2021-02-02T06:12:26.668Z",
         "updatedAt":"2021-02-02T06:12:48.930Z"
     }
