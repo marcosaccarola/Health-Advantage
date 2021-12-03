@@ -51,16 +51,16 @@ const RequestedInterventions=({currentUser,requests})=>{
                     </div>
                     <div className='row justify-content-between mx-5 mt-4 mb-3 text-light'>
                         <Button 
-                            variant="info rounded-pill text-dark px-5" 
+                            variant="warning rounded-pill text-dark border-light px-5" 
                             onClick={()=>handleInterventInfo(reply.requestId)}>
                             <Card.Title>Intervent info:<div className='text-light'>{reply.interventionRequested}</div></Card.Title>
                         </Button>
                         <Button 
-                            variant="info rounded-pill text-dark" 
+                            variant="warning rounded-pill text-dark border-light" 
                             onClick={()=>handleMessages(reply.requestId)}>Send a message to patient</Button>
                     </div>
                 {openedMoreInterventInfo.indexOf(reply.requestId)!==-1&&
-                    <Card className='border-info bg-info text-dark'>
+                    <Card className='border-light bg-warning text-dark'>
                         <Card.Body>
                             <Card.Title className='text-left'>Intervent type: </Card.Title>
                             <Card.Title className='text-left text-light mx-4'>{reply.interventionRequested}</Card.Title>
