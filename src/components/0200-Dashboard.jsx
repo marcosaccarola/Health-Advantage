@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Card,Button } from "react-bootstrap"
 import InterventionsTakenInCharge from "./0210-InterventionsTakenInCharge"
 import ListOfRequests from "./0220-Requests"
+import PublishForm from "./0230-PublishForm"
 
 const Dashboard=({currentUser})=>{
     const[offeredServices,setOfferedServices]=useState([])
@@ -33,10 +34,7 @@ const Dashboard=({currentUser})=>{
                 <ListOfRequests offeredServices={offeredServices} setOfferedServices={setOfferedServices} />
             }
             {currentUser.type!=='practitioner'&&
-                <Button
-                variant="warning rounded-pill text-dark px-5 my-5"
-                // onClick={()=>}
-                >Publish</Button>
+                <PublishForm currentUser={currentUser} />
             }
         </div>
     )
