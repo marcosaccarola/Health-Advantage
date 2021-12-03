@@ -1,7 +1,8 @@
 import { useState } from "react"
 import {Button, Card, Form} from "react-bootstrap"
 
-const PublishForm=({currentUser})=>{
+
+const PublishForm=({currentUser,requests,setRequests})=>{
     const[formIsOpen,setFormIsOpen]=useState(false)
     const handleForm=()=>{
         formIsOpen===false?setFormIsOpen(true):setFormIsOpen(false)
@@ -10,6 +11,23 @@ const PublishForm=({currentUser})=>{
     const[zipcode,setZipcode]=useState()
     const[intervention,setIntervention]=useState()
     const[info,setInfo]=useState()
+
+    const sendRequest=()=>{
+        const requestObj={
+            "requestId":"example6666",
+            "userId":currentUser.userId,
+            "zipcode":zipcode,
+            "interventionRequested":intervention,
+            "moreInfo":info,
+            "answers":[],
+            "addedAt":new Date(),
+            "updatedAt":new Date()
+        }
+        setRequests(prevState=>[...prevState,requestObj])
+        console.log(requests)
+        handleForm()
+        alert('Request sent!')
+    }
 
     return(
         <div>
@@ -40,7 +58,7 @@ const PublishForm=({currentUser})=>{
 
                     <Button
                         variant="success text-dark px-5"
-                        onClick={handleForm}
+                        onClick={sendRequest}
                         >Publish
                     </Button>
 

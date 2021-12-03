@@ -4,8 +4,9 @@ import InterventionsTakenInCharge from "./0210-InterventionsTakenInCharge"
 import ListOfRequests from "./0220-Requests"
 import PublishForm from "./0230-PublishForm"
 
-const Dashboard=({currentUser})=>{
+const Dashboard=({currentUser,requests,setRequests})=>{
     const[offeredServices,setOfferedServices]=useState([])
+
 
     return(
         <div className='mt-5'>
@@ -31,10 +32,10 @@ const Dashboard=({currentUser})=>{
             </Card.Body>
             </Card>
             {currentUser.type==='practitioner'&&
-                <ListOfRequests offeredServices={offeredServices} setOfferedServices={setOfferedServices} />
+                <ListOfRequests requests={requests} offeredServices={offeredServices} setOfferedServices={setOfferedServices} />
             }
             {currentUser.type!=='practitioner'&&
-                <PublishForm currentUser={currentUser} />
+                <PublishForm currentUser={currentUser} requests={requests} setRequests={setRequests} />
             }
         </div>
     )

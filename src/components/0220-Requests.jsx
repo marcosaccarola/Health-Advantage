@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Card,Button } from 'react-bootstrap'
-import requestToIntervention from '../dbExample/requestToIntervention.json'
 
-const ListOfRequests=({offeredServices,setOfferedServices})=>{
+
+const ListOfRequests=({requests,offeredServices,setOfferedServices})=>{
 
     const offerYourService=(request)=>{
         setOfferedServices(prevRequests=>[...prevRequests,request])
@@ -13,11 +13,11 @@ const ListOfRequests=({offeredServices,setOfferedServices})=>{
 
     return(
         <div className='mt-5'>
-            {requestToIntervention.map((request)=>               
+            {requests.map((request)=>               
                 <Card style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
                     <Card.Body>
                     <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
-                        <Card.Title className='text-info'>{request.addedAt}</Card.Title>
+                        {/* <Card.Title className='text-info'>{request.addedAt}</Card.Title> */}
                         <Card.Title className='text-info'>{request.position}</Card.Title>
                     </div>
                     <Card.Text className='row justify-content-start text-info mx-5'>{request.interventionRequested}</Card.Text>

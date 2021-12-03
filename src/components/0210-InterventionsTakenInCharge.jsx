@@ -34,7 +34,7 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
                 <Card key={reply.requestId} style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
                     <Card.Body>
                     <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
-                        <Card.Title className='text-info'>{reply.addedAt}</Card.Title>
+                        {/* <Card.Title className='text-info'>{reply.addedAt}</Card.Title> */}
                         <Card.Title className='text-info'>{reply.position}</Card.Title>
                     </div>
                     <div className='row justify-content-between mx-5 mt-4 mb-3 text-light'>

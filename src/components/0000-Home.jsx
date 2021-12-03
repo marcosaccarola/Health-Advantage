@@ -1,7 +1,8 @@
 import LandingInterface from "./0100-LandingInterface"
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import Dashboard from "./0200-Dashboard"
 import {Button} from "react-bootstrap"
+import requestsToIntervention from '../dbExample/requestsToIntervention.json'
 
 const Home=()=>{
     const[currentUser,setCurrentUser]=useState(
@@ -22,6 +23,11 @@ const Home=()=>{
 
     const[currentPosition,setCurrentPosition]=useState(30135)
 
+    const[requests,setRequests]=useState()
+    useEffect(() => {
+        setRequests(requestsToIntervention)
+    }, [])
+
     return (
         <div>
             {currentUser&&
@@ -34,7 +40,7 @@ const Home=()=>{
             }
 
             {currentUser
-                ?<Dashboard currentUser={currentUser} />
+                ?<Dashboard currentUser={currentUser} requests={requests} setRequests={setRequests} />
                 :<LandingInterface setCurrentUser={setCurrentUser} />
             }
         </div>
