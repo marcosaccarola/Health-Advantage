@@ -3,6 +3,7 @@ import {Button, Card, Form} from "react-bootstrap"
 
 
 const PublishForm=({currentUser,requests,setRequests})=>{
+
     const[formIsOpen,setFormIsOpen]=useState(false)
     const handleForm=()=>{
         formIsOpen===false?setFormIsOpen(true):setFormIsOpen(false)
