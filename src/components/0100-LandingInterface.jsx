@@ -61,9 +61,33 @@ const LandingInterface=({setCurrentUser})=>{
                             <Col xs={4}>value icon and text</Col>
                         </Row>
                         <Row>
-                            <Col xs={4}>value icon and text</Col>
-                            <Col xs={4}>value icon and text</Col>
-                            <Col xs={4}>value icon and text</Col>
+                            <Col xs={4}>
+                                <Card.Title className='font-weight-bold'>
+                                Safe
+                                </Card.Title>
+                                <Card.Title className='text-justify mx-5'>
+                                <span className='text-warning'>all data is encrypted </span>
+                                and all practitioners are asked for documents certifying qualification for the medical role
+                                </Card.Title>
+                            </Col>
+                            <Col xs={4}>
+                                <Card.Title className='font-weight-bold'>
+                                Anonymous
+                                </Card.Title>
+                                <Card.Title className='text-justify mx-5'>
+                                <span className='text-warning'>no personal data required</span>
+                                : email and zipcode are enough, then choose a password and publish your first request for home assistance
+                                </Card.Title>
+                            </Col>
+                            <Col xs={4}>
+                               <Card.Title className='font-weight-bold'>
+                                Free
+                                </Card.Title>
+                                <Card.Title className='text-justify mx-5'>
+                                <span className='text-warning'>it's completely free </span>
+                                and will be forever, no credit card required
+                                </Card.Title>
+                            </Col>
                         </Row>
                     </Card.Text>
             :
