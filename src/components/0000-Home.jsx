@@ -5,12 +5,7 @@ import {Button} from "react-bootstrap"
 import requestsToIntervention from '../dbExample/requestsToIntervention.json'
 
 const Home=()=>{
-    const[currentUser,setCurrentUser]=useState(
-
-    )
-
-    const[currentPosition,setCurrentPosition]=useState(30135)
-
+    const[currentUser,setCurrentUser]=useState()
     const[requests,setRequests]=useState()
     useEffect(() => {
         setRequests(requestsToIntervention)
@@ -19,12 +14,14 @@ const Home=()=>{
     return (
         <div>
             {currentUser&&
-            <div className='row justify-content-end mt-5'>
-                <Button
-                    variant={currentUser.type==='practitioner'?"info rounded-pill text-dark px-5":"warning rounded-pill text-dark px-5"}
-                    onClick={()=>setCurrentUser()}
-                    >Logout</Button>
-            </div>
+                <div className='row justify-content-end mt-5'>
+                    <Button
+                        variant={currentUser.type==='practitioner'
+                            ?"info rounded-pill text-dark px-5"
+                            :"warning rounded-pill text-dark px-5"}
+                        onClick={()=>setCurrentUser()}
+                        >Logout</Button>
+                </div>
             }
 
             {currentUser

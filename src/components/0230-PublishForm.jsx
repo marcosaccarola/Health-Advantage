@@ -1,7 +1,6 @@
 import { useState } from "react"
 import {Button, Card, Form} from "react-bootstrap"
 
-
 const PublishForm=({currentUser,requests,setRequests})=>{
 
     const[formIsOpen,setFormIsOpen]=useState(false)
@@ -25,7 +24,6 @@ const PublishForm=({currentUser,requests,setRequests})=>{
             "updatedAt":new Date()
         }
         setRequests(prevState=>[...prevState,requestObj])
-        console.log(requests)
         handleForm()
         alert('Request sent!')
     }
@@ -37,6 +35,7 @@ const PublishForm=({currentUser,requests,setRequests})=>{
                 onClick={handleForm}
                 >{formIsOpen===false?'Publish':'Cancel'}
             </Button>
+
             {formIsOpen===true&&
                 <Card>
                     <Form.Group controlId="exampleForm.ControlInput1">
@@ -47,13 +46,15 @@ const PublishForm=({currentUser,requests,setRequests})=>{
 
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Control
-                            type="text" placeholder="type of intervention (e.g. blood pressure measurement, medication, injection)" 
+                            type="text" 
+                            placeholder="type of intervention (e.g. blood pressure measurement, medication, injection)" 
                             onChange={(e)=>setIntervention(e.target.value)} />
                     </Form.Group>
 
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Control 
-                            type="text" placeholder="more info (e.g. days of the week and times of preference, skills required)"
+                            type="text" 
+                            placeholder="more info (e.g. days of the week and times of preference, skills required)"
                             onChange={((e)=>setInfo(e.target.value))} />
                     </Form.Group>
 

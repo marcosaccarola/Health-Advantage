@@ -4,16 +4,19 @@ import practitioners from '../dbExample/practitioners.json'
 import patients from '../dbExample/patients.json'
 
 const LoginRegisterForm=({setCurrentUser})=>{
+
     const[emailListener,setEmailListener]=useState('')
     const handleChangeEmail=(e)=>{
         setEmailListener(e.target.value)
         checkBothIfMatch()
     }
+
     const[pwListener,setPwListener]=useState('')
     const handleChangePw=(e)=>{
         setPwListener(e.target.value)
         checkBothIfMatch()
     }
+
     const checkBothIfMatch=()=>{
         const matchUser=
             practitioners.find((obj)=>(obj.email===emailListener&&obj.password===pwListener))
@@ -29,7 +32,6 @@ const LoginRegisterForm=({setCurrentUser})=>{
             <Form.Group style={{position:'absolute',marginLeft:'30%',marginRight:'30%',marginTop:180,minWidth:400}}>
                 <Form.Control 
                     className='bg-light text-secondary border-info' 
-                    // style={{borderWidth:2}}
                     size="lg" type="text" 
                     value={emailListener}
                     onChange={(e)=>handleChangeEmail(e)}
@@ -37,7 +39,6 @@ const LoginRegisterForm=({setCurrentUser})=>{
                 <br />
                 <Form.Control
                     className='bg-light text-secondary border-info'
-                    // style={{borderWidth:2}}
                     size="lg" type="password"
                     value={pwListener}
                     onChange={(e)=>handleChangePw(e)}

@@ -43,6 +43,7 @@ const RegistrationForm=({showProfessionalsForm,setNewUser})=>{
                         type="number" placeholder="enter your zipcode here"
                         onChange={((e)=>setZipcode(e.target.value))} />
                 </Form.Group>
+
             {showProfessionalsForm===true&&
             <div>      
                     <Form.Text>mandatory personal data</Form.Text>
@@ -83,10 +84,12 @@ const RegistrationForm=({showProfessionalsForm,setNewUser})=>{
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Control 
                         as="textarea" 
-                        placeholder='a few words about your services and a passport photo will increase the chances of patients choosing you by 65%!' 
+                        placeholder='a few words about your services and a passport photo 
+                            will increase the chances of patients choosing you by 65%!' 
                         rows={3}
                         onChange={(e)=>(setBio(e.target.value))} />
                 </Form.Group>
+
                 <Form.Group controlId="formFile">
                     <Form.Control type="file" size="sm" />
                 </Form.Group>

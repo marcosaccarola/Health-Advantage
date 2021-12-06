@@ -17,12 +17,13 @@ const Dashboard=({currentUser,requests,setRequests})=>{
         }
     }, [])
 
-
     return(
         <div className='mt-5'>
             <Card style={{ width: '80rem' }} 
-                className={currentUser.type==='practitioner'?'text-dark bg-info':'text-dark bg-warning'}
-                >
+                className={currentUser.type==='practitioner'
+                    ?'text-dark bg-info'
+                    :'text-dark bg-warning'}
+                    >
             <Card.Body>
                 <div className='row justify-content-between mx-5 mt-4 mb-5'>
                 <Card.Title>{currentUser.email}</Card.Title>
@@ -52,6 +53,7 @@ const Dashboard=({currentUser,requests,setRequests})=>{
                 </Card.Text>
             </Card.Body>
             </Card>
+
             {currentUser.type==='practitioner'&&
                 <ListOfRequests requests={requests} offeredServices={offeredServices} setOfferedServices={setOfferedServices} />
             }
