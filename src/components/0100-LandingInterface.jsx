@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Card,Row,Col,Form,Button } from "react-bootstrap"
-import bg from '../assets/dave-hoefler-unsplash-medium.jpg'
+import bg from '../assets/dave-hoefler-unsplash-medium-cutted.jpg'
 import LoginRegisterForm from "./0110-LoginForm"
 import RegistrationForm from "./0120-RegistrationForm"
 import patients from '../dbExample/patients.json'
@@ -43,11 +43,11 @@ const LandingInterface=({setCurrentUser})=>{
 
                 <Card.Img variant="top" src={bg}/>
                 <Card.Body>
-                    <Card.Title className='mt-2 mb-5'>
+                    <Card.Title className='font-weight-bold mt-2 mb-5'>
                     <a className='text-light' onClick={handleRegistrationComponent}>
-                        <span className='text-warning'>Purple Cross</span>
+                        <span className='text-warning'>Purple Cross </span>
                         connects home healthcare professionals with patients,
-                        <span className='text-warning'>forever free</span>.
+                        <span className='text-warning'> forever free</span>.
                         <br/>
                         <span className='text-warning'>Sign up in 45 seconds!</span>
                     </a>
@@ -66,7 +66,7 @@ const LandingInterface=({setCurrentUser})=>{
                                 <Card.Title className='font-weight-bold my-4'>
                                 Safe
                                 </Card.Title>
-                                <Card.Title className='text-justify mx-5'>
+                                <Card.Title className='text-justify mx-4'>
                                 <span className='text-warning'>all data is encrypted </span>
                                 and all practitioners are asked for documents certifying qualification for the medical role
                                 </Card.Title>
@@ -75,16 +75,16 @@ const LandingInterface=({setCurrentUser})=>{
                                 <Card.Title className='font-weight-bold my-4'>
                                 Anonymous
                                 </Card.Title>
-                                <Card.Title className='text-justify mx-5'>
+                                <Card.Title className='text-justify mx-4'>
                                 <span className='text-warning'>no personal data required</span>
                                 : email and zipcode are enough, then choose a password and publish your first request for home assistance
                                 </Card.Title>
                             </Col>
                             <Col xs={4}>
-                               <Card.Title className='font-weight-bold mt-4'>
+                               <Card.Title className='font-weight-bold my-4'>
                                 Free
                                 </Card.Title>
-                                <Card.Title className='text-justify mx-5'>
+                                <Card.Title className='text-justify mx-4'>
                                 <span className='text-warning'>it's completely free </span>
                                 and will be forever, no credit card required
                                 </Card.Title>
