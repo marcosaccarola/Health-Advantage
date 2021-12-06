@@ -5,6 +5,7 @@ import LoginRegisterForm from "./0110-LoginForm"
 import RegistrationForm from "./0120-RegistrationForm"
 import patients from '../dbExample/patients.json'
 import practitioners from '../dbExample/practitioners.json'
+import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/ai";
 
 const LandingInterface=({setCurrentUser})=>{
 
@@ -56,13 +57,13 @@ const LandingInterface=({setCurrentUser})=>{
             ?
                     <Card.Text>
                         <Row>
-                            <Col xs={4}>value icon and text</Col>
-                            <Col xs={4}>value icon and text</Col>
-                            <Col xs={4}>value icon and text</Col>
+                            <Col xs={4}><AiOutlineEyeInvisible size='96px' /></Col>
+                            <Col xs={4}><AiOutlineLock size='96px' /></Col>
+                            <Col xs={4}><AiOutlineSmile size='96px' /></Col>
                         </Row>
                         <Row>
                             <Col xs={4}>
-                                <Card.Title className='font-weight-bold'>
+                                <Card.Title className='font-weight-bold my-4'>
                                 Safe
                                 </Card.Title>
                                 <Card.Title className='text-justify mx-5'>
@@ -71,7 +72,7 @@ const LandingInterface=({setCurrentUser})=>{
                                 </Card.Title>
                             </Col>
                             <Col xs={4}>
-                                <Card.Title className='font-weight-bold'>
+                                <Card.Title className='font-weight-bold my-4'>
                                 Anonymous
                                 </Card.Title>
                                 <Card.Title className='text-justify mx-5'>
@@ -80,7 +81,7 @@ const LandingInterface=({setCurrentUser})=>{
                                 </Card.Title>
                             </Col>
                             <Col xs={4}>
-                               <Card.Title className='font-weight-bold'>
+                               <Card.Title className='font-weight-bold mt-4'>
                                 Free
                                 </Card.Title>
                                 <Card.Title className='text-justify mx-5'>
