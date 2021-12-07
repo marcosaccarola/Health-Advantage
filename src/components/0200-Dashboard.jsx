@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Card,Button } from "react-bootstrap"
+import { Card,Button, Image } from "react-bootstrap"
 import InterventionsTakenInCharge from "./0210-InterventionsTakenInCharge"
 import ListOfRequests from "./0220-Requests"
 import PublishForm from "./0230-PublishForm"
@@ -26,7 +26,11 @@ const Dashboard=({currentUser,requests,setRequests})=>{
                     >
             <Card.Body>
                 <div className='row justify-content-between mx-5 mt-4 mb-5'>
-                <Card.Title>{currentUser.email}</Card.Title>
+                <Image src={currentUser.photo} 
+                    style={{height:150,weight:150,borderRadius:50,border:4,borderColor:'grey'}} 
+                    className='border-light'
+                    />
+                <Card.Title>{currentUser.firstName} {currentUser.lastName}</Card.Title>
                 <Card.Title>{currentUser.zipcode}</Card.Title>
                 </div>
                 <Card.Text>
