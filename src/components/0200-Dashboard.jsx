@@ -20,7 +20,7 @@ const Dashboard=({currentUser,requests,setRequests})=>{
     return(
         <div className='mt-5'>
             <Card style={{ width: '80rem' }} 
-                className={currentUser.type==='practitioner'
+                className={currentUser.role==='practitioner'
                     ?'text-dark bg-info'
                     :'text-dark bg-warning'}
                     >
@@ -34,7 +34,7 @@ const Dashboard=({currentUser,requests,setRequests})=>{
                 <Card.Title>{currentUser.zipcode}</Card.Title>
                 </div>
                 <Card.Text>
-                    {currentUser.type==='practitioner'
+                    {currentUser.role==='practitioner'
                     ?
                         (offeredServices.length===0)
                         ?
@@ -58,10 +58,10 @@ const Dashboard=({currentUser,requests,setRequests})=>{
             </Card.Body>
             </Card>
 
-            {currentUser.type==='practitioner'&&
+            {currentUser.role==='practitioner'&&
                 <ListOfRequests requests={requests} offeredServices={offeredServices} setOfferedServices={setOfferedServices} />
             }
-            {currentUser.type!=='practitioner'&&
+            {currentUser.role!=='practitioner'&&
                 <PublishForm currentUser={currentUser} requests={requests} setRequests={setRequests} />
             }
         </div>

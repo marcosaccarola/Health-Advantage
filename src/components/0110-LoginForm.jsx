@@ -6,6 +6,7 @@ import { getUser } from "../utilities/fetches.js"
 
 const LoginRegisterForm=({setCurrentUser})=>{
 
+    // *ONLY-FE ver.
     // const[emailListener,setEmailListener]=useState('')
     // const handleChangeEmail=(e)=>{
     //     setEmailListener(e.target.value)
@@ -38,8 +39,7 @@ const LoginRegisterForm=({setCurrentUser})=>{
     }
     const loginUser=()=>{
         const reqBody={'email':emailListener,'password':pwListener}
-        console.log(reqBody)
-        getUser({reqBody})
+        getUser({reqBody,setCurrentUser})
     }
 
 

@@ -17,7 +17,7 @@ const Home=()=>{
             {currentUser&&
                 <div className='row justify-content-end mt-5'>
                     <Button
-                        variant={currentUser.type==='practitioner'
+                        variant={currentUser.role==='practitioner'
                             ?"info rounded-pill text-dark px-5"
                             :"warning rounded-pill text-dark px-5"}
                         onClick={()=>setCurrentUser()}
