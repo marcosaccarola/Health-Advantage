@@ -6,7 +6,7 @@ import { getUser } from "../utilities/fetches.js"
 
 const LoginRegisterForm=({setCurrentUser})=>{
 
-    // *ONLY-FE ver.
+    // *ONLY-FE ver. ____________________________
     // const[emailListener,setEmailListener]=useState('')
     // const handleChangeEmail=(e)=>{
     //     setEmailListener(e.target.value)
@@ -28,6 +28,7 @@ const LoginRegisterForm=({setCurrentUser})=>{
     //         setCurrentUser(matchUser)
     //     }
     // }
+    // * ________________________________________
 
     const[emailListener,setEmailListener]=useState('')
     const handleChangeEmail=(e)=>{

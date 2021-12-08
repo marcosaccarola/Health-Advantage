@@ -11,7 +11,9 @@ export const getUser=async({reqBody,setCurrentUser})=>{
             if(response.ok){
                 let user=await response.json()
                 setCurrentUser(user)
-        }
+            }else{
+                alert('User not found.')
+            }
     } catch (error) {
         throw error
     }

@@ -15,23 +15,54 @@ const Dashboard=({currentUser,requests,setRequests})=>{
                 setRequestedServices(userRequests)
             }
         }
+        console.log(currentUser)
     }, [])
 
     return(
         <div className='mt-5'>
-            <Card style={{ width: '80rem' }} 
+            <Card style={{ width: '80rem', borderWidth:10 }} 
                 className={currentUser.role==='practitioner'
-                    ?'text-dark bg-info'
+                    ?'text-dark bg-light border-info'
                     :'text-dark bg-warning'}
                     >
             <Card.Body>
                 <div className='row justify-content-between mx-5 mt-4 mb-5'>
-                <Image src={currentUser.photo} 
-                    style={{height:150,weight:150,borderRadius:50,border:4,borderColor:'grey'}} 
-                    className='border-light'
-                    />
-                <Card.Title>{currentUser.firstName} {currentUser.lastName}</Card.Title>
-                <Card.Title>{currentUser.zipcode}</Card.Title>
+                    <Image src={currentUser.photo} 
+                        style={{width:100,height:100,objectFit:'cover',borderRadius:'50%'}} 
+                        />
+                    <div className='ml-5 text-muted'>
+                        <Card.Title className='row justify-content-start'>
+                            Practitioner
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            Role
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            Location
+                        </Card.Title>
+                    </div>
+                    <div className='ml-5 text-muted'>
+                        <Card.Title className='row justify-content-start'>
+                            :
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            : 
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            :
+                        </Card.Title>
+                    </div>
+                    <div className='ml-5 mr-auto'>
+                        <Card.Title className='row justify-content-start'>
+                            {currentUser.firstName} {currentUser.lastName}
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            {currentUser.profession} 
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            {currentUser.zipcode}
+                        </Card.Title>
+                    </div>
                 </div>
                 <Card.Text>
                     {currentUser.role==='practitioner'
