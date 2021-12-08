@@ -9,6 +9,7 @@ import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/
 
 const LandingInterface=({setCurrentUser})=>{
 
+//*____________________________________ FORMS HANDLERS
     const[showRegistrationForm,setShowRegistrationForm]=useState(false)
     const handleRegistrationComponent=()=>{
         showRegistrationForm===false
@@ -19,7 +20,7 @@ const LandingInterface=({setCurrentUser})=>{
             setShowRegistrationForm(false)
             setShowProfessionalsForm(false)
         }
-    
+
     const[showProfessionalsForm,setShowProfessionalsForm]=useState(false)
     const handleProfessionalsForm=()=>{
         showProfessionalsForm===false

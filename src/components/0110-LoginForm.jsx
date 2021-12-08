@@ -1,31 +1,45 @@
 import { useState } from "react"
-import { Form } from "react-bootstrap"
-import practitioners from '../dbExample/practitioners.json'
-import patients from '../dbExample/patients.json'
+import { Form,Button } from "react-bootstrap"
+// import practitioners from '../dbExample/practitioners.json'
+// import patients from '../dbExample/patients.json'
+import { getUser } from "../Utilities/fetches"
 
 const LoginRegisterForm=({setCurrentUser})=>{
+
+    // const[emailListener,setEmailListener]=useState('')
+    // const handleChangeEmail=(e)=>{
+    //     setEmailListener(e.target.value)
+    //     checkBothIfMatch()
+    // }
+
+    // const[pwListener,setPwListener]=useState('')
+    // const handleChangePw=(e)=>{
+    //     setPwListener(e.target.value)
+    //     checkBothIfMatch()
+    // }
+
+    // const checkBothIfMatch=()=>{
+    //     const matchUser=
+    //         practitioners.find((obj)=>(obj.email===emailListener&&obj.password===pwListener))
+    //         ||
+    //         patients.find((obj)=>(obj.email===emailListener&&obj.password===pwListener))
+    //     if(matchUser){
+    //         setCurrentUser(matchUser)
+    //     }
+    // }
 
     const[emailListener,setEmailListener]=useState('')
     const handleChangeEmail=(e)=>{
         setEmailListener(e.target.value)
-        checkBothIfMatch()
     }
-
     const[pwListener,setPwListener]=useState('')
     const handleChangePw=(e)=>{
         setPwListener(e.target.value)
-        checkBothIfMatch()
+    }
+    const loginUser=(emailListener,pwListener)=>{
+        getUser(emailListener,pwListener)
     }
 
-    const checkBothIfMatch=()=>{
-        const matchUser=
-            practitioners.find((obj)=>(obj.email===emailListener&&obj.password===pwListener))
-            ||
-            patients.find((obj)=>(obj.email===emailListener&&obj.password===pwListener))
-        if(matchUser){
-            setCurrentUser(matchUser)
-        }
-    }
 
     return(
         <div>
@@ -43,7 +57,13 @@ const LoginRegisterForm=({setCurrentUser})=>{
                     value={pwListener}
                     onChange={(e)=>handleChangePw(e)}
                     placeholder="password" />
+                <Button 
+                    className='btn-warning text-muted border-info btn-lg btn-block mt-5'
+                    onClick={loginUser}>
+                        <span className='row justify-text-start ml-1'>Click here for logging</span>
+                </Button>
             </Form.Group>
+
         </div>
     )
 }

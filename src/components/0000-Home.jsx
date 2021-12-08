@@ -8,6 +8,7 @@ const Home=()=>{
     const[currentUser,setCurrentUser]=useState()
     const[requests,setRequests]=useState()
     useEffect(() => {
+        
         setRequests(requestsToIntervention)
     }, [])
 
@@ -34,5 +35,17 @@ const Home=()=>{
 
 export default Home
 
+/*
+location (exact address)
+intervention name and type
+piaghe da decupito
+situazioni che non vengono raccolte dal servizio pubblico (intramuscolo, flebo)
+quando si infonde un farmaco, servirebbe sempre la prescrizione medica
+
+
+nutrizione parenterale
+nutrizione con peg
+
+*/
 
 
