@@ -20,7 +20,7 @@ const Dashboard=({currentUser,requests,setRequests})=>{
 
     return(
         <div className='mt-5'>
-            <Card style={{ width: '80rem', borderWidth:10 }} 
+            <Card style={{ width: '80rem', borderWidth:8 }} 
                 className={currentUser.role==='practitioner'
                     ?'text-dark bg-light border-info'
                     :'text-dark bg-warning'}
@@ -28,7 +28,8 @@ const Dashboard=({currentUser,requests,setRequests})=>{
             <Card.Body>
                 <div className='row justify-content-between mx-5 mt-4 mb-5'>
                     <Image src={currentUser.photo} 
-                        style={{width:100,height:100,objectFit:'cover',borderRadius:'50%'}} 
+                        style={{width:100,height:100,objectFit:'cover',borderRadius:'50%'}}
+                        className='mr-5'
                         />
                     <div className='ml-5 text-muted'>
                         <Card.Title className='row justify-content-start'>
@@ -52,7 +53,7 @@ const Dashboard=({currentUser,requests,setRequests})=>{
                             :
                         </Card.Title>
                     </div>
-                    <div className='ml-5 mr-auto'>
+                    <div className='ml-5 mr-5'>
                         <Card.Title className='row justify-content-start'>
                             {currentUser.firstName} {currentUser.lastName}
                         </Card.Title>
@@ -61,6 +62,39 @@ const Dashboard=({currentUser,requests,setRequests})=>{
                         </Card.Title>
                         <Card.Title className='row justify-content-start'>
                             {currentUser.zipcode}
+                        </Card.Title>
+                    </div>
+                    <div className='ml-5 text-muted'>
+                        <Card.Title className='row justify-content-start'>
+                            Education
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            Board
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            Specializations
+                        </Card.Title>
+                    </div>
+                    <div className='ml-5 text-muted'>
+                        <Card.Title className='row justify-content-start'>
+                            :
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            : 
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            :
+                        </Card.Title>
+                    </div>
+                    <div className='ml-5 mr-auto mr-5'>
+                        <Card.Title className='row justify-content-start'>
+                            {currentUser.firstName} {currentUser.lastName}
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            {currentUser.profession} 
+                        </Card.Title>
+                        <Card.Title className='row justify-content-start'>
+                            {currentUser.specializations}
                         </Card.Title>
                     </div>
                 </div>
