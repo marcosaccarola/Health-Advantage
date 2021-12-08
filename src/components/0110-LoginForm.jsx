@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Form,Button } from "react-bootstrap"
 // import practitioners from '../dbExample/practitioners.json'
 // import patients from '../dbExample/patients.json'
-import { getUser } from "../Utilities/fetches"
+import { getUser } from "../utilities/fetches.js"
 
 const LoginRegisterForm=({setCurrentUser})=>{
 
@@ -36,8 +36,10 @@ const LoginRegisterForm=({setCurrentUser})=>{
     const handleChangePw=(e)=>{
         setPwListener(e.target.value)
     }
-    const loginUser=(emailListener,pwListener)=>{
-        getUser(emailListener,pwListener)
+    const loginUser=()=>{
+        const reqBody={'email':emailListener,'password':pwListener}
+        console.log(reqBody)
+        getUser({reqBody})
     }
 
 
