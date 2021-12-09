@@ -4,18 +4,18 @@ import UserInfoCard from "./0201-UserInfoCard"
 import InterventionsTakenInCharge from "./0210-InterventionsTakenInCharge"
 import ListOfRequests from "./0220-Requests"
 import PublishForm from "./0230-PublishForm"
-import RequestedInterventions from "./0240-RequestedInterventions"
+import ThisPatientInterventions from "./0240-ThisPatientInterventions"
 
 const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
     const[offeredServices,setOfferedServices]=useState([])
-    const[requestedServices,setRequestedServices]=useState([])
+    // const[requestedServices,setRequestedServices]=useState([])
     useEffect(() => {
-        if(requests){
-            let userRequests=requests.filter(r=>r.userId===currentUser.userId)
-            if(userRequests){
-                setRequestedServices(userRequests)
-            }
-        }
+        // if(requests){
+        //     let userRequests=requests.filter(r=>r.userId===currentUser.userId)
+        //     if(userRequests){
+        //         setRequestedServices(userRequests)
+        //     }
+        // }
     }, [])
 
     return(
@@ -50,7 +50,9 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                         </div>
                         :
                         <div>
-                            <RequestedInterventions requestedServices={requestedServices} currentUser={currentUser} requests={requests}/>
+                            {currentUser&&currentUser.published.map((intervention)=>(
+                                <ThisPatientInterventions intervention={intervention}/>
+                            ))}
                         </div>
                     }
                 </Card.Text>

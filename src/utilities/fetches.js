@@ -1,6 +1,6 @@
 const PRACTITIONERS_URL='http://localhost:3001/practitioner/login'
 const PATIENTS_URL='http://localhost:3001/patient/login'
-const INTERVENTIONS_URL='http://localhost:3001/patient/intervention'
+const INTERVENTIONS_URL='http://localhost:3001/intervention'
 
 // *_____________________________________________ GET PRACTITIONER OR PATIENT
 export const getUser=async({reqBody,setCurrentUser})=>{
@@ -54,7 +54,7 @@ export const publishIntervention=async({requestObj,setCurrentUser})=>{
             if(responseInterventionPublication.ok){
                 let userWithInterventions=await responseInterventionPublication.json()
                 setCurrentUser(userWithInterventions)
-                console.log(requestObj)
+                console.log(userWithInterventions)
             }
     } catch (error) {
         throw error

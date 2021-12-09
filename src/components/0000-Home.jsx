@@ -21,7 +21,9 @@ const Home=()=>{
                             ?"border-info rounded-pill bg-light text-dark px-5"
                             :"border-warning rounded-pill bg-light text-dark px-5"}
                         onClick={()=>setCurrentUser()}
-                        >Logout</Button>
+                        >
+                        Logout
+                    </Button>
                 </div>
             }
 
