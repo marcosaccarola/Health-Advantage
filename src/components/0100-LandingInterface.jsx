@@ -7,7 +7,7 @@ import patients from '../dbExample/patients.json'
 import practitioners from '../dbExample/practitioners.json'
 import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/ai";
 
-const LandingInterface=({setCurrentUser})=>{
+const LandingInterface=({currentUser,setCurrentUser})=>{
 
 //*____________________________________ FORMS HANDLERS
     const[showRegistrationForm,setShowRegistrationForm]=useState(false)
@@ -40,7 +40,7 @@ const LandingInterface=({setCurrentUser})=>{
         <div>
             <Card style={{ width: '70%'}} className='text-light bg-info mx-auto mt-2 mb-5'>
 
-                <LoginRegisterForm setCurrentUser={setCurrentUser} />
+                <LoginRegisterForm setCurrentUser={setCurrentUser} currentUser={currentUser} />
 
                 <Card.Img variant="top" src={bg}/>
                 <Card.Body>

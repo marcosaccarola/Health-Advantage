@@ -4,7 +4,7 @@ import { Form,Button } from "react-bootstrap"
 // import patients from '../dbExample/patients.json'
 import { getUser } from "../utilities/fetches.js"
 
-const LoginRegisterForm=({setCurrentUser})=>{
+const LoginRegisterForm=({setCurrentUser,currentUser})=>{
 
     // *_________________________________________ ONLY-FE ver.
     // const[emailListener,setEmailListener]=useState('')

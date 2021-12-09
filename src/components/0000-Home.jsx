@@ -8,7 +8,7 @@ const Home=()=>{
     const[currentUser,setCurrentUser]=useState()
     const[requests,setRequests]=useState()
     useEffect(() => {
-        
+        console.log('CURRENT USER FROM HOME',currentUser)
         setRequests(requestsToIntervention)
     }, [])
 
@@ -27,8 +27,8 @@ const Home=()=>{
             }
 
             {currentUser
-                ?<Dashboard currentUser={currentUser} requests={requests} setRequests={setRequests} />
-                :<LandingInterface setCurrentUser={setCurrentUser} />
+                ?<Dashboard currentUser={currentUser} setCurrentUser={setCurrentUser} requests={requests} setRequests={setRequests} />
+                :<LandingInterface setCurrentUser={setCurrentUser} currentUser={currentUser} />
             }
         </div>
     )

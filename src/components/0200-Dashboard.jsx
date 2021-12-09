@@ -6,10 +6,11 @@ import ListOfRequests from "./0220-Requests"
 import PublishForm from "./0230-PublishForm"
 import RequestedInterventions from "./0240-RequestedInterventions"
 
-const Dashboard=({currentUser,requests,setRequests})=>{
+const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
     const[offeredServices,setOfferedServices]=useState([])
     const[requestedServices,setRequestedServices]=useState([])
     useEffect(() => {
+        console.log('CURRENT USER FROM DASHBOARD',currentUser)
         if(requests){
             let userRequests=requests.filter(r=>r.userId===currentUser.userId)
             if(userRequests){
@@ -41,7 +42,7 @@ const Dashboard=({currentUser,requests,setRequests})=>{
                             You have not yet offered your services, consult the list of service requests below and click reply
                         </div>
                         :
-                        <InterventionsTakenInCharge offeredServices={offeredServices} currentUser={currentUser}/>
+                            <InterventionsTakenInCharge offeredServices={offeredServices} currentUser={currentUser}/>
                     :
                         // requests&&(requests.indexOf(e=>e.userId===currentUser.userId)!==-1)
                         (currentUser.published.length===0)
@@ -62,7 +63,7 @@ const Dashboard=({currentUser,requests,setRequests})=>{
                 <ListOfRequests requests={requests} offeredServices={offeredServices} setOfferedServices={setOfferedServices} />
             }
             {currentUser.role!=='Practitioner'&&
-                <PublishForm currentUser={currentUser} requests={requests} setRequests={setRequests} />
+                <PublishForm currentUser={currentUser} setCurrentUser={setCurrentUser} requests={requests} setRequests={setRequests} />
             }
         </div>
     )

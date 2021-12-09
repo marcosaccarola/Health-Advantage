@@ -1,7 +1,8 @@
 import { useState } from "react"
 import {Button, Card, Form} from "react-bootstrap"
+import {publishIntervention} from '../utilities/fetches.js'
 
-const PublishForm=({currentUser,requests,setRequests})=>{
+const PublishForm=({currentUser,setCurrentUser,requests,setRequests})=>{
 
     const[formIsOpen,setFormIsOpen]=useState(false)
     const handleForm=()=>{
@@ -30,7 +31,15 @@ const PublishForm=({currentUser,requests,setRequests})=>{
     // }
 
     const sendRequest=()=>{
-        
+        const requestObj={
+            "userId":currentUser.userId,
+            "zipcode":zipcode,
+            "interventionRequested":intervention,
+            "moreInfo":info,
+        }
+        handleForm()
+        publishIntervention(requestObj,setCurrentUser)
+        alert('Request sent!')
     }
 
     return(
