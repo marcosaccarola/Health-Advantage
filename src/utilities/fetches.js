@@ -54,6 +54,7 @@ export const publishIntervention=async({requestObj,setCurrentUser})=>{
             if(responseInterventionPublication.ok){
                 let userWithInterventions=await responseInterventionPublication.json()
                 setCurrentUser(userWithInterventions)
+                console.log(requestObj)
             }
     } catch (error) {
         throw error

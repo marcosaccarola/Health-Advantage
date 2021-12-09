@@ -32,13 +32,14 @@ const PublishForm=({currentUser,setCurrentUser,requests,setRequests})=>{
 
     const sendRequest=()=>{
         const requestObj={
-            "userId":currentUser.userId,
+            "userId":currentUser._id,
             "zipcode":zipcode,
             "interventionRequested":intervention,
-            "moreInfo":info,
+            "moreInfo":info
         }
+        console.log(requestObj, currentUser)
         handleForm()
-        publishIntervention(requestObj,setCurrentUser)
+        publishIntervention({requestObj,setCurrentUser})
         alert('Request sent!')
     }
 
