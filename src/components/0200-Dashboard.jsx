@@ -10,14 +10,12 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
     const[offeredServices,setOfferedServices]=useState([])
     const[requestedServices,setRequestedServices]=useState([])
     useEffect(() => {
-        console.log('CURRENT USER FROM DASHBOARD',currentUser)
         if(requests){
             let userRequests=requests.filter(r=>r.userId===currentUser.userId)
             if(userRequests){
                 setRequestedServices(userRequests)
             }
         }
-        console.log(currentUser)
     }, [])
 
     return(

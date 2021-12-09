@@ -8,7 +8,6 @@ const Home=()=>{
     const[currentUser,setCurrentUser]=useState()
     const[requests,setRequests]=useState()
     useEffect(() => {
-        console.log('CURRENT USER FROM HOME',currentUser)
         setRequests(requestsToIntervention)
     }, [])
 

@@ -1,6 +1,6 @@
 const PRACTITIONERS_URL='http://localhost:3001/practitioner/login'
 const PATIENTS_URL='http://localhost:3001/patient/login'
-const INTERVENTIONS_URL='http://localhost:3001/intervention'
+const INTERVENTIONS_URL='http://localhost:3001/patient/intervention'
 
 // *_____________________________________________ GET PRACTITIONER OR PATIENT
 export const getUser=async({reqBody,setCurrentUser})=>{

@@ -37,7 +37,6 @@ const PublishForm=({currentUser,setCurrentUser,requests,setRequests})=>{
             "interventionRequested":intervention,
             "moreInfo":info
         }
-        console.log(requestObj, currentUser)
         handleForm()
         publishIntervention({requestObj,setCurrentUser})
         alert('Request sent!')
