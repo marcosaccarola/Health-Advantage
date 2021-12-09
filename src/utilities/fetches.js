@@ -1,6 +1,7 @@
 const PRACTITIONERS_URL='http://localhost:3001/practitioner/login'
 const PATIENTS_URL='http://localhost:3001/patient/login'
 
+// *_____________________________________________ GET PRATITIONER OR PATIENT
 export const getUser=async({reqBody,setCurrentUser})=>{
     try {
         const responsePractitioners=await fetch(PRACTITIONERS_URL,

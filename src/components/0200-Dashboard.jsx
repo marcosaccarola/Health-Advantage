@@ -21,11 +21,12 @@ const Dashboard=({currentUser,requests,setRequests})=>{
 
     return(
         <div className='mt-5'>
-            <Card style={{ width: '80rem', borderWidth:8 }} 
+            <Card 
+                style={{ width: '80rem', borderWidth:8 }} 
                 className={currentUser.role==='Practitioner'
                     ?'text-dark bg-light border-info'
                     :'text-dark bg-light border-warning'}
-                    >
+                >
             <Card.Body>
 
                 <UserInfoCard currentUser={currentUser} />

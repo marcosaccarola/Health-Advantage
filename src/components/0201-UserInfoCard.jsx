@@ -7,7 +7,7 @@ const UserInfoCard=({currentUser})=>{
         <div>
         {currentUser.role==='Practitioner'
         ?
-        // *! PRACTITIONERS INFO
+        // *_____________________________________ PRACTITIONER INFO
             <div className='row justify-content-between mx-5 mt-4 mb-4'>
                 <Image src={currentUser.photo} 
                     style={{width:100,height:100,objectFit:'cover',borderRadius:'50%'}}
@@ -81,7 +81,7 @@ const UserInfoCard=({currentUser})=>{
                 </div>
             </div>
         :
-        // *! PATIENTS INFO
+        // *_____________________________________ PATIENT INFO
             <div className='row justify-content-between mx-5 mt-4 mb-4'>
                 <Image src={currentUser.photo} 
                     style={{width:100,height:100,objectFit:'cover',borderRadius:'50%'}}
