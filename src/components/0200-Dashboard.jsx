@@ -42,9 +42,10 @@ const Dashboard=({currentUser,requests,setRequests})=>{
                         :
                         <InterventionsTakenInCharge offeredServices={offeredServices} currentUser={currentUser}/>
                     :
-                        requests&&(requests.indexOf(e=>e.userId===currentUser.userId)!==-1)
+                        // requests&&(requests.indexOf(e=>e.userId===currentUser.userId)!==-1)
+                        (currentUser.published.length===0)
                         ?
-                        <div className='row justify-content-start mx-5 mb-4 text-dark'>
+                        <div className='row justify-content-start mx-5 mb-4 text-muted'>
                             you have not yet published a request for home health care, click publish
                         </div>
                         :
