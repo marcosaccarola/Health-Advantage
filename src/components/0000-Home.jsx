@@ -18,9 +18,9 @@ const Home=()=>{
                 <div className='row justify-content-end mt-5'>
                     <Button
                         style={{borderWidth:4}}
-                        className={currentUser.role==='practitioner'
+                        className={currentUser.role==='Practitioner'
                             ?"border-info rounded-pill bg-light text-dark px-5"
-                            :"warning rounded-pill text-dark px-5"}
+                            :"border-warning rounded-pill bg-light text-dark px-5"}
                         onClick={()=>setCurrentUser()}
                         >Logout</Button>
                 </div>

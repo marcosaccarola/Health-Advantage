@@ -22,7 +22,7 @@ const Dashboard=({currentUser,requests,setRequests})=>{
     return(
         <div className='mt-5'>
             <Card style={{ width: '80rem', borderWidth:8 }} 
-                className={currentUser.role==='practitioner'
+                className={currentUser.role==='Practitioner'
                     ?'text-dark bg-light border-info'
                     :'text-dark bg-light border-warning'}
                     >
@@ -32,7 +32,7 @@ const Dashboard=({currentUser,requests,setRequests})=>{
 
                 <hr className='mb-5' />
                 <Card.Text>
-                    {currentUser.role==='practitioner'
+                    {currentUser.role==='Practitioner'
                     ?
                         (offeredServices.length===0)
                         ?
@@ -56,10 +56,10 @@ const Dashboard=({currentUser,requests,setRequests})=>{
             </Card.Body>
             </Card>
 
-            {currentUser.role==='practitioner'&&
+            {currentUser.role==='Practitioner'&&
                 <ListOfRequests requests={requests} offeredServices={offeredServices} setOfferedServices={setOfferedServices} />
             }
-            {currentUser.role!=='practitioner'&&
+            {currentUser.role!=='Practitioner'&&
                 <PublishForm currentUser={currentUser} requests={requests} setRequests={setRequests} />
             }
         </div>
