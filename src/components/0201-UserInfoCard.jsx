@@ -66,10 +66,10 @@ const UserInfoCard=({currentUser})=>{
             </div>
             <div className='ml-5 mr-auto mr-5'>
                 <Card.Title className='row justify-content-start'>
-                    {currentUser.firstName} {currentUser.lastName}
+                    {currentUser.educationalQualification}
                 </Card.Title>
                 <Card.Title className='row justify-content-start'>
-                    {currentUser.profession} 
+                    {currentUser.medicalBoard} 
                 </Card.Title>
                 <Card.Title className='row justify-content-start'>
                     {currentUser.specializations}
