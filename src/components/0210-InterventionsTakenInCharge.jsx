@@ -1,9 +1,12 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Card,Button } from "react-bootstrap"
 // import MoreInterventionInfo from "./0211-MoreInterventionInfo"
 import Messages from "./0212-Messages"
 
 const InterventionsTakenInCharge=({intervention,currentUser})=>{
+    useEffect(() => {
+        console.log(intervention)
+    }, [])
 
     const[openedMoreInterventInfo,setOpenedMoreInterventInfo]=useState([])
     const handleInterventInfo=(id)=>{
@@ -26,9 +29,13 @@ const InterventionsTakenInCharge=({intervention,currentUser})=>{
     return(
         <div>
             {/* {offeredServices.map((reply)=>( */}
-                <Card key={intervention.requestId} style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
+                <Card 
+                    key={intervention.requestId} 
+                    style={{ width: '70rem', borderWidth:2 }} 
+                    className='border-muted text-light mx-auto mb-5'
+                    >
                     <Card.Body>
-                    <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
+                    {/* <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
                         <Card.Title className='text-info'>{intervention.position}</Card.Title>
                     </div>
                     <div className='row justify-content-between mx-5 mt-4 mb-3 text-light'>
@@ -43,6 +50,28 @@ const InterventionsTakenInCharge=({intervention,currentUser})=>{
                             variant="info rounded-pill text-dark" 
                             onClick={()=>handleMessages(intervention.requestId)}>Send a message to patient
                         </Button>
+                    </div> */}
+                    <div className='row justify-content-between mx-5'>
+                        <div className='my-1'>
+                            <Card.Title className='text-muted font-weight-normal row justify-content-start'>
+                                Intervention requested</Card.Title>
+                            <Card.Title className='text-dark row justify-content-start ml-2'>
+                                {intervention.interventionRequested}</Card.Title>
+                        </div>
+                        <div className='my-1'>
+                            <Card.Title className='text-muted font-weight-normal row justify-content-start'>
+                                Intervention's location</Card.Title>
+                            <Card.Title className='text-dark row justify-content-end'>
+                                {intervention.zipcode}</Card.Title>
+                        </div>
+                    </div>
+                    <div className='row mx-5'>
+                        <div className='my-1'>
+                            <Card.Title className='text-muted font-weight-normal row justify-content-start'>
+                                Info</Card.Title>
+                            <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
+                                {intervention.moreInfo}</Card.Title>
+                        </div>
                     </div>
 
                 {openedMoreInterventInfo.indexOf(intervention.requestId)!==-1&&

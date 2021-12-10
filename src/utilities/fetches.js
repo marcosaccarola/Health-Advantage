@@ -31,8 +31,6 @@ const getPatient=async({reqBody,setCurrentUser})=>{
             })
             if(responsePatientsLogin.ok){
                 let user=await responsePatientsLogin.json()
-                console.log('USER FROM FETCH',user)
-                console.log(user.published.length)
                 setCurrentUser(user)
             }else{
                 console.log('User not found')
@@ -54,7 +52,6 @@ export const publishIntervention=async({requestObj,setCurrentUser})=>{
             if(responseInterventionPublication.ok){
                 let userWithInterventions=await responseInterventionPublication.json()
                 setCurrentUser(userWithInterventions)
-                console.log(userWithInterventions)
             }else{
                 console.log('Something went wrong.')
             }
@@ -91,7 +88,6 @@ export const addIntervention=async({interventionId,userId,setCurrentUser})=>{
         if(responseInterventionAdded.ok){
             let practitionerWithInterventions=await responseInterventionAdded.json()
             setCurrentUser(practitionerWithInterventions)
-            console.log(practitionerWithInterventions)
         }else{
             console.log('Intervention not added.')
         }
