@@ -3,7 +3,7 @@ import { Card,Button } from "react-bootstrap"
 // import MoreInterventionInfo from "./0211-MoreInterventionInfo"
 import Messages from "./0212-Messages"
 
-const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
+const InterventionsTakenInCharge=({intervention,currentUser})=>{
 
     const[openedMoreInterventInfo,setOpenedMoreInterventInfo]=useState([])
     const handleInterventInfo=(id)=>{
@@ -25,44 +25,44 @@ const InterventionsTakenInCharge=({offeredServices,currentUser})=>{
 
     return(
         <div>
-            {offeredServices.map((reply)=>(
-                <Card key={reply.requestId} style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
+            {/* {offeredServices.map((reply)=>( */}
+                <Card key={intervention.requestId} style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
                     <Card.Body>
                     <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
-                        <Card.Title className='text-info'>{reply.position}</Card.Title>
+                        <Card.Title className='text-info'>{intervention.position}</Card.Title>
                     </div>
                     <div className='row justify-content-between mx-5 mt-4 mb-3 text-light'>
                         <Button 
                             variant="info rounded-pill text-dark px-5" 
-                            onClick={()=>handleInterventInfo(reply.requestId)}>
+                            onClick={()=>handleInterventInfo(intervention.requestId)}>
                             <Card.Title>
-                                Intervent info:<div className='text-light'>{reply.interventionRequested}</div>
+                                Intervent info:<div className='text-light'>{intervention.interventionRequested}</div>
                             </Card.Title>
                         </Button>
                         <Button 
                             variant="info rounded-pill text-dark" 
-                            onClick={()=>handleMessages(reply.requestId)}>Send a message to patient
+                            onClick={()=>handleMessages(intervention.requestId)}>Send a message to patient
                         </Button>
                     </div>
 
-                {openedMoreInterventInfo.indexOf(reply.requestId)!==-1&&
+                {openedMoreInterventInfo.indexOf(intervention.requestId)!==-1&&
                     <Card className='border-info bg-info text-dark'>
                         <Card.Body>
                             <Card.Title className='text-left'>Intervent type: </Card.Title>
-                            <Card.Title className='text-left text-light mx-4'>{reply.interventionRequested}</Card.Title>
+                            <Card.Title className='text-left text-light mx-4'>{intervention.interventionRequested}</Card.Title>
                             <Card.Title className='text-left mt-5'>Info:</Card.Title>
-                            <Card.Title className='text-left mx-4'>{reply.moreInfo}</Card.Title>
+                            <Card.Title className='text-left mx-4'>{intervention.moreInfo}</Card.Title>
                         </Card.Body>
                     </Card>
                 }
 
-                {(messagesIsOpen.indexOf(reply.requestId)!==-1)&&
-                    <Messages reply={reply} currentUser={currentUser} />
+                {(messagesIsOpen.indexOf(intervention.requestId)!==-1)&&
+                    <Messages intervention={intervention} currentUser={currentUser} />
                 
                 }
                     </Card.Body>
                 </Card>
-            ))}
+            {/* ))} */}
         </div>
     )
 }

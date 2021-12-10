@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
 import { Card,Button } from 'react-bootstrap'
+import { getListOfInterventions } from '../utilities/fetches.js'
 
-const ListOfRequests=({requests,offeredServices,setOfferedServices})=>{
+const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices})=>{
+    useEffect(() => {
+        // getListOfInterventions(setRequests)
+    }, [])
 
     const offerYourService=(request)=>{
         setOfferedServices(prevRequests=>[...prevRequests,request])
@@ -11,7 +16,7 @@ const ListOfRequests=({requests,offeredServices,setOfferedServices})=>{
 
     return(
         <div className='mt-5'>
-            {requests.map((request)=>               
+            {requests&&requests.map((request)=>               
                 <Card style={{ width: '70rem' }} className='text-light bg-dark my-3 mx-auto'>
                     <Card.Body>
                         <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>

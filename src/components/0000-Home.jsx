@@ -2,13 +2,15 @@ import LandingInterface from "./0100-LandingInterface"
 import {useEffect, useState} from 'react'
 import Dashboard from "./0200-Dashboard"
 import {Button} from "react-bootstrap"
-import requestsToIntervention from '../dbExample/requestsToIntervention.json'
+import { getListOfInterventions } from "../utilities/fetches"
+// import requestsToIntervention from '../dbExample/requestsToIntervention.json'
 
 const Home=()=>{
     const[currentUser,setCurrentUser]=useState()
     const[requests,setRequests]=useState()
     useEffect(() => {
-        setRequests(requestsToIntervention)
+        // setRequests(requestsToIntervention)
+        getListOfInterventions({setRequests})
     }, [])
 
     return (

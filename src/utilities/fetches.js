@@ -2,7 +2,7 @@ const PRACTITIONERS_URL='http://localhost:3001/practitioner/login'
 const PATIENTS_URL='http://localhost:3001/patient/login'
 const INTERVENTIONS_URL='http://localhost:3001/intervention'
 
-// *_____________________________________________ GET PRACTITIONER OR PATIENT
+// *_____________________________________________ LOGIN (GET PRACTITIONER OR PATIENT)
 export const getUser=async({reqBody,setCurrentUser})=>{
     try {
         const responsePractitionersLogin=await fetch(PRACTITIONERS_URL,
@@ -42,7 +42,7 @@ const getPatient=async({reqBody,setCurrentUser})=>{
     }
 }
 
-// *_____________________________________________ INTERVENTION PUBLICATION
+// *_____________________________________________ PATIENT PUBLISH AN INTERVENTION
 export const publishIntervention=async({requestObj,setCurrentUser})=>{
     try {
         const responseInterventionPublication=await fetch(INTERVENTIONS_URL,
@@ -55,6 +55,27 @@ export const publishIntervention=async({requestObj,setCurrentUser})=>{
                 let userWithInterventions=await responseInterventionPublication.json()
                 setCurrentUser(userWithInterventions)
                 console.log(userWithInterventions)
+            }else{
+                console.log('Something went wrong.')
+            }
+    } catch (error) {
+        throw error
+    }
+}
+
+// *_____________________________________________ GET COMPLETE LIST OF INTERVENTIONS
+export const getListOfInterventions=async({setRequests})=>{
+    try {
+        const responseListOfInterventions=await fetch(INTERVENTIONS_URL,
+            {
+                method:'GET'
+            })
+            if(responseListOfInterventions.ok){
+                let listOfInterventions=await responseListOfInterventions.json()
+                console.log(listOfInterventions)
+                setRequests(listOfInterventions)
+            }else{
+                console.log('Something went wrong.')
             }
     } catch (error) {
         throw error
