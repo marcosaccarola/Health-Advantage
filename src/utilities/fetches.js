@@ -72,7 +72,6 @@ export const getListOfInterventions=async({setRequests})=>{
             })
             if(responseListOfInterventions.ok){
                 let listOfInterventions=await responseListOfInterventions.json()
-                console.log(listOfInterventions)
                 setRequests(listOfInterventions)
             }else{
                 console.log('Something went wrong.')
