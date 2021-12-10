@@ -33,17 +33,29 @@ const ThisPatientInterventions=({intervention})=>{
                     style={{ width: '70rem', borderWidth:2, backgroundColor:'#E9ECEF' }} 
                     className='border-muted text-light mx-auto my-3'>
                     <Card.Body>
-                        <div className='row mx-5'>
-                                <Card.Title className='text-muted font-weight-normal mr-2'>Location:</Card.Title>
-                                <Card.Title className='text-dark font-weight-normal'>{intervention.zipcode}</Card.Title>
+                        {/* <div className='row mx-4'>
+                        </div> */}
+                        <div className='row justify-content-between mx-5'>
+                            <div className='my-1'>
+                                <Card.Title className='text-muted font-weight-normal row justify-content-start'>
+                                    Intervention requested</Card.Title>
+                                <Card.Title className='text-dark row justify-content-start ml-2'>
+                                    {intervention.interventionRequested}</Card.Title>
+                            </div>
+                            <div className='my-1'>
+                                <Card.Title className='text-muted font-weight-normal row justify-content-start'>
+                                    Intervention's location</Card.Title>
+                                <Card.Title className='text-dark row justify-content-end'>
+                                    {intervention.zipcode}</Card.Title>
+                            </div>
                         </div>
                         <div className='row mx-5'>
-                                <Card.Title className='text-muted font-weight-normal mr-2'>Intervention requested:</Card.Title>
-                                <Card.Title className='text-dark'>{intervention.interventionRequested}</Card.Title>
-                        </div>
-                        <div className='row mx-5'>
-                                <Card.Title className='text-muted font-weight-normal mr-2'>Info:</Card.Title>
-                                <Card.Title className='text-dark font-weight-normal'>{intervention.moreInfo}</Card.Title>
+                            <div className='my-1'>
+                                <Card.Title className='text-muted font-weight-normal row justify-content-start'>
+                                    Info</Card.Title>
+                                <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
+                                    {intervention.moreInfo}</Card.Title>
+                            </div>
                         </div>
 
                         <div className='row justify-content-end mx-5 mt-3 text-light'>
@@ -55,7 +67,7 @@ const ThisPatientInterventions=({intervention})=>{
                             </Button> */}
                             <Button 
                                 style={{borderWidth:2}}
-                                className="bg-light rounded-pill text-dark border-warning px-5" 
+                                className="bg-light rounded-pill text-dark border-warning px-5 mt-4" 
                                 onClick={()=>handleMessages(intervention.requestId)}>Modify this request for intervention
                             </Button>
                         </div>
