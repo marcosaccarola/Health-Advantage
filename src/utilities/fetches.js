@@ -100,12 +100,12 @@ export const withdrawService=async({userId,interventionId,setCurrentUser})=>{
     try {
         const responseRemoveIntervention=await fetch(PRACTITIONERS_URL+'/'+userId+'/removeIntervention/'+interventionId,
         {
-            method:'PUT'
+            method:'DELETE'
         })
         if(responseRemoveIntervention.ok){
             let practitionerWithInterventions=await responseRemoveIntervention.json()
             setCurrentUser(practitionerWithInterventions)
-            console.log(practitionerWithInterventions)
+            console.log('FETCH',practitionerWithInterventions)
         }else{
             console.log('Intervention not removed or not found')
         }

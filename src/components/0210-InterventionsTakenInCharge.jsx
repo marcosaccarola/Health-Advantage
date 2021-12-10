@@ -83,7 +83,7 @@ const InterventionsTakenInCharge=({intervention,currentUser,setCurrentUser})=>{
                         <Button 
                             style={{borderWidth:2}}
                             className="bg-light rounded-pill text-dark border-info px-5 mt-4" 
-                            onClick={()=>withdraw(intervention.requestId)}>Withdraw your offer to intervention
+                            onClick={()=>withdraw(intervention._id)}>Withdraw your offer to intervention
                         </Button>
                     </div>
 
