@@ -33,7 +33,7 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                 <Card.Text>
                     {currentUser.role==='Practitioner'
                     ?
-                        (offeredServices.length===0)
+                        (currentUser&&currentUser.InterventionsTakenInCharge.length===0)
                         ?
                         <div className='row justify-content-start mx-5 mb-4 text-muted'>
                             <hr className='mx-5 mb-5' />
@@ -66,7 +66,7 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
             </Card>
 
             {currentUser.role==='Practitioner'&&
-                <ListOfRequests requests={requests} setRequests={setRequests} offeredServices={offeredServices} setOfferedServices={setOfferedServices} />
+                <ListOfRequests currentUser={currentUser} setCurrentUser={setCurrentUser} requests={requests} setRequests={setRequests} offeredServices={offeredServices} setOfferedServices={setOfferedServices} />
             }
             {currentUser.role!=='Practitioner'&&
                 <PublishForm currentUser={currentUser} setCurrentUser={setCurrentUser} requests={requests} setRequests={setRequests} />

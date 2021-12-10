@@ -1,11 +1,11 @@
-const PRACTITIONERS_URL='http://localhost:3001/practitioner/login'
-const PATIENTS_URL='http://localhost:3001/patient/login'
+const PRACTITIONERS_URL='http://localhost:3001/practitioner'
+const PATIENTS_URL='http://localhost:3001/patient'
 const INTERVENTIONS_URL='http://localhost:3001/intervention'
 
 // *_____________________________________________ LOGIN (GET PRACTITIONER OR PATIENT)
 export const getUser=async({reqBody,setCurrentUser})=>{
     try {
-        const responsePractitionersLogin=await fetch(PRACTITIONERS_URL,
+        const responsePractitionersLogin=await fetch(PRACTITIONERS_URL+'/login',
             {
                 method:'POST',
                 body:JSON.stringify(reqBody),
@@ -23,7 +23,7 @@ export const getUser=async({reqBody,setCurrentUser})=>{
 }
 const getPatient=async({reqBody,setCurrentUser})=>{
     try {
-        const responsePatientsLogin=await fetch(PATIENTS_URL,
+        const responsePatientsLogin=await fetch(PATIENTS_URL+'/login',
             {
                 method:'POST',
                 body:JSON.stringify(reqBody),
@@ -76,6 +76,25 @@ export const getListOfInterventions=async({setRequests})=>{
             }else{
                 console.log('Something went wrong.')
             }
+    } catch (error) {
+        throw error
+    }
+}
+
+// *_____________________________________________ ADD INTERVENTION TO PRACTITIONER
+export const addIntervention=async({interventionId,userId,setCurrentUser})=>{
+    try {
+        const responseInterventionAdded=await fetch(PRACTITIONERS_URL+'/'+userId+'/addIntervention/'+interventionId,
+        {
+            method:'PUT',
+        })
+        if(responseInterventionAdded.ok){
+            let practitionerWithInterventions=await responseInterventionAdded.json()
+            setCurrentUser(practitionerWithInterventions)
+            console.log(practitionerWithInterventions)
+        }else{
+            console.log('Intervention not added.')
+        }
     } catch (error) {
         throw error
     }

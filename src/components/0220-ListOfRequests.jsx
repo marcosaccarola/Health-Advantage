@@ -1,17 +1,20 @@
 import { useEffect } from 'react'
 import { Card,Button } from 'react-bootstrap'
+import { addIntervention } from '../utilities/fetches.js'
 // import { getListOfInterventions } from '../utilities/fetches.js'
 
-const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices})=>{
-    useEffect(() => {
-        // getListOfInterventions(setRequests)
-    }, [])
+const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,currentUser,setCurrentUser})=>{
+    // useEffect(() => {
+    //     // getListOfInterventions(setRequests)
+    // }, [])
 
-    const offerYourService=(request)=>{
-        setOfferedServices(prevRequests=>[...prevRequests,request])
+    const offerYourService=(interventionId)=>{
+        // setOfferedServices(prevRequests=>[...prevRequests,request])
+        const userId=currentUser._id
+        addIntervention({interventionId,userId,setCurrentUser})
     }
-    const withdrawYourService=(request)=>{
-        setOfferedServices(offeredServices.filter((r)=>r!==request))
+    const withdrawYourService=(intervention)=>{
+        // setOfferedServices(offeredServices.filter((r)=>r!==request))
     }
 
     return(
@@ -73,7 +76,7 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices})
                                 <Button 
                                     style={{borderWidth:2,backgroundColor:'#E9ECEF' }}
                                     className="rounded-pill text-dark border-info px-5 mt-4"  
-                                    onClick={()=>offerYourService(intervention)}>
+                                    onClick={()=>offerYourService(intervention._id)}>
                                     offer your service
                                 </Button>)
                                 :(
