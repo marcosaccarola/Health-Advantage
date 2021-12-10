@@ -22,7 +22,7 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices})
                 <div className='mt-4 mb-5'></div>
             {requests&&requests.map((intervention)=>               
                 <Card 
-                style={{ width: '70rem', borderWidth:2, backgroundColor:'#E9ECEF' }} 
+                style={{ width: '70rem', borderWidth:2 }} 
                 className='border-muted text-light mx-auto mb-5'>
                     <Card.Body>
                         {/* <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
@@ -70,12 +70,18 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices})
                             {
                                 (offeredServices.indexOf(intervention)===-1)
                                 ?(
-                                <Button variant="info rounded-pill text-dark" onClick={()=>offerYourService(intervention)}>
+                                <Button 
+                                    style={{borderWidth:2,backgroundColor:'#E9ECEF' }}
+                                    className="rounded-pill text-dark border-info px-5 mt-4"  
+                                    onClick={()=>offerYourService(intervention)}>
                                     offer your service
                                 </Button>)
                                 :(
                                 <div className='row justify-content-end mr-5'>
-                                <Button variant="info rounded-pill text-dark" onClick={()=>withdrawYourService(intervention)}>
+                                <Button 
+                                    style={{borderWidth:2,backgroundColor:'#E9ECEF' }}
+                                    className="rounded-pill text-dark border-info px-5 mt-4"  
+                                    onClick={()=>withdrawYourService(intervention)}>
                                     withdraw your offer
                                 </Button>
                                 </div>)
