@@ -14,27 +14,27 @@ const UserInfoCard=({currentUser})=>{
                     className='mr-5'
                     />
                 <div className='ml-5 text-muted'>
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         {currentUser.role}
                     </Card.Title>          
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         Role
                     </Card.Title>
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         Location
                     </Card.Title>
                 </div>
-                <div className='ml-5 text-muted'>
-                    <Card.Title className='row justify-content-start'>
+                {/* <div className='ml-5 text-muted'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         :
                     </Card.Title>
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         : 
                     </Card.Title>
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         :
                     </Card.Title>
-                </div>
+                </div> */}
                 <div className='ml-5 mr-5'>
                     <Card.Title className='row justify-content-start'>
                         {currentUser.firstName} {currentUser.lastName}
@@ -47,27 +47,27 @@ const UserInfoCard=({currentUser})=>{
                     </Card.Title>
                 </div>
                 <div className='ml-5 text-muted'>
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         Education
                     </Card.Title>
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         Board
                     </Card.Title>
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         Specializations
                     </Card.Title>
                 </div>
-                <div className='ml-5 text-muted'>
-                    <Card.Title className='row justify-content-start'>
+                {/* <div className='ml-5 text-muted'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         :
                     </Card.Title>
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         : 
                     </Card.Title>
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         :
                     </Card.Title>
-                </div>
+                </div> */}
                 <div className='ml-5 mr-auto mr-5'>
                     <Card.Title className='row justify-content-start'>
                         {currentUser.educationalQualification}
@@ -87,22 +87,22 @@ const UserInfoCard=({currentUser})=>{
                     style={{width:100,height:100,objectFit:'cover',borderRadius:'50%'}}
                     className='mr-5'
                     />
-                <div className='ml-5 text-muted'>
-                    <Card.Title className='row justify-content-start'>
+                <div className='ml-1 text-muted'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         {currentUser.role}
                     </Card.Title>          
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         Location
                     </Card.Title>
                 </div>
-                <div className='ml-5 text-muted'>
-                    <Card.Title className='row justify-content-start'>
+                {/* <div className='ml-5 text-muted'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         :
                     </Card.Title>
-                    <Card.Title className='row justify-content-start'>
+                    <Card.Title className='row justify-content-start font-weight-normal'>
                         :
                     </Card.Title>
-                </div>
+                </div> */}
                 <div className='ml-5 mr-auto'>
                     <Card.Title className='row justify-content-start'>
                         {currentUser.firstName} {currentUser.lastName}

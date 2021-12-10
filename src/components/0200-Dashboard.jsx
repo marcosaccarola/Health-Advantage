@@ -30,7 +30,6 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
 
                 <UserInfoCard currentUser={currentUser} />
 
-                <hr className='mb-5' />
                 <Card.Text>
                     {currentUser.role==='Practitioner'
                     ?
@@ -46,6 +45,7 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                         (currentUser.published.length===0)
                         ?
                         <div className='row justify-content-start mx-5 mb-4 text-muted'>
+                            <hr className='mx-5 mb-5' />
                             you have not yet published a request for home health care, click publish
                         </div>
                         :
