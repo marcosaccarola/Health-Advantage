@@ -74,16 +74,16 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,c
                                 (offeredServices.indexOf(intervention)===-1)
                                 ?(
                                 <Button 
-                                    style={{borderWidth:2,backgroundColor:'#E9ECEF' }}
-                                    className="rounded-pill text-dark border-info px-5 mt-4"  
+                                    style={{borderWidth:2 }}
+                                    className="bg-light rounded-pill text-dark border-info px-5 mt-4"  
                                     onClick={()=>offerYourService(intervention._id)}>
                                     offer your service
                                 </Button>)
                                 :(
                                 <div className='row justify-content-end mr-5'>
                                 <Button 
-                                    style={{borderWidth:2,backgroundColor:'#E9ECEF' }}
-                                    className="rounded-pill text-dark border-info px-5 mt-4"  
+                                    style={{borderWidth:2 }}
+                                    className="bg-light rounded-pill text-dark border-info px-5 mt-4"  
                                     onClick={()=>withdrawYourService(intervention)}>
                                     withdraw your offer
                                 </Button>

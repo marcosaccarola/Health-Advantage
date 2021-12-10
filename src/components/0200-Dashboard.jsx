@@ -43,7 +43,10 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                         <div>
                             {/* {offeredServices.map((intervention)=>( */}
                             {currentUser&&currentUser.InterventionsTakenInCharge.map((intervention)=>(
-                            <InterventionsTakenInCharge intervention={intervention}/>
+                            <InterventionsTakenInCharge 
+                                intervention={intervention} 
+                                currentUser={currentUser} 
+                                setCurrentUser={setCurrentUser}/>
                             ))}
                         </div>
                     :

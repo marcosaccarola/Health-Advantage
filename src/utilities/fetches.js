@@ -81,15 +81,33 @@ export const getListOfInterventions=async({setRequests})=>{
 // *_____________________________________________ ADD INTERVENTION TO PRACTITIONER
 export const addIntervention=async({interventionId,userId,setCurrentUser})=>{
     try {
-        const responseInterventionAdded=await fetch(PRACTITIONERS_URL+'/'+userId+'/addIntervention/'+interventionId,
+        const responseAddIntervention=await fetch(PRACTITIONERS_URL+'/'+userId+'/addIntervention/'+interventionId,
         {
             method:'PUT',
         })
-        if(responseInterventionAdded.ok){
-            let practitionerWithInterventions=await responseInterventionAdded.json()
+        if(responseAddIntervention.ok){
+            let practitionerWithInterventions=await responseAddIntervention.json()
             setCurrentUser(practitionerWithInterventions)
         }else{
             console.log('Intervention not added.')
+        }
+    } catch (error) {
+        throw error
+    }
+}
+// *_____________________________________________ REMOVE INTERVENTION FROM PRACTITIONER
+export const withdrawService=async({userId,interventionId,setCurrentUser})=>{
+    try {
+        const responseRemoveIntervention=await fetch(PRACTITIONERS_URL+'/'+userId+'/removeIntervention/'+interventionId,
+        {
+            method:'PUT'
+        })
+        if(responseRemoveIntervention.ok){
+            let practitionerWithInterventions=await responseRemoveIntervention.json()
+            setCurrentUser(practitionerWithInterventions)
+            console.log(practitionerWithInterventions)
+        }else{
+            console.log('Intervention not removed or not found')
         }
     } catch (error) {
         throw error
