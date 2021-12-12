@@ -1,9 +1,11 @@
 import LandingInterface from "./0100-LandingInterface"
 import {useEffect, useState} from 'react'
 import Dashboard from "./0200-Dashboard"
-import {Button} from "react-bootstrap"
+import {Button,Card} from "react-bootstrap"
 //! import { getListOfInterventions } from "../utilities/fetches"
 import doctor from '../assets/banner-img.png'
+import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/ai";
+
 
 const Home=()=>{
     const[currentUser,setCurrentUser]=useState()
@@ -14,7 +16,8 @@ const Home=()=>{
 
     return (
         <div className='' style={{width: '100%'}}>
-            <div style={{minHeight:'100vh', background:'#FEEBEA'}}>
+
+            <div style={{width:'100%',minHeight:'100vh', background:'#FEEBEA'}}>
                 <div className='row justify-content-between'>
                     <div style={{width:'16vh',minHeight:'8vh',background:'#527c88',marginTop:'8vh',marginLeft:'24vh'}}>
                         LOGO
@@ -42,10 +45,53 @@ const Home=()=>{
                     </div>
                 </div>
             </div>
-            <div style={{width: '100%',minHeight:'50vh',background:'#FFFFFF',position:'absolute',zIndex:'1'}}>
 
+            <div 
+                style={{width: '100%',minHeight:'50vh',background:'#FFFFFF',position:'absolute',zIndex:'1',color:'#2e4450',fontSize:20}}
+                className='row justify-content-center mx-auto'
+                >
+                <Card style={{ width: '24rem', background:'#FEEBEA' }} className='border-0 mx-5 my-5'>
+                    {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                    <Card.Body>
+                        <AiOutlineEyeInvisible size='96px' style={{color:'#2e4450'}} />
+                        <Card.Title>no personal data required</Card.Title>
+                        <Card.Text>
+                        email and zipcode are enough, then choose a password and publish your first request for home assistance
+                        </Card.Text>
+                        <Button
+                            style={{width:'8rem',position:'absolute',bottom:'2rem',right:'8rem'}}
+                            >Read more</Button>
+                    </Card.Body>
+                </Card>
+                <Card style={{ width: '24rem', background:'#FEEBEA' }} className='border-0 mx-5 my-5'>
+                    {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                    <Card.Body className=''>
+                        <AiOutlineSmile size='96px' style={{color:'#2e4450'}} />
+                        <Card.Title>it's completely free</Card.Title>
+                        <Card.Text>
+                        and it will be forever free, no credit card required
+                        </Card.Text>
+                        <Button
+                            style={{width:'8rem',position:'absolute',bottom:'2rem',right:'8rem'}}
+                            >Read more</Button>
+                    </Card.Body>
+                </Card>
+                <Card style={{ width: '24rem', background:'#FEEBEA' }} className='border-0 mx-5 my-5'>
+                    {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                    <Card.Body>
+                        <AiOutlineLock size='96px' style={{color:'#2e4450'}} /> 
+                        <Card.Title>all data is encrypted</Card.Title>
+                        <Card.Text>
+                        and all practitioners are asked for documents certifying qualification for the medical role
+                        </Card.Text>
+                        <Button
+                            style={{width:'8rem',position:'absolute',bottom:'2rem',right:'8rem'}}
+                            >Read more</Button>
+                    </Card.Body>
+                </Card>
             </div>
-            <div style={{width: '100%',minHeight:'50vh',background:'#FEEBEA',marginTop:'50vh'}}>
+
+            <div style={{width: '100%',minHeight:'100vh',background:'#FEEBEA',marginTop:'50vh'}}>
 
             </div>
 
