@@ -1,7 +1,7 @@
 import LandingInterface from "./0100-LandingInterface"
 import {useEffect, useState} from 'react'
 import Dashboard from "./0200-Dashboard"
-import {Button,Card, Row} from "react-bootstrap"
+import {Button,Card, Form, Row} from "react-bootstrap"
 //! import { getListOfInterventions } from "../utilities/fetches"
 import doctor from '../assets/banner-img.png'
 import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/ai";
@@ -97,14 +97,44 @@ const Home=()=>{
                         className='mx-auto rounded'
                         style={{width:'80%',background:'#B5958E',marginTop:'12vh'}}>
                             <Row className=' justify-content-between'>
-                                <img src={elderlyWithNurse} 
-                                    className='row justify-content-start' 
-                                    style={{}}/>
-                            <Card
-                                className='my-5 ml-auto mr-5'
-                                style={{background:'#FEEBEA'}}>
-                                <Card.Body>This is some text within a card body.</Card.Body>
-                            </Card>    
+                                <div className='mt-auto'>
+                                    <img src={elderlyWithNurse} 
+                                        height='600rem'
+                                        className='row justify-content-start'
+                                        />
+                                </div>
+                                <Card
+                                    className='my-5 ml-auto mr-5'
+                                    style={{background:'#FEEBEA'}}>
+                                    <Card.Body 
+                                        className='mx-5 justify-content-start'
+                                        style={{color:'#2e4450'}}>
+                                        <Card.Title>Enter your first request for home health care:</Card.Title>
+                                        <Form className='mt-5'>
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                <Form.Label>Email address</Form.Label>
+                                                <Form.Control type="email" placeholder="Enter email" />
+                                                <Form.Text className="text-muted">
+                                                We'll never share your email with anyone else.
+                                                </Form.Text>
+                                                <Form.Text className="text-muted">
+                                                We'll never share your email with anyone else.
+                                                </Form.Text>
+                                                <Form.Text className="text-muted">
+                                                We'll never share your email with anyone else.
+                                                </Form.Text>
+                                            </Form.Group>
+
+                                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                <Form.Label>Password</Form.Label>
+                                                <Form.Control type="password" placeholder="Password" />
+                                            </Form.Group>
+                                            <Button variant="primary" type="submit">
+                                                Submit
+                                            </Button>
+                                        </Form>
+                                    </Card.Body>
+                                </Card>    
 
 
                                 <div >
