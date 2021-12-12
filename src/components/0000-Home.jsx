@@ -91,8 +91,12 @@ const Home=()=>{
                 </Card>
             </div>
 
-            <div style={{width: '100%',minHeight:'100vh',background:'#FEEBEA',marginTop:'50vh'}}>
-
+            <div style={{position:'absolute',width: '100%',minHeight:'100vh',background:'#FEEBEA',marginTop:'50vh'}}>
+                    <div
+                        className='mx-auto'
+                        style={{width:'80%',minHeight:'40vh',background:'#B5958E',marginTop:'12vh'}}>
+                    </div>
+                FOOTER
             </div>
 
             
