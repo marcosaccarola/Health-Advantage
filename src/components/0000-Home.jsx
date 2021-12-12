@@ -1,7 +1,7 @@
 import LandingInterface from "./0100-LandingInterface"
 import {useEffect, useState} from 'react'
 import Dashboard from "./0200-Dashboard"
-import {Button,Card} from "react-bootstrap"
+import {Button,Card, Row} from "react-bootstrap"
 //! import { getListOfInterventions } from "../utilities/fetches"
 import doctor from '../assets/banner-img.png'
 import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/ai";
@@ -95,10 +95,39 @@ const Home=()=>{
             <div style={{position:'absolute',width: '100%',minHeight:'100vh',background:'#FEEBEA',marginTop:'50vh'}}>
                     <div
                         className='mx-auto rounded'
-                        style={{width:'80%',minHeight:'40vh',background:'#B5958E',marginTop:'12vh'}}>
-                            <img src={elderlyWithNurse} 
-                                className='row justify-content-start' 
-                                style={{}}/>
+                        style={{width:'80%',background:'#B5958E',marginTop:'12vh'}}>
+                            <Row className=' justify-content-between'>
+                                <img src={elderlyWithNurse} 
+                                    className='row justify-content-start' 
+                                    style={{}}/>
+                            <Card
+                                className='my-5 ml-auto mr-5'
+                                style={{background:'#FEEBEA'}}>
+                                <Card.Body>This is some text within a card body.</Card.Body>
+                            </Card>    
+
+
+                                <div >
+
+
+                                    {/* enter your first request for home health care */}
+                                    {/* <div style={{width:'48vh',height:'90%',background:'pink'}}> */}
+
+                                    {/* </div> */}
+                                    {/* <Card style={{ width: '48rem',minHeigth:'80%', background:'#FEEBEA' }} className='border-0 mx-5 my-5'>
+                                        <Card.Body className=''>
+                                            <AiOutlineSmile size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
+                                            <Card.Title className='mb-3'>it's completely free</Card.Title>
+                                            <Card.Text style={{fontWeight:'lighter'}}>
+                                            and it will be forever free, no credit card required
+                                            </Card.Text>
+                                            <Button
+                                                style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'3rem',right:'8rem'}}
+                                                >Read more</Button>
+                                        </Card.Body>
+                                    </Card> */}
+                                </div>
+                            </Row>
                     </div>
                 FOOTER
             </div>
