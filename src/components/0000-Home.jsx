@@ -2,22 +2,38 @@ import LandingInterface from "./0100-LandingInterface"
 import {useEffect, useState} from 'react'
 import Dashboard from "./0200-Dashboard"
 import {Button} from "react-bootstrap"
-// import { getListOfInterventions } from "../utilities/fetches"
+//! import { getListOfInterventions } from "../utilities/fetches"
+import doctor from '../assets/banner-img.png'
 
 const Home=()=>{
     const[currentUser,setCurrentUser]=useState()
     const[requests,setRequests]=useState()
     useEffect(() => {
-        // getListOfInterventions({setRequests})
+        //! getListOfInterventions({setRequests})
     }, [])
 
     return (
         <div className='' style={{width: '100%', minHeight:'100vh', background:'#d7baad'}}>
-            <div 
-                style={{
-                    width:'16vh',minHeight:'8vh',background:'#16c2d5',marginTop:'8vh',marginLeft:'16vh'
-                    }}>
+            <div style={{width:'16vh',minHeight:'8vh',background:'#527c88',marginTop:'8vh',marginLeft:'24vh'}}>
                 LOGO
+            </div>
+            <div style={{position:'absolute',right:'24vh'}}>
+                <img src={doctor} />
+            </div>
+            <div style={{width:'72vh',minHeight:'8vh',background:'#527c88',marginTop:'16vh',marginLeft:'24vh'}}>
+                NAME
+            </div>
+            <div style={{width:'84vh',minHeight:'24vh',background:'#527c88',marginTop:'2vh',marginLeft:'24vh'}}>
+                DETAILS
+            </div>
+            <div className='row justify-content-between'
+                 style={{position:'absolute',width:'84vh',minHeight:'8vh',background:'#d7baad',marginTop:'12vh',marginLeft:'24vh'}}>
+                <div style={{width:'32vh',background:'#527c88'}}>
+                    looking for assistance
+                </div>
+                <div style={{width:'32vh',background:'#527c88'}}>
+                    licensed healthcare practitioners area
+                </div>
             </div>
 
             
