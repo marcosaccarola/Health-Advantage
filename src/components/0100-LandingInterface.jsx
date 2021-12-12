@@ -42,6 +42,7 @@ const LandingInterface=({currentUser,setCurrentUser})=>{
 
                 <LoginRegisterForm setCurrentUser={setCurrentUser} currentUser={currentUser} />
 
+                
                 <Card.Img variant="top" src={bg}/>
                 <Card.Body>
                     <Card.Title className='font-weight-bold mt-2 mb-5'>

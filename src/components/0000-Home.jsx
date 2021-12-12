@@ -5,6 +5,7 @@ import {Button,Card} from "react-bootstrap"
 //! import { getListOfInterventions } from "../utilities/fetches"
 import doctor from '../assets/banner-img.png'
 import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/ai";
+import elderlyWithNurse from '../assets/elderlyWithNurse.png'
 
 
 const Home=()=>{
@@ -93,8 +94,11 @@ const Home=()=>{
 
             <div style={{position:'absolute',width: '100%',minHeight:'100vh',background:'#FEEBEA',marginTop:'50vh'}}>
                     <div
-                        className='mx-auto'
+                        className='mx-auto rounded'
                         style={{width:'80%',minHeight:'40vh',background:'#B5958E',marginTop:'12vh'}}>
+                            <img src={elderlyWithNurse} 
+                                className='row justify-content-start' 
+                                style={{}}/>
                     </div>
                 FOOTER
             </div>
