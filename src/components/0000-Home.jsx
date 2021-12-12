@@ -13,32 +13,40 @@ const Home=()=>{
     }, [])
 
     return (
-        <div className='' style={{width: '100%', minHeight:'100vh', background:'#FEEBEA'}}>
-            <div className='row justify-content-between'>
-                <div style={{width:'16vh',minHeight:'8vh',background:'#527c88',marginTop:'8vh',marginLeft:'24vh'}}>
-                    LOGO
+        <div className='' style={{width: '100%'}}>
+            <div style={{minHeight:'100vh', background:'#FEEBEA'}}>
+                <div className='row justify-content-between'>
+                    <div style={{width:'16vh',minHeight:'8vh',background:'#527c88',marginTop:'8vh',marginLeft:'24vh'}}>
+                        LOGO
+                    </div>
+                    <div style={{width:'16vh',minHeight:'8vh',background:'#527c88',marginTop:'8vh',marginRight:'24vh'}}>
+                        LOGIN
+                    </div>
                 </div>
-                <div style={{width:'16vh',minHeight:'8vh',background:'#527c88',marginTop:'8vh',marginRight:'24vh'}}>
-                    LOGIN
+                <div style={{position:'absolute',right:'24vh'}}>
+                    <img src={doctor} />
+                </div>
+                <div style={{width:'72vh',minHeight:'8vh',background:'#527c88',marginTop:'16vh',marginLeft:'24vh'}}>
+                    NAME
+                </div>
+                <div style={{width:'84vh',minHeight:'24vh',background:'#527c88',marginTop:'2vh',marginLeft:'24vh'}}>
+                    DETAILS
+                </div>
+                <div className='row justify-content-between'
+                    style={{position:'absolute',width:'84vh',minHeight:'8vh',marginTop:'12vh',marginLeft:'24vh'}}>
+                    <div style={{width:'32vh',background:'#B5958E'}}>
+                        looking for assistance
+                    </div>
+                    <div style={{width:'32vh',background:'#B5958E'}}>
+                        licensed healthcare practitioners area
+                    </div>
                 </div>
             </div>
-            <div style={{position:'absolute',right:'24vh'}}>
-                <img src={doctor} />
+            <div style={{width: '100%',minHeight:'50vh',background:'#FFFFFF',position:'absolute',zIndex:'1'}}>
+
             </div>
-            <div style={{width:'72vh',minHeight:'8vh',background:'#527c88',marginTop:'16vh',marginLeft:'24vh'}}>
-                NAME
-            </div>
-            <div style={{width:'84vh',minHeight:'24vh',background:'#527c88',marginTop:'2vh',marginLeft:'24vh'}}>
-                DETAILS
-            </div>
-            <div className='row justify-content-between'
-                 style={{position:'absolute',width:'84vh',minHeight:'8vh',marginTop:'12vh',marginLeft:'24vh'}}>
-                <div style={{width:'32vh',background:'#B5958E'}}>
-                    looking for assistance
-                </div>
-                <div style={{width:'32vh',background:'#B5958E'}}>
-                    licensed healthcare practitioners area
-                </div>
+            <div style={{width: '100%',minHeight:'50vh',background:'#FEEBEA',marginTop:'50vh'}}>
+
             </div>
 
             
