@@ -19,7 +19,9 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
     }, [])
 
     return(
-        <div className='mt-5'>
+        <div 
+            // style={{width:'100%',minHeight:'100vh', background:'#FEEBEA'}}
+            >
             <Card 
                 style={{ width: '80rem', borderWidth:8 ,backgroundColor:'#E9ECEF' }} 
                 className={currentUser.role==='Practitioner'

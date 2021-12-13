@@ -20,6 +20,8 @@ const Home=()=>{
     return (
         <div style={{width: '100%',fontFamily:'mulish,sans-serif'}}>
 
+            {!currentUser&&
+            <>
             <div style={{width:'100%',minHeight:'100vh', background:'#FEEBEA'}}>
                 <div className='row justify-content-between'>
                     <div style={{width:'16vh',minHeight:'8vh',background:'#527c88',marginTop:'8vh',marginLeft:'24vh'}}>
@@ -105,20 +107,22 @@ const Home=()=>{
                         className='mx-auto rounded'
                         style={{width:'85%',background:'#B5958E',marginTop:'12vh'}}>
                             <Row className=' justify-content-between'>
-                                <div className='mt-auto'>
+                                <div className=''>
                                     <Card 
-                                        className='border-0 mt-4 ml-5 mb-4' 
-                                        style={{background:'#FEEBEA',color:'#2e4450',fontSize:'2.3rem'}}>
+                                        className=' mt-4 ml-5 mb-4' 
+                                        style={{background:'#FFFFFF',color:'#2e4450',fontSize:'2.3rem',borderWidth:1,borderColor:'#2e4450'}}>
                                         <Card.Body>Enter your first request for home health care</Card.Body>
                                     </Card>
-                                    <img src={elderlyWithNurse} 
-                                        height='650rem'
-                                        className='row justify-content-start'
-                                        />
+                                    <div>
+                                        <img src={elderlyWithNurse} 
+                                            height='650rem'
+                                            className='row justify-content-start'
+                                            />
+                                    </div>
                                 </div>
                                 <Card
                                     className='my-4 ml-auto mr-5'
-                                    style={{background:'#FEEBEA',minWidth:'42%'}}>
+                                    style={{background:'#FEEBEA',minWidth:'42%',borderWidth:1,borderColor:'#2e4450'}}>
                                     <Card.Body 
                                         className='mx-5 justify-content-start'
                                         style={{color:'#2e4450'}}>
@@ -180,29 +184,32 @@ const Home=()=>{
                         </div>
                     </div>
             </div>
-
-            
-            {/* {currentUser
-            // &&
-    // ? CURRENT USER ? LOGOUT BUTTON : ...
-                // <div className='row justify-content-end mt-5'>
-                //     <Button
-                //         style={{borderWidth:4}}
-                //         className={currentUser.role==='Practitioner'
-                //             ?"border-info rounded-pill bg-light text-dark px-5"
-                //             :"border-warning rounded-pill bg-light text-dark px-5"}
-                //         onClick={()=>setCurrentUser()}
-                //         >
-                //         Logout
-                //     </Button>
-                // </div>
+            </>
             }
 
-            {currentUser
-    // ? CURRENT USER ? DASHBOARD : LANDIN INTERFACE
-                // ?<Dashboard currentUser={currentUser} setCurrentUser={setCurrentUser} requests={requests} setRequests={setRequests} />
-                // :<LandingInterface setCurrentUser={setCurrentUser} currentUser={currentUser} />
+            
+            {/* {currentUser&&
+            // &&
+    // ? CURRENT USER ? LOGOUT BUTTON : ...
+                <div className='row justify-content-end mt-5'>
+                    <Button
+                        style={{borderWidth:4}}
+                        className={currentUser.role==='Practitioner'
+                            ?"border-info rounded-pill bg-light text-dark px-5"
+                            :"border-warning rounded-pill bg-light text-dark px-5"}
+                        onClick={()=>setCurrentUser()}
+                        >
+                        Logout
+                    </Button>
+                </div>
             } */}
+
+            {currentUser&&
+    // ? CURRENT USER ? DASHBOARD : LANDIN INTERFACE
+    // ?
+                <Dashboard currentUser={currentUser} setCurrentUser={setCurrentUser} />
+                // :<LandingInterface setCurrentUser={setCurrentUser} currentUser={currentUser} />
+            }
         </div>
     )
 }
