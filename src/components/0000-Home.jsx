@@ -145,7 +145,7 @@ const Home=()=>{
                                                 <Nav.Item 
                                                     style={{color:'#DDDDDD'}}
                                                     className='mr-auto mb-2'>
-                                                    Hello, my name is <a style={{color:'#FFFFFF'}}> Marco Saccarola</a> and here is a parrot, for no reason.
+                                                    Hello, my name is <a style={{color:'#FFFFFF'}}> Marco Saccarola</a> and here is a parrot for no reason.
                                                 </Nav.Item>
                                                 <Nav.Item style={{color:'#DDDDDD'}} className='mt-3 mr-auto row justify-content-end'>
                                                     <span>You can find me on <a style={{color:'#FFFFFF'}}>Zoom</a>, <span style={{color:'#FFFFFF'}}> Discord</span>                                                                                                                                                            
