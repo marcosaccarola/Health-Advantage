@@ -223,23 +223,42 @@ const Home=()=>{
 
                         <Row>
                             <Col lg='8' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
-                                <Nav defaultActiveKey="/home" className="flex-column" style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
-                                    <Nav.Link href="/home">Active</Nav.Link>
-                                    <Nav.Link eventKey="link-1">Link</Nav.Link>
-                                    <Nav.Link eventKey="link-2">Link</Nav.Link>
-                                    <Nav.Link eventKey="disabled" disabled>
-                                        Disabled
-                                    </Nav.Link>
+                                <Nav defaultActiveKey="/home" 
+                                    className="flex-column" 
+                                    style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                                    <Nav.Item 
+                                        style={{color:'#DDDDDD'}}
+                                        className='mr-auto'>
+                                        Hello, my name is <span style={{color:'#FFFFFF'}}>Marco Saccarola</span> based in Italy
+                                    </Nav.Item>
+                                    <Nav.Item style={{color:'#DDDDDD'}}>
+                                        and on 
+                                        <span style={{color:'#FFFFFF'}}> Zoom</span>
+                                        ,
+                                        <span style={{color:'#FFFFFF'}}> Discord</span>
+                                        ,
+                                        <span style={{color:'#FFFFFF'}}> GitHub</span>
+                                        ,
+                                        <span style={{color:'#FFFFFF'}}> Linkedin</span>
+                                        , and around.
+                                    </Nav.Item>
+                                    {/* <Nav.Item style={{color:'#FFFFFF'}}>
+                                        <Nav.Link style={{color:'#FFFFFF'}} eventKey="link-1">Link</Nav.Link>
+                                        <Nav.Link style={{color:'#FFFFFF'}} eventKey="link-2">Link</Nav.Link>
+                                        <Nav.Link style={{color:'#FFFFFF'}} eventKey="link-2">Link</Nav.Link>
+                                    </Nav.Item> */}
                                 </Nav>
                             </Col>
                             <Col lg='4' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
                                 <Nav defaultActiveKey="/home" className="flex-column" style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
-                                    <Nav.Link href="/home">Active</Nav.Link>
-                                    <Nav.Link eventKey="link-1">Link</Nav.Link>
-                                    <Nav.Link eventKey="link-2">Link</Nav.Link>
-                                    <Nav.Link eventKey="disabled" disabled>
+                                    {/* <Nav.Link href="/home">Active</Nav.Link> */}
+                                    <Nav.Link eventKey="link-1"className='mr-auto'>MongoDB</Nav.Link>
+                                    <Nav.Link eventKey="link-2"className='mr-auto'>Express.js</Nav.Link>
+                                    <Nav.Link eventKey="link-3"className='mr-auto'>React.js</Nav.Link>
+                                    <Nav.Link eventKey="link-4"className='mr-auto'>Node.js</Nav.Link>
+                                    {/* <Nav.Link eventKey="disabled" disabled>
                                         Disabled
-                                    </Nav.Link>
+                                    </Nav.Link> */}
                                 </Nav>
                             </Col>
                         </Row>
