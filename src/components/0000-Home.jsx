@@ -30,18 +30,29 @@ const Home=()=>{
                 <div style={{position:'absolute',right:'24vh'}}>
                     <img src={doctor} />
                 </div>
-                <div style={{width:'72vh',minHeight:'8vh',background:'#527c88',marginTop:'16vh',marginLeft:'24vh'}}>
-                    NAME
+                <div 
+                    style={{width:'84vh',minHeight:'8vh',background:'#FEEBEA',color:'#527c88',fontSize:90,marginTop:'16vh',marginLeft:'24vh'}}
+                    className='rounded row justify-content-start'>
+                    Health Advantage
                 </div>
-                <div style={{width:'84vh',minHeight:'24vh',background:'#527c88',marginTop:'2vh',marginLeft:'24vh'}}>
-                    DETAILS
+                <div style={{width:'84vh',background:'#527c88',marginTop:'1vh',marginLeft:'24vh'}}
+                    className='rounded mt-5 mb-4'>
+
+                        It connects healthcare professionals with your nursing and integrated home care needs.
+                        <br/>
+                        You can get in touch with the best professionals with their specializations and patient reviews.
+
                 </div>
                 <div className='row justify-content-between'
                     style={{position:'absolute',width:'84vh',minHeight:'8vh',marginTop:'12vh',marginLeft:'24vh'}}>
-                    <div style={{width:'32vh',background:'#B5958E'}}>
+                    <div 
+                        style={{width:'32vh',background:'#B5958E'}}
+                        className='rounded'>
                         looking for assistance
                     </div>
-                    <div style={{width:'32vh',background:'#B5958E'}}>
+                    <div 
+                        style={{width:'32vh',background:'#B5958E'}}
+                        className='rounded'>
                         licensed healthcare practitioners area
                     </div>
                 </div>
