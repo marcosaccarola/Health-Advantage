@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { Button, Form, Modal } from "react-bootstrap"
+import { registerPatient } from "../utilities/fetches"
 
-const HomeForm=()=>{
+const HomeForm=({setCurrentUser})=>{
     const[intervention,setIntervention]=useState('')
     const handleChangeIntervention=(e)=>{
         setIntervention(e.target.value)
@@ -29,7 +30,7 @@ const HomeForm=()=>{
         isModalOpen===false?setIsModalOpen(true):setIsModalOpen(false)
     }
     const registerUserAndIntervention=()=>{
-        // getUser({reqBody,setCurrentUser})
+        registerPatient({reqBody,setCurrentUser})
     }
 
     return(
@@ -150,12 +151,13 @@ const HomeForm=()=>{
                 <Modal.Body>Name: {reqBody.firstName}</Modal.Body>
                 <Modal.Body>Email: {reqBody.email}</Modal.Body>
                 <Modal.Body>Zip Code: {reqBody.zipcode}</Modal.Body>
+                <Modal.Body>Please check if everything is right or click Back.</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleModal}>
-                    Close
+                    Back
                     </Button>
                     <Button variant="primary" onClick={registerUserAndIntervention}>
-                    Save Changes
+                    Submit
                     </Button>
                 </Modal.Footer>
             </Modal>

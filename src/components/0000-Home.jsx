@@ -123,7 +123,7 @@ const Home=()=>{
                                         className='mx-5 justify-content-start'
                                         style={{color:'#2e4450'}}>
 
-                                            <HomeForm />
+                                            <HomeForm setCurrentUser={setCurrentUser} />
 
                                     </Card.Body>
                                 </Card>    

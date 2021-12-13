@@ -2,6 +2,49 @@ const PRACTITIONERS_URL='http://localhost:3001/practitioner'
 const PATIENTS_URL='http://localhost:3001/patient'
 const INTERVENTIONS_URL='http://localhost:3001/intervention'
 
+// *_____________________________________________ REGISTER PATIENT
+export const registerPatient=async({reqBody,setCurrentUser})=>{
+    const patientBody={'firstName':reqBody.firstName,'email':reqBody.email,'password':reqBody.password,'zipcode':reqBody.zipcode,'role':'Patient'}
+    console.log(patientBody)
+    try {
+        const responseRegister=await fetch(PATIENTS_URL,
+            {
+               method:'POST',
+               body:JSON.stringify(patientBody),
+               headers:{'Content-Type':'application/json'}
+            })
+            if(responseRegister.ok){
+                let patient=await responseRegister.json()
+                postIntervention({reqBody,patient,setCurrentUser})
+            }else{
+                console.log('Something went wrong.')
+            }
+    } catch (error) {
+        throw error
+    }
+}
+const postIntervention=async({reqBody,patient,setCurrentUser})=>{
+    const interventionBody={'userId':patient._id,'interventionRequested':reqBody.intervention,'zipcode':reqBody.zipcode}
+    try {
+        const responsePostIntervention=await fetch(PATIENTS_URL,
+            {
+               method:'POST',
+               body:JSON.stringify(interventionBody),
+               headers:{'Content-Type':'application/json'}
+            })
+            if(responsePostIntervention.ok){
+                let intervention=await responsePostIntervention.json()
+                reqBody={'email':reqBody.email,'password':reqBody.password}
+                getPatient({reqBody,setCurrentUser})
+            }else{
+                console.log('Something went wrong.')
+            }
+    } catch (error) {
+        throw error
+    }
+}
+
+
 // *_____________________________________________ LOGIN (GET PRACTITIONER OR PATIENT)
 export const getUser=async({reqBody,setCurrentUser})=>{
     try {
