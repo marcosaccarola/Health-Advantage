@@ -218,7 +218,33 @@ const Home=()=>{
                                 </div>
                             </Row>
                     </div>
+                    <div style={{minWidth:'100vh',minHeight:'30vh',background:'#B5958E',marginTop:'16vh'}}>
+                        <div className='container'>
 
+                        <Row>
+                            <Col lg='8' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
+                                <Nav defaultActiveKey="/home" className="flex-column" style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                                    <Nav.Link href="/home">Active</Nav.Link>
+                                    <Nav.Link eventKey="link-1">Link</Nav.Link>
+                                    <Nav.Link eventKey="link-2">Link</Nav.Link>
+                                    <Nav.Link eventKey="disabled" disabled>
+                                        Disabled
+                                    </Nav.Link>
+                                </Nav>
+                            </Col>
+                            <Col lg='4' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
+                                <Nav defaultActiveKey="/home" className="flex-column" style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                                    <Nav.Link href="/home">Active</Nav.Link>
+                                    <Nav.Link eventKey="link-1">Link</Nav.Link>
+                                    <Nav.Link eventKey="link-2">Link</Nav.Link>
+                                    <Nav.Link eventKey="disabled" disabled>
+                                        Disabled
+                                    </Nav.Link>
+                                </Nav>
+                            </Col>
+                        </Row>
+                        </div>
+                    </div>
             </div>
 
             
