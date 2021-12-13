@@ -239,18 +239,18 @@ const Home=()=>{
                                                         <Nav.Item 
                                                             style={{color:'#DDDDDD'}}
                                                             className='mr-auto mb-2'>
-                                                            Hello, my name is <span style={{color:'#FFFFFF'}}> Marco Saccarola</span> and this is a parrot.
+                                                            Hello, my name is <a style={{color:'#FFFFFF'}}> Marco Saccarola</a> and here is a parrot, for no reason.
                                                         </Nav.Item>
                                                         <Nav.Item style={{color:'#DDDDDD'}} className='mt-3 mr-auto row justify-content-end'>
                                                             <span>You can find me on <a style={{color:'#FFFFFF'}}>Zoom</a>, <span style={{color:'#FFFFFF'}}> Discord</span>
                                                             
                                                             
                                                             
-                                                            ,
-                                                            <span style={{color:'#FFFFFF'}}> GitHub</span>
+                                                            , 
+                                                            <a href='https://github.com/marcosaccarola' style={{color:'#FFFFFF'}}> GitHub</a>
                                                             ,
                                                             <span style={{color:'#FFFFFF'}}> Linkedin</span>
-                                                            , and around.</span>
+                                                            , and around. Or you can write me an <a href='www.google.com' style={{color:'#FFFFFF'}}>email</a>.</span>
                                                         </Nav.Item>
                                                     </Col>
                                                 </Row>
