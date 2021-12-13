@@ -95,41 +95,64 @@ const Home=()=>{
             <div style={{position:'absolute',width: '100%',minHeight:'100vh',background:'#FEEBEA',marginTop:'50vh'}}>
                     <div
                         className='mx-auto rounded'
-                        style={{width:'80%',background:'#B5958E',marginTop:'12vh'}}>
+                        style={{width:'85%',background:'#B5958E',marginTop:'12vh'}}>
                             <Row className=' justify-content-between'>
                                 <div className='mt-auto'>
                                     <img src={elderlyWithNurse} 
-                                        height='600rem'
+                                        height='650rem'
                                         className='row justify-content-start'
                                         />
                                 </div>
                                 <Card
-                                    className='my-5 ml-auto mr-5'
-                                    style={{background:'#FEEBEA'}}>
+                                    className='my-4 ml-auto mr-5'
+                                    style={{background:'#FEEBEA',minWidth:'38rem'}}>
                                     <Card.Body 
                                         className='mx-5 justify-content-start'
                                         style={{color:'#2e4450'}}>
-                                        <Card.Title>Enter your first request for home health care:</Card.Title>
-                                        <Form className='mt-5'>
+                                        {/* <Card.Title>Enter your first request for home health care:</Card.Title> */}
+                                        <Form className=''>
+                                                <Form.Label 
+                                                    className="mt-2 mb-4"
+                                                    style={{fontWeight:'lighter',fontSize:20,color:'#2e4450'}}>
+                                                    Enter your first request for home health care:
+                                                </Form.Label>
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Form.Label>Email address</Form.Label>
+                                                <Form.Label
+                                                    style={{fontWeight:'bold',fontSize:20,color:'#2e4450'}}
+                                                    >Email address</Form.Label>
                                                 <Form.Control type="email" placeholder="Enter email" />
-                                                <Form.Text className="text-muted">
-                                                We'll never share your email with anyone else.
-                                                </Form.Text>
-                                                <Form.Text className="text-muted">
-                                                We'll never share your email with anyone else.
-                                                </Form.Text>
-                                                <Form.Text className="text-muted">
+                                                <Form.Text style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
                                                 We'll never share your email with anyone else.
                                                 </Form.Text>
                                             </Form.Group>
-
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                <Form.Label
+                                                    style={{fontWeight:'bold',fontSize:20,color:'#2e4450'}}
+                                                    >Zip code</Form.Label>
+                                                <Form.Control type="email" placeholder="Enter email" />
+                                                <Form.Text style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                                                Your address will not be shared.
+                                                </Form.Text>
+                                            </Form.Group>
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                <Form.Label
+                                                    style={{fontWeight:'bold',fontSize:20,color:'#2e4450'}}
+                                                    >Name</Form.Label>
+                                                <Form.Control type="email" placeholder="Enter email" />
+                                                <Form.Text style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                                                Just your first name.
+                                                </Form.Text>
+                                            </Form.Group>
                                             <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                <Form.Label>Password</Form.Label>
+                                                <Form.Label
+                                                    style={{fontWeight:'bold',fontSize:20,color:'#2e4450'}}
+                                                    >Password</Form.Label>
                                                 <Form.Control type="password" placeholder="Password" />
+                                                <Form.Text style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                                                Choose a password.
+                                                </Form.Text>
                                             </Form.Group>
-                                            <Button variant="primary" type="submit">
+                                            <Button variant="primary" type="submit" className='mt-3' style={{fontSize:18}}>
                                                 Submit
                                             </Button>
                                         </Form>
