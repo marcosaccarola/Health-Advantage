@@ -51,42 +51,42 @@ const Home=()=>{
                 style={{width: '100%',minHeight:'50vh',background:'#FFFFFF',position:'absolute',zIndex:'1',color:'#2e4450',fontSize:20}}
                 className='row justify-content-center mx-auto'
                 >
-                <Card style={{ width: '24rem', background:'#FEEBEA' }} className='border-0 mx-5 my-5'>
+                <Card style={{ width: '24rem',height:'24rem',background:'#FEEBEA',borderColor:'#B5958E' }} className='mx-5 my-auto'>
                     {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                     <Card.Body>
                         <AiOutlineEyeInvisible size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
                         <Card.Title className='mb-3'>no personal data required</Card.Title>
-                        <Card.Text style={{fontWeight:'lighter'}}>
+                        <Card.Text className='mx-4' style={{fontWeight:'lighter'}}>
                         email and zipcode are enough, then choose a password and publish your first request for home assistance
                         </Card.Text>
                         <Button
-                            style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'3rem',right:'8rem'}}
+                            style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'2rem',right:'8rem'}}
                             >Read more</Button>
                     </Card.Body>
                 </Card>
-                <Card style={{ width: '24rem', background:'#FEEBEA' }} className='border-0 mx-5 my-5'>
+                <Card style={{ width: '24rem',height:'24rem', background:'#FEEBEA',borderColor:'#B5958E' }} className='mx-5 my-auto'>
                     {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                     <Card.Body className=''>
                         <AiOutlineSmile size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
                         <Card.Title className='mb-3'>it's completely free</Card.Title>
-                        <Card.Text style={{fontWeight:'lighter'}}>
+                        <Card.Text className='mx-4' style={{fontWeight:'lighter'}}>
                         and it will be forever free, no credit card required
                         </Card.Text>
                         <Button
-                            style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'3rem',right:'8rem'}}
+                            style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'2rem',right:'8rem'}}
                             >Read more</Button>
                     </Card.Body>
                 </Card>
-                <Card style={{ width: '24rem', background:'#FEEBEA' }} className='border-0 mx-5 my-5'>
+                <Card style={{ width: '24rem',height:'24rem', background:'#FEEBEA',borderColor:'#B5958E' }} className='mx-5 my-auto'>
                     {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                     <Card.Body>
                         <AiOutlineLock size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' /> 
                         <Card.Title className='mb-3'>all data is encrypted</Card.Title>
-                        <Card.Text style={{fontWeight:'lighter'}}>
+                        <Card.Text className='mx-4' style={{fontWeight:'lighter'}}>
                         and all practitioners are asked for documents certifying qualification for the medical role
                         </Card.Text>
                         <Button
-                            style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'3rem',right:'8rem'}}
+                            style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'2rem',right:'8rem'}}
                             >Read more</Button>
                     </Card.Body>
                 </Card>
@@ -98,24 +98,30 @@ const Home=()=>{
                         style={{width:'85%',background:'#B5958E',marginTop:'12vh'}}>
                             <Row className=' justify-content-between'>
                                 <div className='mt-auto'>
+                                    <Card 
+                                        className='border-0 mt-4 ml-5 mb-4' 
+                                        style={{background:'#FEEBEA',color:'#2e4450',fontSize:'2.3rem'}}>
+                                        <Card.Body>Enter your first request for home health care</Card.Body>
+                                    </Card>
                                     <img src={elderlyWithNurse} 
                                         height='650rem'
+                                        // style={{minWidth:'90%'}}
                                         className='row justify-content-start'
                                         />
                                 </div>
                                 <Card
                                     className='my-4 ml-auto mr-5'
-                                    style={{background:'#FEEBEA',minWidth:'38rem'}}>
+                                    style={{background:'#FEEBEA',minWidth:'42%'}}>
                                     <Card.Body 
                                         className='mx-5 justify-content-start'
                                         style={{color:'#2e4450'}}>
                                         {/* <Card.Title>Enter your first request for home health care:</Card.Title> */}
                                         <Form className=''>
-                                                <Form.Label 
+                                                {/* <Form.Label 
                                                     className="mt-2 mb-4"
                                                     style={{fontWeight:'lighter',fontSize:20,color:'#2e4450'}}>
                                                     Enter your first request for home health care:
-                                                </Form.Label>
+                                                </Form.Label> */}
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                                 <Form.Label
                                                     style={{fontWeight:'bold',fontSize:20,color:'#2e4450'}}
