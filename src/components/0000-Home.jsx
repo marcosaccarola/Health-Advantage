@@ -17,7 +17,7 @@ const Home=()=>{
     }, [])
 
     return (
-        <div className='' style={{width: '100%',fontFamily:'mulish,sans-serif'}}>
+        <div style={{width: '100%',fontFamily:'mulish,sans-serif'}}>
 
             <div style={{width:'100%',minHeight:'100vh', background:'#FEEBEA'}}>
                 <div className='row justify-content-between'>
@@ -38,11 +38,9 @@ const Home=()=>{
                 </div>
                 <div style={{width:'84vh',background:'#527c88',marginTop:'1vh',marginLeft:'24vh'}}
                     className='rounded mt-5 mb-4'>
-
                         It connects home healthcare professionals with your nursing and integrated home care needs.
                         <br/>
                         You can get in touch with the best professionals with their specializations and patient reviews.
-
                 </div>
                 <div className='row justify-content-between'
                     style={{position:'absolute',width:'84vh',minHeight:'8vh',marginTop:'12vh',marginLeft:'24vh'}}>
@@ -60,11 +58,10 @@ const Home=()=>{
             </div>
 
             <div 
-                style={{width: '100%',minHeight:'50vh',background:'#FFFFFF',position:'absolute',zIndex:'1',color:'#2e4450',fontSize:20}}
+                style={{width:'100%',minHeight:'50vh',background:'#FFFFFF',position:'absolute',zIndex:'1',color:'#2e4450',fontSize:20}}
                 className='row justify-content-center mx-auto'
                 >
-                <Card style={{ width: '24rem',height:'24rem',background:'#FEEBEA',borderColor:'#B5958E' }} className='mx-5 my-auto'>
-                    {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                <Card style={{width:'24rem',height:'24rem',background:'#FEEBEA',borderColor:'#B5958E' }} className='mx-5 my-auto'>
                     <Card.Body>
                         <AiOutlineEyeInvisible size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
                         <Card.Title className='mb-3' style={{fontWeight:'bold'}}>no personal data required</Card.Title>
@@ -76,8 +73,7 @@ const Home=()=>{
                             >Read more</Button>
                     </Card.Body>
                 </Card>
-                <Card style={{ width: '24rem',height:'24rem', background:'#FEEBEA',borderColor:'#B5958E' }} className='mx-5 my-auto'>
-                    {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                <Card style={{width:'24rem',height:'24rem', background:'#FEEBEA',borderColor:'#B5958E' }} className='mx-5 my-auto'>
                     <Card.Body className=''>
                         <AiOutlineSmile size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
                         <Card.Title className='mb-3' style={{fontWeight:'bold'}}>it's completely free</Card.Title>
@@ -90,7 +86,6 @@ const Home=()=>{
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '24rem',height:'24rem', background:'#FEEBEA',borderColor:'#B5958E' }} className='mx-5 my-auto'>
-                    {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                     <Card.Body>
                         <AiOutlineLock size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' /> 
                         <Card.Title className='mb-3' style={{fontWeight:'bold'}}>all data is encrypted</Card.Title>
@@ -117,7 +112,6 @@ const Home=()=>{
                                     </Card>
                                     <img src={elderlyWithNurse} 
                                         height='650rem'
-                                        // style={{minWidth:'90%'}}
                                         className='row justify-content-start'
                                         />
                                 </div>
@@ -127,13 +121,7 @@ const Home=()=>{
                                     <Card.Body 
                                         className='mx-5 justify-content-start'
                                         style={{color:'#2e4450'}}>
-                                        {/* <Card.Title>Enter your first request for home health care:</Card.Title> */}
                                         <Form className=''>
-                                                {/* <Form.Label 
-                                                    className="mt-2 mb-4"
-                                                    style={{fontWeight:'lighter',fontSize:20,color:'#2e4450'}}>
-                                                    Enter your first request for home health care:
-                                                </Form.Label> */}
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                                 <Form.Label
                                                     style={{fontWeight:'bold',fontSize:20,color:'#2e4450'}}
@@ -195,72 +183,40 @@ const Home=()=>{
                                         </Form>
                                     </Card.Body>
                                 </Card>    
-
-
-                                <div >
-
-
-                                    {/* enter your first request for home health care */}
-                                    {/* <div style={{width:'48vh',height:'90%',background:'pink'}}> */}
-
-                                    {/* </div> */}
-                                    {/* <Card style={{ width: '48rem',minHeigth:'80%', background:'#FEEBEA' }} className='border-0 mx-5 my-5'>
-                                        <Card.Body className=''>
-                                            <AiOutlineSmile size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
-                                            <Card.Title className='mb-3'>it's completely free</Card.Title>
-                                            <Card.Text style={{fontWeight:'lighter'}}>
-                                            and it will be forever free, no credit card required
-                                            </Card.Text>
-                                            <Button
-                                                style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'3rem',right:'8rem'}}
-                                                >Read more</Button>
-                                        </Card.Body>
-                                    </Card> */}
-                                </div>
                             </Row>
                     </div>
                     <div style={{minWidth:'100vh',minHeight:'30vh',background:'#B5958E',marginTop:'24vh'}}>
                         <div className='container' style={{minWidth:'100vh'}}>
 
                         <Row>
-                            <Col lg='8' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start my-auto'>
-
-
-                                   
-                                        <Nav defaultActiveKey="/home" 
-                                            className="flex-column mr-auto" 
-                                            style={{fontWeight:'lighter',fontSize:16,color:'#2e4450'}}>
-                                                <Row>
-                                                    <Col>
-                                                    
-                                                    <img src={marco} style={{width:'20vh'}} />  
-                                                    </Col>
-                                                    <Col>
-                                                        <Nav.Item 
-                                                            style={{color:'#DDDDDD'}}
-                                                            className='mr-auto mb-2'>
-                                                            Hello, my name is <a style={{color:'#FFFFFF'}}> Marco Saccarola</a> and here is a parrot, for no reason.
-                                                        </Nav.Item>
-                                                        <Nav.Item style={{color:'#DDDDDD'}} className='mt-3 mr-auto row justify-content-end'>
-                                                            <span>You can find me on <a style={{color:'#FFFFFF'}}>Zoom</a>, <span style={{color:'#FFFFFF'}}> Discord</span>
-                                                            
-                                                            
-                                                            
-                                                            , 
-                                                            <a href='https://github.com/marcosaccarola' style={{color:'#FFFFFF'}}> GitHub</a>
-                                                            ,
-                                                            <span style={{color:'#FFFFFF'}}> Linkedin</span>
-                                                            , and around. Or you can write me an <a href='www.google.com' style={{color:'#FFFFFF'}}>email</a>.</span>
-                                                        </Nav.Item>
-                                                    </Col>
-                                                </Row>
-                                        </Nav>
-                                 
-
+                            <Col lg='8' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start my-auto'>                                   
+                                <Nav defaultActiveKey="/home" 
+                                    className="flex-column mr-auto" 
+                                    style={{fontWeight:'lighter',fontSize:16,color:'#2e4450'}}>
+                                        <Row>
+                                            <Col>                                       
+                                            <img src={marco} style={{width:'20vh'}} />  
+                                            </Col>
+                                            <Col>
+                                                <Nav.Item 
+                                                    style={{color:'#DDDDDD'}}
+                                                    className='mr-auto mb-2'>
+                                                    Hello, my name is <a style={{color:'#FFFFFF'}}> Marco Saccarola</a> and here is a parrot, for no reason.
+                                                </Nav.Item>
+                                                <Nav.Item style={{color:'#DDDDDD'}} className='mt-3 mr-auto row justify-content-end'>
+                                                    <span>You can find me on <a style={{color:'#FFFFFF'}}>Zoom</a>, <span style={{color:'#FFFFFF'}}> Discord</span>                                                                                                                                                            
+                                                    , 
+                                                    <a href='https://github.com/marcosaccarola' style={{color:'#FFFFFF'}}> GitHub</a>
+                                                    ,
+                                                    <span style={{color:'#FFFFFF'}}> Linkedin</span>
+                                                    , and around. Or you can write me an <a href='www.google.com' style={{color:'#FFFFFF'}}>email</a>.</span>
+                                                </Nav.Item>
+                                            </Col>
+                                        </Row>
+                                </Nav>
                             </Col>
                             <Col lg='4' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-end ml-auto'>
                                 <Nav defaultActiveKey="/home" className="flex-column mx-auto" style={{fontWeight:'lighter',fontSize:16,color:'#2e4450'}}>
-                                    {/* <Nav.Link href="/home">Active</Nav.Link> */}
                                     <Nav.Item 
                                         style={{color:'#DDDDDD'}}
                                         className='mr-auto mb-2 ml-3'>
@@ -274,9 +230,6 @@ const Home=()=>{
                                         style={{color:'#DDDDDD'}}><span style={{color:'#FFFFFF'}}>R</span>eact.js</Nav.Link>
                                     <Nav.Link eventKey="link-4"className='mr-auto' 
                                         style={{color:'#DDDDDD'}}><span style={{color:'#FFFFFF'}}>N</span>ode.js</Nav.Link>
-                                    {/* <Nav.Link eventKey="disabled" disabled>
-                                        Disabled
-                                    </Nav.Link> */}
                                 </Nav>
                             </Col>
                         </Row>
