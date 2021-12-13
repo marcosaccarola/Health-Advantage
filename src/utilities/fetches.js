@@ -26,7 +26,7 @@ export const registerPatient=async({reqBody,setCurrentUser})=>{
 const postIntervention=async({reqBody,patient,setCurrentUser})=>{
     const interventionBody={'userId':patient._id,'interventionRequested':reqBody.intervention,'zipcode':reqBody.zipcode}
     try {
-        const responsePostIntervention=await fetch(PATIENTS_URL,
+        const responsePostIntervention=await fetch(INTERVENTIONS_URL,
             {
                method:'POST',
                body:JSON.stringify(interventionBody),
@@ -34,7 +34,7 @@ const postIntervention=async({reqBody,patient,setCurrentUser})=>{
             })
             if(responsePostIntervention.ok){
                 let intervention=await responsePostIntervention.json()
-                reqBody={'email':reqBody.email,'password':reqBody.password}
+                // reqBody={'email':reqBody.email,'password':reqBody.password}
                 getPatient({reqBody,setCurrentUser})
             }else{
                 console.log('Something went wrong.')
