@@ -1,7 +1,7 @@
 import LandingInterface from "./0100-LandingInterface"
 import {useEffect, useState} from 'react'
 import Dashboard from "./0200-Dashboard"
-import {Button,Card, Form, Row} from "react-bootstrap"
+import {Button,Card, Col, Form, Nav, Row} from "react-bootstrap"
 //! import { getListOfInterventions } from "../utilities/fetches"
 import doctor from '../assets/banner-img.png'
 import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/ai";
@@ -16,7 +16,7 @@ const Home=()=>{
     }, [])
 
     return (
-        <div className='' style={{width: '100%'}}>
+        <div className='' style={{width: '100%',fontFamily:'mulish,sans-serif'}}>
 
             <div style={{width:'100%',minHeight:'100vh', background:'#FEEBEA'}}>
                 <div className='row justify-content-between'>
@@ -38,7 +38,7 @@ const Home=()=>{
                 <div style={{width:'84vh',background:'#527c88',marginTop:'1vh',marginLeft:'24vh'}}
                     className='rounded mt-5 mb-4'>
 
-                        It connects healthcare professionals with your nursing and integrated home care needs.
+                        It connects home healthcare professionals with your nursing and integrated home care needs.
                         <br/>
                         You can get in touch with the best professionals with their specializations and patient reviews.
 
@@ -66,7 +66,7 @@ const Home=()=>{
                     {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                     <Card.Body>
                         <AiOutlineEyeInvisible size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
-                        <Card.Title className='mb-3'>no personal data required</Card.Title>
+                        <Card.Title className='mb-3' style={{fontWeight:'bold'}}>no personal data required</Card.Title>
                         <Card.Text className='mx-4' style={{fontWeight:'lighter'}}>
                         email and zipcode are enough, then choose a password and publish your first request for home assistance
                         </Card.Text>
@@ -79,7 +79,7 @@ const Home=()=>{
                     {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                     <Card.Body className=''>
                         <AiOutlineSmile size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
-                        <Card.Title className='mb-3'>it's completely free</Card.Title>
+                        <Card.Title className='mb-3' style={{fontWeight:'bold'}}>it's completely free</Card.Title>
                         <Card.Text className='mx-4' style={{fontWeight:'lighter'}}>
                         and it will be forever free, no credit card required
                         </Card.Text>
@@ -92,7 +92,7 @@ const Home=()=>{
                     {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                     <Card.Body>
                         <AiOutlineLock size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' /> 
-                        <Card.Title className='mb-3'>all data is encrypted</Card.Title>
+                        <Card.Title className='mb-3' style={{fontWeight:'bold'}}>all data is encrypted</Card.Title>
                         <Card.Text className='mx-4' style={{fontWeight:'lighter'}}>
                         and all practitioners are asked for documents certifying qualification for the medical role
                         </Card.Text>
@@ -133,6 +133,25 @@ const Home=()=>{
                                                     style={{fontWeight:'lighter',fontSize:20,color:'#2e4450'}}>
                                                     Enter your first request for home health care:
                                                 </Form.Label> */}
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                <Form.Label
+                                                    style={{fontWeight:'bold',fontSize:20,color:'#2e4450'}}
+                                                    >Intervent type</Form.Label>
+                                                <Form.Text style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                                                    <Form.Select 
+                                                        aria-label="Default select example" 
+                                                        className=''
+                                                        style={{width:'100%',height:40,fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                                                        <option>Open this select menu</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </Form.Select>
+                                                </Form.Text>
+                                                <Form.Text style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                                                Choose the closest intervention category.
+                                                </Form.Text>
+                                            </Form.Group>
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                                 <Form.Label
                                                     style={{fontWeight:'bold',fontSize:20,color:'#2e4450'}}
@@ -199,7 +218,7 @@ const Home=()=>{
                                 </div>
                             </Row>
                     </div>
-                FOOTER
+
             </div>
 
             
