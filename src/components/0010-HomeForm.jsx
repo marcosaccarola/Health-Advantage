@@ -41,23 +41,42 @@ const HomeForm=()=>{
                         style={{width:'100%',height:40,fontWeight:'lighter',fontSize:18,color:'#2e4450'}}
                         onChange={(e)=>handleChangeIntervention(e)}>
                         <option>Choose an option</option>
-                        <option value="1">Prevention of bedsores</option>
-                        <option value="2">Critical Patient Nutrition</option>
-                        <option value="3">Infusion or injection therapy</option>
-                        <option value="4">Treatment of intravascular devices</option>
-                        <option value="5">Urostomy management</option>
-                        <option value="6">Tracheostomy management</option>
-                        <option value="7">Treatment of bladder catheters</option>
-                        <option value="8">Percutaneous Endoscopic Gastrostomy Management</option>
-                        <option value="9">Gastric tube management</option>
-                        <option value="10">Application of medicines for external use</option>
-                        <option value="11">Assistance or recovery from immobilization syndrome</option>
-                        <option value="12">Assistance related to incontinence or irregularities</option>
-                        <option value="13">Treats skin lesions (burns,neuropathic or vascular lesions)</option>
-                        <option value="14">Day assistance</option>
-                        <option value="15">Night assistance</option>
-                        <option value="16">24h assistance</option>
-                        <option value="17">Other</option>
+                        <option value="Prevention of bedsores">
+                            Prevention of bedsores</option>
+                        <option value="Critical Patient Nutrition">
+                            Critical Patient Nutrition</option>
+                        <option value="Infusion or injection therapy">
+                            Infusion or injection therapy</option>
+                        <option value="Treatment of intravascular devices">
+                            Treatment of intravascular devices</option>
+                        <option value="Urostomy management">
+                            Urostomy management</option>
+                        <option value="Tracheostomy management">
+                            Tracheostomy management</option>
+                        <option value="Treatment of bladder catheters">
+                            Treatment of bladder catheters</option>
+                        <option value="Percutaneous Endoscopic Gastrostomy Management">
+                            Percutaneous Endoscopic Gastrostomy Management</option>
+                        <option value="Gastric tube management9">
+                            Gastric tube management</option>
+                        <option value="Application of medicines for external use">
+                            Application of medicines for external use</option>
+                        <option value="Assistance or recovery from immobilization syndrome">
+                            Assistance or recovery from immobilization syndrome</option>
+                        <option value="Assistance related to incontinence or irregularities">
+                            Assistance related to incontinence or irregularities</option>
+                        <option value="Treats skin lesions">
+                            Treats skin lesions (burns,neuropathic or vascular lesions)</option>
+                        <option value="Day assistance">
+                            Day assistance</option>
+                        <option value="Night assistance">
+                            Night assistance</option>
+                        <option value="24h assistance">
+                            24h assistance</option>
+                        <option value="Pain relief treatments">
+                            Pain relief treatments</option>
+                        <option value="18">
+                            Other</option>
                     </Form.Select>
                 </Form.Text>
                 <Form.Text style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
