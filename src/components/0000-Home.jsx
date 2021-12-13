@@ -224,11 +224,11 @@ const Home=()=>{
                         <Row>
                             <Col lg='8' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
                                 <Nav defaultActiveKey="/home" 
-                                    className="flex-column" 
+                                    className="flex-column mr-auto" 
                                     style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
                                     <Nav.Item 
                                         style={{color:'#DDDDDD'}}
-                                        className='mr-auto'>
+                                        className='mr-auto mb-2'>
                                         Hello, my name is <span style={{color:'#FFFFFF'}}>Marco Saccarola</span> based in Italy
                                     </Nav.Item>
                                     <Nav.Item style={{color:'#DDDDDD'}}>
@@ -250,12 +250,21 @@ const Home=()=>{
                                 </Nav>
                             </Col>
                             <Col lg='4' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
-                                <Nav defaultActiveKey="/home" className="flex-column" style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                                <Nav defaultActiveKey="/home" className="flex-column ml-auto" style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
                                     {/* <Nav.Link href="/home">Active</Nav.Link> */}
-                                    <Nav.Link eventKey="link-1"className='mr-auto'>MongoDB</Nav.Link>
-                                    <Nav.Link eventKey="link-2"className='mr-auto'>Express.js</Nav.Link>
-                                    <Nav.Link eventKey="link-3"className='mr-auto'>React.js</Nav.Link>
-                                    <Nav.Link eventKey="link-4"className='mr-auto'>Node.js</Nav.Link>
+                                    <Nav.Item 
+                                        style={{color:'#DDDDDD'}}
+                                        className='mr-auto mb-2 ml-3'>
+                                        Code tools:
+                                    </Nav.Item>
+                                    <Nav.Link eventKey="link-1"className='mr-auto' 
+                                        style={{color:'#DDDDDD'}}><span style={{color:'#FFFFFF'}}>M</span>ongoDB</Nav.Link>
+                                    <Nav.Link eventKey="link-2"className='mr-auto' 
+                                        style={{color:'#DDDDDD'}}><span style={{color:'#FFFFFF'}}>E</span>xpress.js</Nav.Link>
+                                    <Nav.Link eventKey="link-3"className='mr-auto' 
+                                        style={{color:'#DDDDDD'}}><span style={{color:'#FFFFFF'}}>R</span>eact.js</Nav.Link>
+                                    <Nav.Link eventKey="link-4"className='mr-auto' 
+                                        style={{color:'#DDDDDD'}}><span style={{color:'#FFFFFF'}}>N</span>ode.js</Nav.Link>
                                     {/* <Nav.Link eventKey="disabled" disabled>
                                         Disabled
                                     </Nav.Link> */}
