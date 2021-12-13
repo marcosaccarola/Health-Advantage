@@ -6,6 +6,7 @@ import {Button,Card, Col, Form, Nav, Row} from "react-bootstrap"
 import doctor from '../assets/banner-img.png'
 import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/ai";
 import elderlyWithNurse from '../assets/elderlyWithNurse.png'
+import marco from '../assets/parrot1.png'
 
 
 const Home=()=>{
@@ -222,32 +223,34 @@ const Home=()=>{
                         <div className='container'>
 
                         <Row>
-                            <Col lg='8' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
-                                <Nav defaultActiveKey="/home" 
-                                    className="flex-column mr-auto" 
-                                    style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
-                                    <Nav.Item 
-                                        style={{color:'#DDDDDD'}}
-                                        className='mr-auto mb-2'>
-                                        Hello, my name is <span style={{color:'#FFFFFF'}}>Marco Saccarola</span> based in Italy
-                                    </Nav.Item>
-                                    <Nav.Item style={{color:'#DDDDDD'}}>
-                                        and on 
-                                        <span style={{color:'#FFFFFF'}}> Zoom</span>
-                                        ,
-                                        <span style={{color:'#FFFFFF'}}> Discord</span>
-                                        ,
-                                        <span style={{color:'#FFFFFF'}}> GitHub</span>
-                                        ,
-                                        <span style={{color:'#FFFFFF'}}> Linkedin</span>
-                                        , and around.
-                                    </Nav.Item>
-                                    {/* <Nav.Item style={{color:'#FFFFFF'}}>
-                                        <Nav.Link style={{color:'#FFFFFF'}} eventKey="link-1">Link</Nav.Link>
-                                        <Nav.Link style={{color:'#FFFFFF'}} eventKey="link-2">Link</Nav.Link>
-                                        <Nav.Link style={{color:'#FFFFFF'}} eventKey="link-2">Link</Nav.Link>
-                                    </Nav.Item> */}
-                                </Nav>
+                            <Col lg='9' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
+                                <Row>
+                                    <Col lg='4'>
+                                        <img src={marco} style={{width:'100%'}} />  
+                                    </Col>                                    
+                                    <Col lg='8'>                                    
+                                        <Nav defaultActiveKey="/home" 
+                                            className="flex-column mr-auto" 
+                                            style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                                            <Nav.Item 
+                                                style={{color:'#DDDDDD'}}
+                                                className='mr-auto mb-2'>
+                                                Hello, my name is <span style={{color:'#FFFFFF'}}>Marco Saccarola</span> based in Italy
+                                            </Nav.Item>
+                                            <Nav.Item style={{color:'#DDDDDD'}}>
+                                                and on 
+                                                <span style={{color:'#FFFFFF'}}> Zoom</span>
+                                                ,
+                                                <span style={{color:'#FFFFFF'}}> Discord</span>
+                                                ,
+                                                <span style={{color:'#FFFFFF'}}> GitHub</span>
+                                                ,
+                                                <span style={{color:'#FFFFFF'}}> Linkedin</span>
+                                                , and around.
+                                            </Nav.Item>
+                                        </Nav>
+                                    </Col>                                    
+                                </Row>
                             </Col>
                             <Col lg='4' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
                                 <Nav defaultActiveKey="/home" className="flex-column ml-auto" style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
