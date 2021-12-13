@@ -131,10 +131,24 @@ const Home=()=>{
                                                         aria-label="Default select example" 
                                                         className=''
                                                         style={{width:'100%',height:40,fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
-                                                        <option>Open this select menu</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                        <option>Choose an option</option>
+                                                        <option value="1">Prevention of bedsores</option>
+                                                        <option value="3">Critical Patient Nutrition</option>
+                                                        <option value="3">Infusion or injection therapy</option>
+                                                        <option value="3">Treatment of intravascular devices</option>
+                                                        <option value="3">Urostomy management</option>
+                                                        <option value="3">Tracheostomy management</option>
+                                                        <option value="3">Treatment of bladder catheters</option>
+                                                        <option value="3">Percutaneous Endoscopic Gastrostomy Management</option>
+                                                        <option value="3">Gastric tube management</option>
+                                                        <option value="2">Application of medicines for external use</option>
+                                                        <option value="3">Assistance or recovery from immobilization syndrome</option>
+                                                        <option value="3">Assistance related to incontinence or irregularities</option>
+                                                        <option value="3">Treats skin lesions (burns,neuropathic or vascular lesions)</option>
+                                                        <option value="3">Day assistance</option>
+                                                        <option value="3">Night assistance</option>
+                                                        <option value="3">24h assistance</option>
+                                                        <option value="3">Other</option>
                                                     </Form.Select>
                                                 </Form.Text>
                                                 <Form.Text style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
