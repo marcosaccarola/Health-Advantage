@@ -2,10 +2,9 @@ const PRACTITIONERS_URL='http://localhost:3001/practitioner'
 const PATIENTS_URL='http://localhost:3001/patient'
 const INTERVENTIONS_URL='http://localhost:3001/intervention'
 
-// *_____________________________________________ REGISTER PATIENT
+// *_____________________________________________ REGISTER PATIENT & SUBMIT FIRST INTERVENTION
 export const registerPatient=async({reqBody,setCurrentUser})=>{
     const patientBody={'firstName':reqBody.firstName,'email':reqBody.email,'password':reqBody.password,'zipcode':reqBody.zipcode,'role':'Patient'}
-    console.log(patientBody)
     try {
         const responseRegister=await fetch(PATIENTS_URL,
             {
@@ -34,7 +33,6 @@ const postIntervention=async({reqBody,patient,setCurrentUser})=>{
             })
             if(responsePostIntervention.ok){
                 let intervention=await responsePostIntervention.json()
-                // reqBody={'email':reqBody.email,'password':reqBody.password}
                 getPatient({reqBody,setCurrentUser})
             }else{
                 console.log('Something went wrong.')

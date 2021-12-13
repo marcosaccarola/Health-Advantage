@@ -1,5 +1,5 @@
 import LandingInterface from "./0100-LandingInterface"
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import Dashboard from "./0200-Dashboard"
 import {Button,Card, Col, Form, Nav, Row} from "react-bootstrap"
 //! import { getListOfInterventions } from "../utilities/fetches"
@@ -12,10 +12,10 @@ import HomeForm from "./0010-HomeForm"
 
 const Home=()=>{
     const[currentUser,setCurrentUser]=useState()
-    const[requests,setRequests]=useState()
-    useEffect(() => {
-        //! getListOfInterventions({setRequests})
-    }, [])
+    // const[requests,setRequests]=useState()
+    // useEffect(() => {
+    //     //! getListOfInterventions({setRequests})
+    // }, [])
 
     return (
         <div style={{width: '100%',fontFamily:'mulish,sans-serif'}}>
@@ -153,7 +153,7 @@ const Home=()=>{
                                                     <a href='https://github.com/marcosaccarola' style={{color:'#FFFFFF'}}> GitHub</a>
                                                     ,
                                                     <span style={{color:'#FFFFFF'}}> Linkedin</span>
-                                                    , and around. Or you can write me an <a href='www.google.com' style={{color:'#FFFFFF'}}>email</a>.</span>
+                                                    , and around here. Or you can write me an <a href='www.google.com' style={{color:'#FFFFFF'}}>email</a>.</span>
                                                 </Nav.Item>
                                             </Col>
                                         </Row>
@@ -182,7 +182,7 @@ const Home=()=>{
             </div>
 
             
-            {currentUser
+            {/* {currentUser
             // &&
     // ? CURRENT USER ? LOGOUT BUTTON : ...
                 // <div className='row justify-content-end mt-5'>
@@ -202,7 +202,7 @@ const Home=()=>{
     // ? CURRENT USER ? DASHBOARD : LANDIN INTERFACE
                 // ?<Dashboard currentUser={currentUser} setCurrentUser={setCurrentUser} requests={requests} setRequests={setRequests} />
                 // :<LandingInterface setCurrentUser={setCurrentUser} currentUser={currentUser} />
-            }
+            } */}
         </div>
     )
 }
