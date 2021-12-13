@@ -22,12 +22,13 @@ const HomeForm=()=>{
     const handleChangePw=(e)=>{
         setPw(e.target.value)
     }
+    const[reqBody,setReqBody]=useState()
     const[isModalOpen,setIsModalOpen]=useState(false)
     const handleModal=()=>{
+        setReqBody({'intervention':intervention,'email':email,'zipcode':zipCode,'firstName':name,'password':pw})
         isModalOpen===false?setIsModalOpen(true):setIsModalOpen(false)
     }
     const registerUserAndIntervention=()=>{
-        const reqBody={'intervention':intervention,'email':email,'zipcode':zipCode,'firstName':name,'password':pw}
         // getUser({reqBody,setCurrentUser})
     }
 
@@ -137,25 +138,28 @@ const HomeForm=()=>{
 
             </Form>
 
-            {(isModalOpen==true)&&(
+            {reqBody&&
             <Modal 
                 show={isModalOpen} 
                 onHide={handleModal}
                 >
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Header className='justify-content-center'>
+                    <Modal.Title>Checking acceptance form</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Body>Intervent type: {reqBody.intervention}</Modal.Body>
+                <Modal.Body>Name: {reqBody.firstName}</Modal.Body>
+                <Modal.Body>Email: {reqBody.email}</Modal.Body>
+                <Modal.Body>Zip Code: {reqBody.zipcode}</Modal.Body>
                 <Modal.Footer>
-                    {/* <Button variant="secondary" onClick={handleClose}>
+                    <Button variant="secondary" onClick={handleModal}>
                     Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="primary" onClick={registerUserAndIntervention}>
                     Save Changes
-                    </Button> */}
+                    </Button>
                 </Modal.Footer>
             </Modal>
-            )}
+            }
         </>
     )
 }
