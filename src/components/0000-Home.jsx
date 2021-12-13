@@ -220,40 +220,49 @@ const Home=()=>{
                             </Row>
                     </div>
                     <div style={{minWidth:'100vh',minHeight:'30vh',background:'#B5958E',marginTop:'16vh'}}>
-                        <div className='container'>
+                        <div className='container' style={{minWidth:'100vh'}}>
 
                         <Row>
-                            <Col lg='9' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
-                                <Row>
-                                    <Col lg='4'>
-                                        <img src={marco} style={{width:'100%'}} />  
-                                    </Col>                                    
-                                    <Col lg='8'>                                    
+                            <Col lg='6' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
+
+
+                                   
                                         <Nav defaultActiveKey="/home" 
                                             className="flex-column mr-auto" 
-                                            style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
-                                            <Nav.Item 
-                                                style={{color:'#DDDDDD'}}
-                                                className='mr-auto mb-2'>
-                                                Hello, my name is <span style={{color:'#FFFFFF'}}>Marco Saccarola</span> based in Italy
-                                            </Nav.Item>
-                                            <Nav.Item style={{color:'#DDDDDD'}}>
-                                                and on 
-                                                <span style={{color:'#FFFFFF'}}> Zoom</span>
-                                                ,
-                                                <span style={{color:'#FFFFFF'}}> Discord</span>
-                                                ,
-                                                <span style={{color:'#FFFFFF'}}> GitHub</span>
-                                                ,
-                                                <span style={{color:'#FFFFFF'}}> Linkedin</span>
-                                                , and around.
-                                            </Nav.Item>
+                                            style={{fontWeight:'lighter',fontSize:16,color:'#2e4450'}}>
+                                                <Row>
+                                                    <Col>
+                                                    
+                                                    <img src={marco} style={{width:'20vh'}} />  
+                                                    </Col>
+                                                    <Col>
+
+
+                                                    <Nav.Item 
+                                                        style={{color:'#DDDDDD'}}
+                                                        className='mr-auto mb-2 row justify-content-start'>
+                                                        Hello, my name is <span style={{color:'#FFFFFF'}}>Marco Saccarola</span> and this is a parrot.
+                                                    </Nav.Item>
+                                                    <Nav.Item style={{color:'#DDDDDD'}} className='mt-3 mr-auto row justify-content-end'>
+                                                        <span>You can find me on </span> 
+                                                        <span style={{color:'#FFFFFF'}}> Zoom</span>
+                                                        ,
+                                                        <span style={{color:'#FFFFFF'}}> Discord</span>
+                                                        ,
+                                                        <span style={{color:'#FFFFFF'}}> GitHub</span>
+                                                        ,
+                                                        <span style={{color:'#FFFFFF'}}> Linkedin</span>
+                                                        , and around.
+                                                    </Nav.Item>
+
+                                                    </Col>
+                                                </Row>
                                         </Nav>
-                                    </Col>                                    
-                                </Row>
+                                 
+
                             </Col>
-                            <Col lg='4' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-start'>
-                                <Nav defaultActiveKey="/home" className="flex-column ml-auto" style={{fontWeight:'lighter',fontSize:18,color:'#2e4450'}}>
+                            <Col lg='6' style={{marginTop:'12vh',marginBottom:'8vh'}} className='row justify-content-end ml-auto'>
+                                <Nav defaultActiveKey="/home" className="flex-column mx-auto" style={{fontWeight:'lighter',fontSize:16,color:'#2e4450'}}>
                                     {/* <Nav.Link href="/home">Active</Nav.Link> */}
                                     <Nav.Item 
                                         style={{color:'#DDDDDD'}}
