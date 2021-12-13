@@ -25,8 +25,8 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
             <Card 
                 style={{ width: '80rem', borderWidth:8 ,backgroundColor:'#E9ECEF' }} 
                 className={currentUser.role==='Practitioner'
-                    ?'text-dark border-info'
-                    :'text-dark bg-light border-warning'}
+                    ?'text-dark border-info mx-auto'
+                    :'text-dark bg-light border-warning mx-auto'}
                 >
             <Card.Body>
 

@@ -8,10 +8,13 @@ import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/
 import elderlyWithNurse from '../assets/elderlyWithNurse.png'
 import marco from '../assets/parrot1.png'
 import HomeForm from "./0010-HomeForm"
+import NewDashboard from "./1000-Dashboard"
 
 
 const Home=()=>{
-    const[currentUser,setCurrentUser]=useState()
+    const[currentUser,setCurrentUser]=useState(
+        {"_id":{"$oid":"61b148b616145441832aedce"},"email":"pat","password":"$2b$10$e/5Vp.0HTPtMyAOU/g370uxocIwNM1ruwjDOvRTd6wahBrCvH79WW","zipcode":30174,"role":"Patient","firstName":"Gustavo","lastName":"Merenda","bio":"I'm patient zero.","photo":"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80","published":[{"$oid":"61b28982ae791b1d6cc63669"},{"$oid":"61b2899eae791b1d6cc6366d"}],"createdAt":{"$date":"2021-12-09T00:07:18.264Z"},"updatedAt":{"$date":"2021-12-09T22:56:30.530Z"},"__v":0}
+    )
     // const[requests,setRequests]=useState()
     // useEffect(() => {
     //     //! getListOfInterventions({setRequests})
@@ -106,8 +109,8 @@ const Home=()=>{
                     <div
                         className='mx-auto rounded'
                         style={{width:'85%',background:'#B5958E',marginTop:'12vh'}}>
-                            <Row className=' justify-content-between'>
-                                <div className=''>
+                            <Row className='justify-content-between'>
+                                <div className='mt-auto'>
                                     <Card 
                                         className=' mt-4 ml-5 mb-4' 
                                         style={{background:'#FFFFFF',color:'#2e4450',fontSize:'2.3rem',borderWidth:1,borderColor:'#2e4450'}}>
@@ -207,7 +210,7 @@ const Home=()=>{
             {currentUser&&
     // ? CURRENT USER ? DASHBOARD : LANDIN INTERFACE
     // ?
-                <Dashboard currentUser={currentUser} setCurrentUser={setCurrentUser} />
+                <NewDashboard currentUser={currentUser} setCurrentUser={setCurrentUser} />
                 // :<LandingInterface setCurrentUser={setCurrentUser} currentUser={currentUser} />
             }
         </div>
