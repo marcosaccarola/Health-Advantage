@@ -23,10 +23,12 @@
 }
 .megaTitle {
   font-size: 100px;
+  color: #527c88;
   text-shadow: -1px 0 #ffffff, 0 2px #ffffff, 2px 0 #ffffff, 0 -1px #ffffff !important;
 }
 .submegaTitle {
   font-size: 32px;
+  color: #527c88;
 }
 .doctor {
   max-width: 100%;
