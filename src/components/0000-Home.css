@@ -3,6 +3,9 @@
 .body {
   font-family: "mulish", sans-serif;
 }
+.white {
+  background: #ffffff;
+}
 .pink {
   background: #feebea;
 }
@@ -41,7 +44,7 @@
   color: #ffffff !important;
   border-color: #ffffff !important;
   border-width: 2px !important;
-  font-size: 24px !important;
+  font-size: 32px !important;
   width: 36vh;
 }
 .card {
@@ -49,10 +52,19 @@
   font-family: "mulish", sans-serif !important;
   color: #527c88 !important;
   border-color: #b5958e !important;
-  border-width: 2px !important;
+  border-width: 1px !important;
   font-size: 18px !important;
   width: 24rem;
   height: 24rem;
+}
+.button {
+  width: 8rem;
+  background: #ffffff !important;
+  border-color: #b5958e !important;
+  color: #2e4450 !important;
+  position: absolute;
+  bottom: 2rem;
+  right: 8rem;
 }
 
 /* .login{

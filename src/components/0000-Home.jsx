@@ -112,7 +112,7 @@ const Home=()=>{
 
             <Row 
                 // style={{minHeight:'50vh',background:'#FFFFFF',position:'absolute',zIndex:'1',color:'#2e4450',fontSize:20}}
-                className=' pink justify-content-around mx-5 my-5'
+                className='bg-light justify-content-around mx-5 my-5'
                 >
                 <Card 
                     // style={{width:'24rem',height:'24rem',background:'#FEEBEA',borderColor:'#B5958E' }} 
@@ -121,18 +121,20 @@ const Home=()=>{
                     >
                     <Card.Body>
 
-                        <AiOutlineEyeInvisible size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
+                        <AiOutlineEyeInvisible size='72px' 
+                            // style={{color:'#2e4450'}} 
+                            className='mt-3 mb-3' />
 
                         <Card.Title 
-                            className='mb-3' 
-                            style={{fontWeight:'bold'}}
-                            >no personal data required</Card.Title>
+                            className='font-weight-bold mb-3' 
+                            // style={{fontWeight:'bold'}}
+                            >No personal data required</Card.Title>
                         <Card.Text 
                             className='mx-4' 
-                            style={{fontWeight:'lighter'}}
+                            // style={{fontWeight:'lighter'}}
                             >email and zipcode are enough, then choose a password and publish your first request for home assistance</Card.Text>
-                        <Button
-                            style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'2rem',right:'8rem'}}
+                        <Button className='button'
+                            // style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'2rem',right:'8rem'}}
                             >Read more</Button>
                     </Card.Body>
                 </Card>
@@ -141,13 +143,20 @@ const Home=()=>{
                     className='card my-5'
                     >
                     <Card.Body className=''>
-                        <AiOutlineSmile size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
-                        <Card.Title className='mb-3' style={{fontWeight:'bold'}}>it's completely free</Card.Title>
-                        <Card.Text className='mx-4' style={{fontWeight:'lighter'}}>
+                        <AiOutlineSmile size='72px' 
+                            // style={{color:'#2e4450'}} 
+                            className='mt-3 mb-3' />
+                        <Card.Title 
+                            className='font-weight-bold mb-3' 
+                            // style={{fontWeight:'bold'}}
+                            >It's completely free</Card.Title>
+                        <Card.Text className='mx-4' 
+                            // style={{fontWeight:'lighter'}}
+                            >
                         and it will be forever free, no credit card required
                         </Card.Text>
-                        <Button
-                            style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'2rem',right:'8rem'}}
+                        <Button className='button'
+                            // style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'2rem',right:'8rem'}}
                             >Read more</Button>
                     </Card.Body>
                 </Card>
@@ -155,13 +164,20 @@ const Home=()=>{
                     // style={{ width: '24rem',height:'24rem', background:'#FEEBEA',borderColor:'#B5958E' }} 
                     className='card my-5'>
                     <Card.Body>
-                        <AiOutlineLock size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' /> 
-                        <Card.Title className='mb-3' style={{fontWeight:'bold'}}>all data is encrypted</Card.Title>
-                        <Card.Text className='mx-4' style={{fontWeight:'lighter'}}>
+                        <AiOutlineLock size='72px' 
+                        // style={{color:'#2e4450'}} 
+                        className='mt-3 mb-3' /> 
+                        <Card.Title
+                            className='font-weight-bold mb-3' 
+                            // style={{fontWeight:'bold'}}
+                            >All data is encrypted</Card.Title>
+                        <Card.Text className='mx-4' 
+                            // style={{fontWeight:'lighter'}}
+                            >
                         and all practitioners are asked for documents certifying qualification for the medical role
                         </Card.Text>
-                        <Button
-                            style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'2rem',right:'8rem'}}
+                        <Button className='button'
+                            // style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'2rem',right:'8rem'}}
                             >Read more</Button>
                     </Card.Body>
                 </Card>
