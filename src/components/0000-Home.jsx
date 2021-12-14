@@ -27,8 +27,8 @@ const Home=()=>{
              
             {!currentUser&&
             <>
-            <div className='container-fluid'>
-                <Row className='justify-content-between mt-3'>
+            <div className='container-fluid pink'>
+                <Row className='justify-content-between vw90 mx-auto mt-3 pink'>
                     <Col sm={2} className='green'
                         // style={{width:'16vh',minHeight:'8vh',marginTop:'8vh',marginLeft:'24vh'}}                        
                         >
@@ -40,40 +40,38 @@ const Home=()=>{
                         LOGIN
                     </Col>
                 </Row>
-                <Row className='mt-5'>
-                    <Col sm={8}>
-                        <div 
-                            style={{width:'84vh',minHeight:'8vh',background:'#FEEBEA',color:'#527c88',fontSize:90,marginTop:'16vh',marginLeft:'24vh'}}
-                            className='rounded row justify-content-start'
-                            >
+                <Row className='mt-5 vw80 mx-auto pink'>
+                    <Col sm={8} className='mt-auto mb-5'>
+                        <Row className='megaTitle textGreen justify-content-center mb-4'>                                                        
                             Health Advantage
-                        </div>
-                        <div 
-                            style={{width:'84vh',background:'#527c88',marginTop:'1vh',marginLeft:'24vh'}}
-                            className='rounded mt-5 mb-4'
-                            >
+                        </Row>
+                        <Row style={{height:'3vh'}}></Row>
+                        <Row className='textGreen rounded submegaTitle'>                                                      
                                 It connects home healthcare professionals with your nursing and integrated home care needs.
                                 <br/>
                                 You can get in touch with the best professionals with their specializations and patient reviews.
-                        </div>
-                        <div 
-                            className='row justify-content-between'
-                            style={{position:'absolute',width:'84vh',minHeight:'8vh',marginTop:'12vh',marginLeft:'24vh'}}
+                        </Row>
+                        <Row style={{height:'9vh'}}></Row>
+                        <Row 
+                            className='row justify-content-center mt-5'
+                            // style={{position:'absolute',width:'84vh',minHeight:'8vh',marginTop:'12vh',marginLeft:'24vh'}}
                             >
-                            <div 
-                                style={{width:'32vh',background:'#B5958E'}}
-                                className='rounded'>
-                                looking for assistance
-                            </div>
-                            <div 
-                                style={{width:'32vh',background:'#B5958E'}}
-                                className='rounded'>
-                                licensed healthcare practitioners area
-                            </div>
-                        </div>
+                            <Button 
+                                // style={{width:'32vh',background:'#B5958E'}}
+                                className='rounded nudeButtons mx-auto'>
+                                Looking for assistance
+                            </Button>
+                            <Button 
+                                // style={{width:'32vh',background:'#B5958E'}}
+                                className='rounded nudeButtons mx-auto'>
+                                Licensed healthcare practitioners area
+                            </Button>
+                        </Row>
                     </Col>
                     <Col sm={4}>
-                        <img src={doctor} />
+                        <Row>
+                            <img className='container doctor' src={doctor} />   
+                        </Row>
                     </Col>
                 </Row>
 

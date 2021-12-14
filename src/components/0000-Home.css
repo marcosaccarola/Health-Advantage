@@ -6,11 +6,43 @@
 .pink {
   background: #feebea;
 }
+.nude {
+  background: #b5958e;
+}
 .green {
   background: #527c88;
 }
 .red {
   background: "red";
+}
+.textGreen {
+  color: #527c88;
+}
+.megaTitle {
+  font-size: 90px;
+  text-shadow: -1px 0 #ffffff, 0 2px #ffffff, 2px 0 #ffffff, 0 -1px #ffffff !important;
+}
+.submegaTitle {
+  font-size: 32px;
+}
+.doctor {
+  max-width: 100%;
+  height: auto;
+}
+.vw80 {
+  max-width: 80%;
+}
+.vw90 {
+  max-width: 90%;
+}
+.nudeButtons {
+  background: #b5958e !important;
+  font-family: "mulish", sans-serif !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  border-width: 2px !important;
+  font-size: 24px !important;
+  width: 36vh;
 }
 /* .login{
     width:'16vh',min-height:'8vh',marginTop:'8vh',marginLeft:'24vh'
