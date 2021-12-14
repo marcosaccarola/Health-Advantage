@@ -2,6 +2,7 @@
 
 .body {
   font-family: "mulish", sans-serif;
+  background: #feebea;
 }
 .white {
   background: #ffffff;
@@ -71,6 +72,10 @@
 .imgAlign {
   vertical-align: bottom;
   border: 0;
+}
+.borderGreen {
+  border-color: #2e4450 !important;
+  border-width: 2px !important;
 }
 
 /* .login{

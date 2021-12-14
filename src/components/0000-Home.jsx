@@ -62,7 +62,7 @@ const Home=()=>{
                 </Row>
             </div>
 
-            <Row className='bg-light justify-content-around mx-5 my-5'>                               
+            <Row className='bg-light justify-content-around mx-5 mb-5'>                               
                 <Card className='card my-5'>                                       
                     <Card.Body>
                         <AiOutlineEyeInvisible size='72px' className='mt-3 mb-3' />                         
@@ -109,11 +109,11 @@ const Home=()=>{
 
             <Row className='container-fluid nude vw80 mx-auto rounded'>
                 <Col sm={6}>
-                    <Row className='submegaTitle bg-light justify-content-center mx-auto my-5 rounded'>
+                    <Row className='submegaTitle pink justify-content-center mx-auto my-5 rounded'>
                         Enter your first request for home health care           
                     </Row>
-                    <Row className='row justify-content-center mt-auto'>
-                        <img src={elderlyWithNurse} className='img-fluid d-block mt-auto imgAlign' />                                                                                                                  
+                    <Row className='justify-content-center mt-auto'>
+                        <img src={elderlyWithNurse} className='w-100 mt-auto' />                                                                                                                  
                     </Row>
                 </Col>                                                                        
                 <Col sm={6}>
