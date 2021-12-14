@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Button, Form, Modal } from "react-bootstrap"
 import { registerPatient } from "../utilities/fetches"
+import './0000-Home.css'
 
 const HomeForm=({setCurrentUser})=>{
     const[intervention,setIntervention]=useState('')
@@ -35,7 +36,7 @@ const HomeForm=({setCurrentUser})=>{
 
     return(
         <>
-            <Form className=''>
+            <Form className='my-3'>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label
@@ -132,7 +133,7 @@ const HomeForm=({setCurrentUser})=>{
                 </Form.Group>
 
                 <Button 
-                    variant="primary" className='mt-3' style={{fontSize:18}}
+                    variant="primary" className='my-3' style={{fontSize:18}}
                     onClick={handleModal}>
                     Submit
                 </Button>

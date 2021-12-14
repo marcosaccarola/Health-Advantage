@@ -68,6 +68,10 @@
   bottom: 2rem;
   right: 8rem;
 }
+.imgAlign {
+  vertical-align: bottom;
+  border: 0;
+}
 
 /* .login{
     width:'16vh',min-height:'8vh',marginTop:'8vh',marginLeft:'24vh'
