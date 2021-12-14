@@ -186,9 +186,9 @@ const Home=()=>{
             {/* <div  */}
                 {/* // style={{position:'absolute',width: '100%',minHeight:'100vh',background:'#FEEBEA',marginTop:'50vh'}} */}
                 {/* > */}
-                    <Row className='container-fluid nude'>
+                    <Row className='container-fluid nude vw80 mx-auto rounded'>
                         <Col sm={6}>
-                            <Row className='submegaTitle bg-light justify-content-center my-5'>
+                            <Row className='submegaTitle bg-light justify-content-center mx-auto my-5 rounded'>
                                 Enter your first request for home health care           
                             </Row>
                             <Row className='row justify-content-center'>
@@ -198,9 +198,22 @@ const Home=()=>{
                             </Row>
                         </Col>                                                                        
                         <Col sm={6}>
+                            <Row className='pink justify-content-center mx-auto my-5 rounded'>
+                                {/* <Card
+                                    className='my-4 ml-auto mr-5'
+                                    style={{background:'#FEEBEA',minWidth:'42%',borderWidth:1,borderColor:'#2e4450'}}> */}
+                                    {/* <Card.Body
+                                        className='mx-5 justify-content-start'
+                                        style={{color:'#2e4450'}}> */}
+
+                                            <HomeForm setCurrentUser={setCurrentUser} />
+
+                                    {/* </Card.Body> */}
+                                {/* </Card> */}
+                            </Row>
                         </Col>                                                                        
-                            <Row className='justify-content-between'>
-                                <div className='mt-auto'>
+                            {/* <Row className='justify-content-between'> */}
+                                {/* <div className='mt-auto'>
                                     <Card
                                         className=' mt-4 ml-5 mb-4'
                                         style={{background:'#FFFFFF',color:'#2e4450',fontSize:'2.3rem',borderWidth:1,borderColor:'#2e4450'}}>
@@ -208,19 +221,9 @@ const Home=()=>{
                                     </Card>
                                     <div>
                                     </div>
-                                </div>
-                                <Card
-                                    className='my-4 ml-auto mr-5'
-                                    style={{background:'#FEEBEA',minWidth:'42%',borderWidth:1,borderColor:'#2e4450'}}>
-                                    <Card.Body
-                                        className='mx-5 justify-content-start'
-                                        style={{color:'#2e4450'}}>
+                                </div> */}
 
-                                            <HomeForm setCurrentUser={setCurrentUser} />
-
-                                    </Card.Body>
-                                </Card>
-                            </Row>
+                            {/* </Row> */}
                     </Row>
                     {/* <div
                         className='mx-auto rounded'
