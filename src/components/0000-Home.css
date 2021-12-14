@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700&display=swap");
+
+.body {
+  font-family: "mulish", sans-serif;
+}
+.pink {
+  background: #feebea;
+}
+.green {
+  background: #527c88;
+}
+.red {
+  background: "red";
+}
+/* .login{
+    width:'16vh',min-height:'8vh',marginTop:'8vh',marginLeft:'24vh'
+} */

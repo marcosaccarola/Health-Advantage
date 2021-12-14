@@ -1,6 +1,6 @@
-import LandingInterface from "./0100-LandingInterface"
+// import LandingInterface from "./0100-LandingInterface"
 import {useState} from 'react'
-import Dashboard from "./0200-Dashboard"
+// import Dashboard from "./0200-Dashboard"
 import {Button,Card, Col, Form, Nav, Row} from "react-bootstrap"
 //! import { getListOfInterventions } from "../utilities/fetches"
 import doctor from '../assets/banner-img.png'
@@ -9,47 +9,96 @@ import elderlyWithNurse from '../assets/elderlyWithNurse.png'
 import marco from '../assets/parrot1.png'
 import HomeForm from "./0010-HomeForm"
 import NewDashboard from "./1000-Dashboard"
+import './0000-Home.css'
+import { findRenderedDOMComponentWithTag } from 'react-dom/cjs/react-dom-test-utils.development';
 
 
 const Home=()=>{
     const[currentUser,setCurrentUser]=useState(
-        {"_id":{"$oid":"61b148b616145441832aedce"},"email":"pat","password":"$2b$10$e/5Vp.0HTPtMyAOU/g370uxocIwNM1ruwjDOvRTd6wahBrCvH79WW","zipcode":30174,"role":"Patient","firstName":"Gustavo","lastName":"Merenda","bio":"I'm patient zero.","photo":"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80","published":[{"$oid":"61b28982ae791b1d6cc63669"},{"$oid":"61b2899eae791b1d6cc6366d"}],"createdAt":{"$date":"2021-12-09T00:07:18.264Z"},"updatedAt":{"$date":"2021-12-09T22:56:30.530Z"},"__v":0}
+        // {"_id":{"$oid":"61b148b616145441832aedce"},"email":"pat","password":"$2b$10$e/5Vp.0HTPtMyAOU/g370uxocIwNM1ruwjDOvRTd6wahBrCvH79WW","zipcode":30174,"role":"Patient","firstName":"Gustavo","lastName":"Merenda","bio":"I'm patient zero.","photo":"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80","published":[{"$oid":"61b28982ae791b1d6cc63669"},{"$oid":"61b2899eae791b1d6cc6366d"}],"createdAt":{"$date":"2021-12-09T00:07:18.264Z"},"updatedAt":{"$date":"2021-12-09T22:56:30.530Z"},"__v":0}
     )
     // const[requests,setRequests]=useState()
     // useEffect(() => {
-    //     //! getListOfInterventions({setRequests})
+    // getListOfInterventions({setRequests})
     // }, [])
 
     return (
-        <div style={{width: '100%',fontFamily:'mulish,sans-serif'}}>
-
+        <div className='container-fluid body'>
+             
             {!currentUser&&
             <>
-            <div style={{width:'100%',minHeight:'100vh', background:'#FEEBEA'}}>
-                <div className='row justify-content-between'>
-                    <div style={{width:'16vh',minHeight:'8vh',background:'#527c88',marginTop:'8vh',marginLeft:'24vh'}}>
+            <div className='container-fluid'>
+                <Row className='justify-content-between mt-3'>
+                    <Col sm={2} className='green'
+                        // style={{width:'16vh',minHeight:'8vh',marginTop:'8vh',marginLeft:'24vh'}}                        
+                        >
                         LOGO
-                    </div>
-                    <div style={{width:'16vh',minHeight:'8vh',background:'#527c88',marginTop:'8vh',marginRight:'24vh'}}>
+                    </Col>
+                    <Col sm={2} className='green'
+                        // style={{width:'16vh',minHeight:'8vh',background:'#527c88',marginTop:'8vh',marginRight:'24vh'}}                        
+                        >
                         LOGIN
-                    </div>
-                </div>
-                <div style={{position:'absolute',right:'24vh'}}>
+                    </Col>
+                </Row>
+                <Row className='mt-5'>
+                    <Col sm={8}>
+                        <div 
+                            style={{width:'84vh',minHeight:'8vh',background:'#FEEBEA',color:'#527c88',fontSize:90,marginTop:'16vh',marginLeft:'24vh'}}
+                            className='rounded row justify-content-start'
+                            >
+                            Health Advantage
+                        </div>
+                        <div 
+                            style={{width:'84vh',background:'#527c88',marginTop:'1vh',marginLeft:'24vh'}}
+                            className='rounded mt-5 mb-4'
+                            >
+                                It connects home healthcare professionals with your nursing and integrated home care needs.
+                                <br/>
+                                You can get in touch with the best professionals with their specializations and patient reviews.
+                        </div>
+                        <div 
+                            className='row justify-content-between'
+                            style={{position:'absolute',width:'84vh',minHeight:'8vh',marginTop:'12vh',marginLeft:'24vh'}}
+                            >
+                            <div 
+                                style={{width:'32vh',background:'#B5958E'}}
+                                className='rounded'>
+                                looking for assistance
+                            </div>
+                            <div 
+                                style={{width:'32vh',background:'#B5958E'}}
+                                className='rounded'>
+                                licensed healthcare practitioners area
+                            </div>
+                        </div>
+                    </Col>
+                    <Col sm={4}>
+                        <img src={doctor} />
+                    </Col>
+                </Row>
+
+
+                {/* <div style={{position:'absolute',right:'24vh'}}>
                     <img src={doctor} />
                 </div>
                 <div 
                     style={{width:'84vh',minHeight:'8vh',background:'#FEEBEA',color:'#527c88',fontSize:90,marginTop:'16vh',marginLeft:'24vh'}}
-                    className='rounded row justify-content-start'>
+                    className='rounded row justify-content-start'
+                    >
                     Health Advantage
                 </div>
-                <div style={{width:'84vh',background:'#527c88',marginTop:'1vh',marginLeft:'24vh'}}
-                    className='rounded mt-5 mb-4'>
+                <div 
+                    style={{width:'84vh',background:'#527c88',marginTop:'1vh',marginLeft:'24vh'}}
+                    className='rounded mt-5 mb-4'
+                    >
                         It connects home healthcare professionals with your nursing and integrated home care needs.
                         <br/>
                         You can get in touch with the best professionals with their specializations and patient reviews.
                 </div>
-                <div className='row justify-content-between'
-                    style={{position:'absolute',width:'84vh',minHeight:'8vh',marginTop:'12vh',marginLeft:'24vh'}}>
+                <div 
+                    className='row justify-content-between'
+                    style={{position:'absolute',width:'84vh',minHeight:'8vh',marginTop:'12vh',marginLeft:'24vh'}}
+                    >
                     <div 
                         style={{width:'32vh',background:'#B5958E'}}
                         className='rounded'>
@@ -60,20 +109,29 @@ const Home=()=>{
                         className='rounded'>
                         licensed healthcare practitioners area
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div 
-                style={{width:'100%',minHeight:'50vh',background:'#FFFFFF',position:'absolute',zIndex:'1',color:'#2e4450',fontSize:20}}
+                style={{minHeight:'50vh',background:'#FFFFFF',position:'absolute',zIndex:'1',color:'#2e4450',fontSize:20}}
                 className='row justify-content-center mx-auto'
                 >
-                <Card style={{width:'24rem',height:'24rem',background:'#FEEBEA',borderColor:'#B5958E' }} className='mx-5 my-auto'>
+                <Card 
+                    style={{width:'24rem',height:'24rem',background:'#FEEBEA',borderColor:'#B5958E' }} 
+                    className='mx-5 my-auto'
+                    >
                     <Card.Body>
+
                         <AiOutlineEyeInvisible size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
-                        <Card.Title className='mb-3' style={{fontWeight:'bold'}}>no personal data required</Card.Title>
-                        <Card.Text className='mx-4' style={{fontWeight:'lighter'}}>
-                        email and zipcode are enough, then choose a password and publish your first request for home assistance
-                        </Card.Text>
+
+                        <Card.Title 
+                            className='mb-3' 
+                            style={{fontWeight:'bold'}}
+                            >no personal data required</Card.Title>
+                        <Card.Text 
+                            className='mx-4' 
+                            style={{fontWeight:'lighter'}}
+                            >email and zipcode are enough, then choose a password and publish your first request for home assistance</Card.Text>
                         <Button
                             style={{width:'8rem',background:'#FFFFFF',borderColor:'#B5958E',color:'#2e4450',position:'absolute',bottom:'2rem',right:'8rem'}}
                             >Read more</Button>
@@ -186,7 +244,7 @@ const Home=()=>{
                         </Row>
                         </div>
                     </div>
-            </div>
+                </div>
             </>
             }
 
