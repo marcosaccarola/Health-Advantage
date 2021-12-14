@@ -14,7 +14,7 @@
   background: #b5958e;
 }
 .green {
-  background: #527c88;
+  background: #527c88 !important;
 }
 .red {
   background: "red";
@@ -40,6 +40,15 @@
 }
 .vw90 {
   max-width: 90%;
+}
+.greenButtons {
+  background: #527c88 !important;
+  font-family: "mulish", sans-serif !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  border-width: 2px !important;
+  font-size: 24px !important;
+  /* width: 36vh; */
 }
 .nudeButtons {
   background: #b5958e !important;
@@ -75,7 +84,14 @@
 }
 .borderGreen {
   border-color: #2e4450 !important;
-  border-width: 2px !important;
+  border-width: 1px !important;
+}
+
+.navText {
+  font-size: 32px !important;
+}
+.textColor {
+  color: #2e4450 !important;
 }
 
 /* .login{

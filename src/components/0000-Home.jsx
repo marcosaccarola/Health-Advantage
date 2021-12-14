@@ -1,10 +1,12 @@
 // import LandingInterface from "./0100-LandingInterface"
 import {useState} from 'react'
 // import Dashboard from "./0200-Dashboard"
-import {Button,Card, Col, Form, Nav, Row} from "react-bootstrap"
+import {Button,Card, Col, Container, Form, Nav, Navbar, Row} from "react-bootstrap"
 //! import { getListOfInterventions } from "../utilities/fetches"
 import doctor from '../assets/banner-img.png'
 import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/ai";
+import { GiElephant } from "react-icons/gi";
+import { IoMdLogIn } from "react-icons/io";
 import elderlyWithNurse from '../assets/elderlyWithNurse.png'
 import marco from '../assets/parrot1.png'
 import HomeForm from "./0010-HomeForm"
@@ -27,12 +29,27 @@ const Home=()=>{
             {!currentUser&&
             <>
             <div className='container-fluid pink'>
-                <Row className='justify-content-between vw90 mx-auto mt-3 pink'>
-                    <Col sm={2} className='green'>                        
-                        Logo
+                <Row className='justify-content-center vw90 mx-auto mt-3'>
+                    <Col sm={1} className='megaTitle'>                        
+                        <GiElephant />
                     </Col>
-                    <Col sm={2} className='green'>                        
-                        Login
+                    <Col sm={8} className='mt-auto'>
+                        <Navbar>
+                            <Container>
+                            <Navbar.Brand href="#home">Health Advantage</Navbar.Brand>
+                            <Nav className="me-auto">
+                            <Nav.Link href="#home">Sign in</Nav.Link>
+                            <Nav.Link href="#features"></Nav.Link>
+                            <Nav.Link href="#pricing">Login</Nav.Link>
+                            </Nav>
+                            </Container>
+                        </Navbar>
+                        {/* <Button className='rounded greenButtons ml-auto mt-auto mb-4'>                               
+                            Login
+                        </Button> */}
+                    </Col>
+                    <Col sm={1} className='megaTitle '>                        
+                        <IoMdLogIn />
                     </Col>
                 </Row>
                 <Row className='mt-5 vw80 mx-auto pink'>
@@ -112,8 +129,8 @@ const Home=()=>{
                     <Row className='submegaTitle pink justify-content-center mx-auto my-5 rounded'>
                         Enter your first request for home health care           
                     </Row>
-                    <Row className='justify-content-center mt-auto'>
-                        <img src={elderlyWithNurse} className='w-100 mt-auto' />                                                                                                                  
+                    <Row className='d-flex justify-content-center align-items-flex-end'>
+                        <img src={elderlyWithNurse} className='self-item-flex-bottom w-100' />                                                                                                                  
                     </Row>
                 </Col>                                                                        
                 <Col sm={6}>
