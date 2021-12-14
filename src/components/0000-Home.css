@@ -44,6 +44,17 @@
   font-size: 24px !important;
   width: 36vh;
 }
+.card {
+  background: #feebea !important;
+  font-family: "mulish", sans-serif !important;
+  color: #527c88 !important;
+  border-color: #b5958e !important;
+  border-width: 2px !important;
+  font-size: 18px !important;
+  width: 24rem;
+  height: 24rem;
+}
+
 /* .login{
     width:'16vh',min-height:'8vh',marginTop:'8vh',marginLeft:'24vh'
 } */

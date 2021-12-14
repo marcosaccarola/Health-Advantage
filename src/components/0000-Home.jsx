@@ -110,13 +110,14 @@ const Home=()=>{
                 </div> */}
             </div>
 
-            <div 
-                style={{minHeight:'50vh',background:'#FFFFFF',position:'absolute',zIndex:'1',color:'#2e4450',fontSize:20}}
-                className='row justify-content-center mx-auto'
+            <Row 
+                // style={{minHeight:'50vh',background:'#FFFFFF',position:'absolute',zIndex:'1',color:'#2e4450',fontSize:20}}
+                className=' pink justify-content-around mx-5 my-5'
                 >
                 <Card 
-                    style={{width:'24rem',height:'24rem',background:'#FEEBEA',borderColor:'#B5958E' }} 
-                    className='mx-5 my-auto'
+                    // style={{width:'24rem',height:'24rem',background:'#FEEBEA',borderColor:'#B5958E' }} 
+                    // style={{width:'18rem'}}
+                    className='card my-5'
                     >
                     <Card.Body>
 
@@ -135,7 +136,10 @@ const Home=()=>{
                             >Read more</Button>
                     </Card.Body>
                 </Card>
-                <Card style={{width:'24rem',height:'24rem', background:'#FEEBEA',borderColor:'#B5958E' }} className='mx-5 my-auto'>
+                <Card 
+                    // style={{width:'24rem',height:'24rem', background:'#FEEBEA',borderColor:'#B5958E' }} 
+                    className='card my-5'
+                    >
                     <Card.Body className=''>
                         <AiOutlineSmile size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' />
                         <Card.Title className='mb-3' style={{fontWeight:'bold'}}>it's completely free</Card.Title>
@@ -147,7 +151,9 @@ const Home=()=>{
                             >Read more</Button>
                     </Card.Body>
                 </Card>
-                <Card style={{ width: '24rem',height:'24rem', background:'#FEEBEA',borderColor:'#B5958E' }} className='mx-5 my-auto'>
+                <Card 
+                    // style={{ width: '24rem',height:'24rem', background:'#FEEBEA',borderColor:'#B5958E' }} 
+                    className='card my-5'>
                     <Card.Body>
                         <AiOutlineLock size='72px' style={{color:'#2e4450'}} className='mt-3 mb-3' /> 
                         <Card.Title className='mb-3' style={{fontWeight:'bold'}}>all data is encrypted</Card.Title>
@@ -159,7 +165,7 @@ const Home=()=>{
                             >Read more</Button>
                     </Card.Body>
                 </Card>
-            </div>
+            </Row>
 
             <div style={{position:'absolute',width: '100%',minHeight:'100vh',background:'#FEEBEA',marginTop:'50vh'}}>
                     <div
