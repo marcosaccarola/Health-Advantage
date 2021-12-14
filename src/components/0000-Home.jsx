@@ -38,9 +38,9 @@ const Home=()=>{
                             <Container>
                             <Navbar.Brand href="#home">Health Advantage</Navbar.Brand>
                             <Nav className="me-auto">
-                            <Nav.Link href="#home">Sign in</Nav.Link>
+                            <Nav.Link href="#home">Sign un</Nav.Link>
                             <Nav.Link href="#features"></Nav.Link>
-                            <Nav.Link href="#pricing">Login</Nav.Link>
+                            <Nav.Link href="#pricing">Log in</Nav.Link>
                             </Nav>
                             </Container>
                         </Navbar>
