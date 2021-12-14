@@ -51,7 +51,7 @@ const Home=()=>{
                                 <br/>
                                 You can get in touch with the best professionals with their specializations and patient reviews.
                         </Row>
-                        <Row style={{height:'9vh'}}></Row>
+                        <Row style={{height:'6vh'}}></Row>
                         <Row 
                             className='row justify-content-center mt-5'
                             // style={{position:'absolute',width:'84vh',minHeight:'8vh',marginTop:'12vh',marginLeft:'24vh'}}
