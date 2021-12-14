@@ -38,7 +38,7 @@ const Home=()=>{
                             <Container>
                             <Navbar.Brand href="#home">Health Advantage</Navbar.Brand>
                             <Nav className="me-auto">
-                            <Nav.Link href="#home">Sign un</Nav.Link>
+                            <Nav.Link href="#home">Sign in</Nav.Link>
                             <Nav.Link href="#features"></Nav.Link>
                             <Nav.Link href="#pricing">Log in</Nav.Link>
                             </Nav>
@@ -164,7 +164,7 @@ const Home=()=>{
                                             <a href='https://github.com/marcosaccarola' style={{color:'#FFFFFF'}}> GitHub</a>
                                             ,
                                             <span style={{color:'#FFFFFF'}}> Linkedin</span>
-                                            , and around here. Or you can write me an <a href='www.google.com' style={{color:'#FFFFFF'}}>email</a>.</span>
+                                            , and around here. Or you can write me an <a href='' style={{color:'#FFFFFF'}}>email</a>.</span>
                                         </Nav.Item>
                                     </Col>
                                 </Row>
