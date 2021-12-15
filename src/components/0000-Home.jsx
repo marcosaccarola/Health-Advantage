@@ -23,6 +23,12 @@ const Home=()=>{
     // getListOfInterventions({setRequests})
     // }, [])
 
+    const openDemo=()=>{
+        setCurrentUser(
+            {"_id":{"$oid":"61b148b616145441832aedce"},"email":"pat","password":"$2b$10$e/5Vp.0HTPtMyAOU/g370uxocIwNM1ruwjDOvRTd6wahBrCvH79WW","zipcode":30174,"role":"Patient","firstName":"Gustavo","lastName":"Merenda","bio":"I'm patient zero.","photo":"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80","published":[{"$oid":"61b28982ae791b1d6cc63669"},{"$oid":"61b2899eae791b1d6cc6366d"}],"createdAt":{"$date":"2021-12-09T00:07:18.264Z"},"updatedAt":{"$date":"2021-12-09T22:56:30.530Z"},"__v":0}
+        )
+    }
+
     return (
         <div className='container-fluid body'>
 
@@ -38,6 +44,8 @@ const Home=()=>{
                             <Container>
                             <Navbar.Brand href="#home">Health Advantage</Navbar.Brand>
                             <Nav className="me-auto">
+                            <Nav.Link onClick={openDemo}>Demo</Nav.Link>
+                            <Nav.Link href="#features"></Nav.Link>
                             <Nav.Link href="#home">Sign in</Nav.Link>
                             <Nav.Link href="#features"></Nav.Link>
                             <Nav.Link href="#pricing">Log in</Nav.Link>
