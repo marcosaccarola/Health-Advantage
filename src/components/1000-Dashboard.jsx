@@ -1,5 +1,7 @@
-import { Button, Container, Navbar, NavDropdown, Row } from "react-bootstrap"
+import { Button, Col, Container, Navbar, NavDropdown, Row } from "react-bootstrap"
 import './0000-Home.css'
+import { GiElephant } from "react-icons/gi";
+
 
 const NewDashboard=({currentUser,setCurrentUser})=>{
 
@@ -25,7 +27,12 @@ const NewDashboard=({currentUser,setCurrentUser})=>{
                 </Container>
             </Navbar> */}
 
-            <Row className='pink vh-100'>
+            <Row className='nude vh-100 justify-content-center'>
+                <Col sm={8} className='pink my-5 rounded border border-white'>
+                    <Row className='bg-white'>
+                        <Col sm={2} className='green'><GiElephant /></Col>
+                    </Row>
+                </Col>
             </Row>
         </>
     )
