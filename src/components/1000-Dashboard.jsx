@@ -30,7 +30,9 @@ const NewDashboard=({currentUser,setCurrentUser})=>{
             <Row className='nude vh-100 justify-content-center'>
                 <Col sm={8} className='pink my-5 rounded border border-white'>
                     <Row className='bg-white'>
-                        <Col sm={2} className='green'><GiElephant /></Col>
+                        <Col sm={2} className='megaTitle'><GiElephant /></Col>
+                        <Col sm={8} className='megaTitle'></Col>
+                        <Col sm={2} className='megaTitle'><img src={currentUser.photo} className='avatar borderGreen' /></Col>
                     </Row>
                 </Col>
             </Row>

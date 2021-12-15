@@ -98,6 +98,13 @@
   color: #2e4450 !important;
 }
 
+.avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 /* .login{
     width:'16vh',min-height:'8vh',marginTop:'8vh',marginLeft:'24vh'
 } */
