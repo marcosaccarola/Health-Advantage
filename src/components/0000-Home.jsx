@@ -7,7 +7,7 @@ import doctor from '../assets/banner-img.png'
 import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/ai";
 import { GiElephant } from "react-icons/gi";
 import { IoMdLogIn } from "react-icons/io";
-import elderlyWithNurse from '../assets/elderlyWithNurse.png'
+import elderlyWithNurse from '../assets/nurse2.jpg'
 import marco from '../assets/parrot1.png'
 import HomeForm from "./0010-HomeForm"
 import NewDashboard from "./1000-Dashboard"
@@ -28,7 +28,7 @@ const Home=()=>{
 
             {!currentUser&&
             <>
-            <div className='container-fluid pink'>
+            <div className='container-fluid '>
                 <Row className='justify-content-center vw90 mx-auto mt-3'>
                     <Col sm={1} className='megaTitle'>                        
                         <GiElephant />
@@ -124,17 +124,17 @@ const Home=()=>{
                 </Card>
             </Row>
 
-            <Row className='container-fluid nude vw80 mx-auto rounded'>
+            <Row className='container-fluid nude vw80 mx-auto rounded border border-white'>
                 <Col sm={6}>
-                    <Row className='submegaTitle pink justify-content-center mx-auto my-5 rounded'>
+                    <Row className='submegaTitle2 pink justify-content-center mx-4 my-5 rounded border border-white'>
                         Enter your first request for home health care           
                     </Row>
-                    <Row className='d-flex justify-content-center align-items-flex-end'>
-                        <img src={elderlyWithNurse} className='self-item-flex-bottom w-100' />                                                                                                                  
+                    <Row className='container'>
+                        <img src={elderlyWithNurse} className='w-100 ml-3 rounded border border-white' />                                                                                                                  
                     </Row>
                 </Col>                                                                        
                 <Col sm={6}>
-                    <Row className='pink justify-content-center mx-auto my-5 rounded'>
+                    <Row className='pink justify-content-center mx-auto my-5 rounded border border-white'>
                         <HomeForm setCurrentUser={setCurrentUser} />
                     </Row>
                 </Col>                                                                        
