@@ -89,21 +89,28 @@ const ThisPatientInterventions=({intervention})=>{
                                 }
                                 {intervention.answers.length!==0&&intervention.answers.map((a)=>
                                 <Row className='pink border rounded mb-4 mx-5'>
-                                <Col sm={2} className='mt-3 mb-2'>
+                                <Col sm={2} className=' mb-2'>
                                 <Image src={a.photo} 
                                     style={{width:100,height:100,objectFit:'cover',borderRadius:'50%'}}
-                                    className='ml-5 mt-3'
+                                    className='ml-4 mt-3'
                                     />
                                 </Col>
-                                <Col sm={10} className='mt-3 mb-2'>
-                                    <Card.Title className=' font-weight-normal row justify-content-start ml-2'>
+                                <Col sm={4} className='mt-3 mb-2'>
+                                    <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
+                                        New service offer from:</Card.Title>
+                                    <Card.Title className=' font-weight-bold row justify-content-start ml-2'>
                                         {a.profession} {a.firstName} {a.lastName}</Card.Title>
+
+                                    <Card.Title className=' font-weight-bold row justify-content-start ml-2'>
+                                        {a.email}</Card.Title>
+                                </Col>
+                                <Col sm={5} className='mt-3 mb-2'>
+                                    <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
+                                        Info:</Card.Title>
                                     <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
                                         {a.educationalQualification}</Card.Title>
                                     <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
                                         {a.medicalBoard}</Card.Title>
-                                    <Card.Title className=' font-weight-normal row justify-content-start ml-2'>
-                                        {a.email}</Card.Title>
                                 </Col>
                                 </Row>
                                 )}
