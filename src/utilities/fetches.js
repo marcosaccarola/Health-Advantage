@@ -57,6 +57,7 @@ export const getUser=async({reqBody,setCurrentUser})=>{
             })
             if(responsePractitionersLogin.ok){
                 let user=await responsePractitionersLogin.json()
+                console.log(user)
                 setCurrentUser(user)
             }else{
                 getPatient({reqBody,setCurrentUser})
@@ -75,6 +76,7 @@ const getPatient=async({reqBody,setCurrentUser})=>{
             })
             if(responsePatientsLogin.ok){
                 let user=await responsePatientsLogin.json()
+                console.log(user)
                 setCurrentUser(user)
             }else{
                 console.log('User not found')

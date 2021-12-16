@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { Form,Button } from "react-bootstrap"
+import { Form,Button, Row } from "react-bootstrap"
 // import practitioners from '../dbExample/practitioners.json'
 // import patients from '../dbExample/patients.json'
 import { getUser } from "../utilities/fetches.js"
 
-const LoginRegisterForm=({setCurrentUser,currentUser})=>{
+const LoginRegisterForm=({setCurrentUser,currentUser,handleLoginModal})=>{
 
     // *_________________________________________ ONLY-FE ver.
     // const[emailListener,setEmailListener]=useState('')
@@ -40,30 +40,36 @@ const LoginRegisterForm=({setCurrentUser,currentUser})=>{
     const loginUser=()=>{
         const reqBody={'email':emailListener,'password':pwListener}
         getUser({reqBody,setCurrentUser})
+        handleLoginModal()
+
     }
 
 
     return(
         <div>
-            <Form.Group style={{position:'absolute',marginLeft:'30%',marginRight:'30%',marginTop:180,minWidth:400}}>
+            <Form.Group 
+                // style={{position:'absolute',marginLeft:'30%',marginRight:'30%',marginTop:180,minWidth:400}}
+                >
                 <Form.Control 
                     className='bg-light text-secondary border-info' 
                     size="lg" type="text" 
                     value={emailListener}
                     onChange={(e)=>handleChangeEmail(e)}
-                    placeholder="email" />
+                    placeholder="Email" />
                 <br />
                 <Form.Control
                     className='bg-light text-secondary border-info'
                     size="lg" type="password"
                     value={pwListener}
                     onChange={(e)=>handleChangePw(e)}
-                    placeholder="password" />
-                <Button 
-                    className='btn-warning text-muted border-info btn-lg btn-block mt-5'
-                    onClick={loginUser}>
-                        <span className='row justify-text-start ml-1'>Click here for logging</span>
-                </Button>
+                    placeholder="Password" />
+                <Row className='mx-auto'>
+                    <Button 
+                        className='btn-warning text-muted border-info btn-lg mt-4 ml-auto'
+                        onClick={loginUser}>
+                            <span className='row justify-text-start mx-2'>Log in</span>
+                    </Button>
+                </Row>
             </Form.Group>
 
         </div>

@@ -61,7 +61,7 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                                 you have not yet published a request for home health care, click publish
                             </div>
                             :
-                            <Row className='container-fluid border rounded mx-5'>
+                            <Row className='container-fluid mx-5'>
                                 {currentUser&&currentUser.published.map((intervention)=>(
                                     <ThisPatientInterventions intervention={intervention}/>
                                 ))}

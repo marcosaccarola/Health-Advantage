@@ -36,6 +36,7 @@ const ThisPatientInterventions=({intervention})=>{
                     <Card.Body> */}
                         {/* <div className='row mx-4'>
                         </div> */}
+                    <Row className='container-fluid border rounded mb-4'>
 
                         <Row className='container-fluid mx-4 mt-4'>
                             <Col className='my-1 ml-auto'>
@@ -79,6 +80,7 @@ const ThisPatientInterventions=({intervention})=>{
                             </Button>
                         </Row>
 
+
                 {openedMoreInterventInfo.indexOf(intervention.requestId)!==-1&&
                     <Card className='border-light bg-warning text-dark'>
                         <Card.Body>
@@ -91,8 +93,10 @@ const ThisPatientInterventions=({intervention})=>{
                 }
                 {(messagesIsOpen.indexOf(intervention.requestId)!==-1)&&
                     <Messages intervention={intervention} />
-                
+                    
                 }
+
+                </Row>
                     {/* </Card.Body>
                 </Card> */}
             {/* ))} */}
