@@ -102,7 +102,7 @@ const ThisPatientInterventions=({intervention})=>{
                                         {a.profession} {a.firstName} {a.lastName}</Card.Title>
 
                                     <Card.Title className=' font-weight-bold row justify-content-start ml-2'>
-                                        {a.email}</Card.Title>
+                                        <a href=''>{a.email}</a></Card.Title>
                                 </Col>
                                 <Col sm={5} className='mt-3 mb-2'>
                                     <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
