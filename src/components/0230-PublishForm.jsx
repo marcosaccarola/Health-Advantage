@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {Button, Card, Form} from "react-bootstrap"
+import {Button, Card, Form,Row} from "react-bootstrap"
 import {publishIntervention} from '../utilities/fetches.js'
 
 const PublishForm=({currentUser,setCurrentUser,requests,setRequests})=>{
@@ -46,47 +46,50 @@ const PublishForm=({currentUser,setCurrentUser,requests,setRequests})=>{
         <div>
             <Button
                 style={{borderWidth:4}}
-                className="border-warning rounded-pill bg-light text-dark px-5 my-5" 
+                className="border-warning rounded-pill bg-light text-dark px-5 my-4" 
                 onClick={handleForm}
                 >{formIsOpen===false?'Publish a request':'Cancel'}
             </Button>
 
             {formIsOpen===true&&
                 <div>
-                    <Card 
-                        style={{ width: '80rem', borderWidth:8 }}
-                        className='text-dark bg-light border-warning'
-                        >
-                        <Form className='mx-5 my-5'>
-                            <Form.Group controlId="exampleForm.ControlInput1">
-                                <Form.Control 
-                                    type="number" placeholder="zipcode of the intervention site"
-                                    onChange={((e)=>setZipcode(e.target.value))} />
-                            </Form.Group>
+                    <Row className='justify-content-center'>
+                        <Card 
+                            style={{ width: '50rem'}}
+                            className='text-dark border'
+                            >
+                            <Form className='mx-5 my-5'>
+                                <Form.Group controlId="exampleForm.ControlInput1">
+                                    <Form.Control 
+                                        type="number" placeholder="zipcode of the intervention site"
+                                        onChange={((e)=>setZipcode(e.target.value))} />
+                                </Form.Group>
 
-                            <Form.Group className='my-4' controlId="exampleForm.ControlInput1">
-                                <Form.Control
-                                    type="text" 
-                                    placeholder="type of intervention (e.g. blood pressure measurement, medication, injection)" 
-                                    onChange={(e)=>setIntervention(e.target.value)} />
-                            </Form.Group>
+                                <Form.Group className='my-4' controlId="exampleForm.ControlInput1">
+                                    <Form.Control
+                                        type="text" 
+                                        placeholder="type of intervention (e.g. blood pressure measurement, medication, injection)" 
+                                        onChange={(e)=>setIntervention(e.target.value)} />
+                                </Form.Group>
 
-                            <Form.Group controlId="exampleForm.ControlInput1">
-                                <Form.Control 
-                                    type="text" 
-                                    placeholder="more info (e.g. days of the week and times of preference, skills required)"
-                                    onChange={((e)=>setInfo(e.target.value))} />
-                            </Form.Group>
-                        </Form>
-                    </Card>
+                                <Form.Group controlId="exampleForm.ControlInput1">
+                                    <Form.Control 
+                                        type="text" 
+                                        placeholder="more info (e.g. days of the week and times of preference, skills required)"
+                                        onChange={((e)=>setInfo(e.target.value))} />
+                                </Form.Group>
+                            </Form>
+                        </Card>
+                    </Row>
 
 
-                    <Button
-                        style={{borderWidth:4}}
-                        className="border-warning rounded-pill bg-light text-dark px-5 my-5" 
-                        onClick={sendRequest}
-                        >Publish
-                    </Button>
+                        <Button
+                            style={{borderWidth:4}}
+                            className="border-warning rounded-pill bg-light text-dark px-5 my-4" 
+                            onClick={sendRequest}
+                            >Publish
+                        </Button>
+
 
                 </div>
             }

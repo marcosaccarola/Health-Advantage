@@ -22,7 +22,7 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
         <div  className='container-fluid body min-vh-100 my-5'>
                        
             <Card 
-                style={{ width: '70rem' }} 
+                style={{ width: '80rem' }} 
                 className={currentUser.role==='Practitioner'
                     ?'text-dark bg-light border-info mx-auto'
                     :'text-dark bg-light border mx-auto'}
