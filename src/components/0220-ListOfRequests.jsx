@@ -23,7 +23,7 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,c
                 style={{backgroundColor:'#E9ECEF',width: '80rem' }} 
                 className='border-info text-light mx-auto my-5'>
                 <div className='mt-4 mb-5'></div>
-            {requests&&requests.map((intervention)=>               
+            {requests&&requests.slice(0).reverse().map((intervention)=>               
                 <Card 
                 style={{ width: '70rem', borderWidth:2 }} 
                 className='border-muted text-light mx-auto mb-5'>

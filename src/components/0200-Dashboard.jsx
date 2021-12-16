@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
-import { Card, Row } from "react-bootstrap"
+import { Card, Col, Container, Nav, Navbar, Row } from "react-bootstrap"
 import UserInfoCard from "./0201-UserInfoCard"
 import InterventionsTakenInCharge from "./0210-InterventionsTakenInCharge"
 import ListOfRequests from "./0220-ListOfRequests"
 import PublishForm from "./0230-PublishForm"
 import ThisPatientInterventions from "./0240-ThisPatientInterventions"
+import { GiElephant } from "react-icons/gi";
+import { IoMdLogOut } from "react-icons/io";
 
 const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
     const[offeredServices,setOfferedServices]=useState([])
@@ -17,9 +19,35 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
         //     }
         // }
     }, [])
+    const logout=()=>{
+        setCurrentUser()
+    }
 
     return(
         <div  className='container-fluid body min-vh-100 my-5'>
+
+            <Row className='justify-content-center vw80 mx-auto mt-3 mb-5'>
+                <Col sm={1} className='megaTitle'>                        
+                    <GiElephant  />
+                </Col>
+                <Col sm={8} className='mt-auto'>
+                    <Navbar>
+                        <Container>
+                        <Navbar.Brand >Health Advantage</Navbar.Brand>
+                        <Nav className="me-auto">
+                        {/* <Nav.Link >Demo</Nav.Link>
+                        <Nav.Link ></Nav.Link>
+                        <Nav.Link >Sign in</Nav.Link>
+                        <Nav.Link ></Nav.Link> */}
+                        <Nav.Link onClick={logout} >Log out</Nav.Link>
+                        </Nav>
+                        </Container>
+                    </Navbar>
+                </Col>
+                <Col sm={1} className='megaTitle '>                        
+                    <IoMdLogOut onClick={logout}  />
+                </Col>
+            </Row>
                        
             <Card 
                 style={{ width: '80rem',backgroundColor:'#E9ECEF' }} 

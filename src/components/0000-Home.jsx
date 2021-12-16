@@ -90,6 +90,7 @@ const Home=()=>{
                         <IoMdLogIn onClick={featureUnderDevelopment} />
                     </Col>
                 </Row>
+
                 <Row className='mt-5 vw80 mx-auto pink'>
                     <Col sm={8} className='mt-auto mb-5'>
                         <Row className='megaTitle justify-content-center mb-4'>
@@ -101,7 +102,9 @@ const Home=()=>{
                         </Row>
                         <Row style={{height:'6vh'}}></Row>
                         <Row className='row justify-content-center mt-5'>                                                       
-                            <Button className='rounded nudeButtons mx-auto' onClick={featureUnderDevelopment}>                               
+                            <Button className='rounded nudeButtons mx-auto' 
+                                onClick={featureUnderDevelopment}
+                                >                               
                                 Looking for assistance
                             </Button>
                             <Button className='rounded nudeButtons mx-auto' onClick={featureUnderDevelopment}>                               
