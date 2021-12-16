@@ -57,6 +57,16 @@ const InterventionsTakenInCharge=({intervention,currentUser,setCurrentUser})=>{
                             onClick={()=>handleMessages(intervention.requestId)}>Send a message to patient
                         </Button>
                     </div> */}
+                    
+
+                    <div className='row justify-content-between mx-5'>
+                        <div className='my-1'>
+                            <Card.Title className='text-muted font-weight-normal row justify-content-start'>
+                                Name: {intervention.email}</Card.Title>
+                            <Card.Title className='text-dark row justify-content-start ml-2'>
+                                {intervention.interventionRequested}</Card.Title>
+                        </div>
+                    </div>
                     <div className='row justify-content-between mx-5'>
                         <div className='my-1'>
                             <Card.Title className='text-muted font-weight-normal row justify-content-start'>
