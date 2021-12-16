@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Card,Button, Row, Col } from "react-bootstrap"
+import { Card,Button, Row, Col,Image } from "react-bootstrap"
 // import MoreInterventionInfo from "./0211-MoreInterventionInfo"
 import Messages from "./0212-Messages"
 import './0000-Home.css'
@@ -83,10 +83,19 @@ const ThisPatientInterventions=({intervention})=>{
 
                         <Row className='container-fluid mx-4'>
                             <Col className='my-1'>
-                                <Card.Title className='text-muted font-weight-normal row justify-content-start'>
-                                    Answers</Card.Title>
+                                {intervention.answers.length!==0&&
+                                    <Card.Title className='text-muted font-weight-normal row mb-4'>
+                                        Answers:</Card.Title>
+                                }
                                 {intervention.answers.length!==0&&intervention.answers.map((a)=>
-                                <div className='container-fluid'>
+                                <Row className='pink border rounded mb-4 mx-5'>
+                                <Col sm={2} className='mt-3 mb-2'>
+                                <Image src={a.photo} 
+                                    style={{width:100,height:100,objectFit:'cover',borderRadius:'50%'}}
+                                    className='ml-5 mt-3'
+                                    />
+                                </Col>
+                                <Col sm={10} className='mt-3 mb-2'>
                                     <Card.Title className=' font-weight-normal row justify-content-start ml-2'>
                                         {a.profession} {a.firstName} {a.lastName}</Card.Title>
                                     <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
@@ -95,7 +104,8 @@ const ThisPatientInterventions=({intervention})=>{
                                         {a.medicalBoard}</Card.Title>
                                     <Card.Title className=' font-weight-normal row justify-content-start ml-2'>
                                         {a.email}</Card.Title>
-                                </div>
+                                </Col>
+                                </Row>
                                 )}
                             </Col>
                         </Row>
