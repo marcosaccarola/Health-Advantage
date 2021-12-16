@@ -95,7 +95,7 @@ const Home=()=>{
             </div>
 
             <Row className='bg-light justify-content-around mx-5 mb-5'>                               
-                <Card className='card my-5'>                                       
+                <Card className='cardHome my-5'>                                       
                     <Card.Body>
                         <AiOutlineEyeInvisible size='72px' className='mt-3 mb-3' />                         
                         <Card.Title className='font-weight-bold mb-3'>                           
@@ -109,7 +109,7 @@ const Home=()=>{
                         </Button>
                     </Card.Body>
                 </Card>
-                <Card className='card my-5'>                                       
+                <Card className='cardHome my-5'>                                       
                     <Card.Body>
                         <AiOutlineSmile size='72px' className='mt-3 mb-3' />                           
                         <Card.Title className='font-weight-bold mb-3'>                        
@@ -123,7 +123,7 @@ const Home=()=>{
                         </Button>
                     </Card.Body>
                 </Card>
-                <Card className='card my-5'>                   
+                <Card className='cardHome my-5'>                   
                     <Card.Body>
                         <AiOutlineLock size='72px' className='mt-3 mb-3' />                       
                         <Card.Title className='font-weight-bold mb-3'>                           

@@ -84,7 +84,7 @@ const UserInfoCard=({currentUser})=>{
             </div>
         :
         // *_____________________________________ PATIENT INFO
-            <Row className='mx-5 mt-4 mb-5 border border-warning'>
+            <Row className='mx-5 mt-4 mb-5'>
                 {/* <Image src={currentUser.photo} 
                     style={{width:100,height:100,objectFit:'cover',borderRadius:'50%'}}
                     className='mr-5'

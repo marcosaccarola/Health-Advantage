@@ -22,10 +22,10 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
         <div  className='container-fluid body min-vh-100 my-5'>
                        
             <Card 
-                style={{ width: '80rem' }} 
+                style={{ width: '70rem' }} 
                 className={currentUser.role==='Practitioner'
                     ?'text-dark bg-light border-info mx-auto'
-                    :'text-dark bg-light border-warning mx-auto'}
+                    :'text-dark bg-light border mx-auto'}
                 >
                 <Card.Body>
 
@@ -33,7 +33,7 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
 
                     <UserInfoCard currentUser={currentUser} />
 
-                    <Row className='container-fluid'>
+                    <Row className=''>
 
 
                         {currentUser.role==='Practitioner'
@@ -61,7 +61,7 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                                 you have not yet published a request for home health care, click publish
                             </div>
                             :
-                            <Row className='container-fluid'>
+                            <Row className='container-fluid border rounded mx-5'>
                                 {currentUser&&currentUser.published.map((intervention)=>(
                                     <ThisPatientInterventions intervention={intervention}/>
                                 ))}

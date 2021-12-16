@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Card,Button, Row, Col } from "react-bootstrap"
 // import MoreInterventionInfo from "./0211-MoreInterventionInfo"
 import Messages from "./0212-Messages"
+import './0000-Home.css'
 
 const ThisPatientInterventions=({intervention})=>{
 
@@ -35,7 +36,8 @@ const ThisPatientInterventions=({intervention})=>{
                     <Card.Body> */}
                         {/* <div className='row mx-4'>
                         </div> */}
-                        <Row className='container-fluid mx-5 border border-success'>
+
+                        <Row className='container-fluid mx-4 mt-4'>
                             <Col className='my-1 ml-auto'>
                                 <Card.Title className='text-muted font-weight-normal row justify-content-start'>
                                     Intervention requested</Card.Title>
@@ -49,16 +51,18 @@ const ThisPatientInterventions=({intervention})=>{
                                     {intervention.zipcode}</Card.Title>
                             </Col>
                         </Row>
-                        <Row className='row mx-5'>
-                            <div className='my-1'>
+
+
+                        <Row className='container-fluid mx-4'>
+                            <Col className='my-1'>
                                 <Card.Title className='text-muted font-weight-normal row justify-content-start'>
                                     Info</Card.Title>
                                 <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
                                     {intervention.moreInfo}</Card.Title>
-                            </div>
+                            </Col>
                         </Row>
 
-                        <div className='row justify-content-end mx-5 mt-3 text-light'>
+                        <Row className='container-fluid justify-content-end mx-4 mt-3 mb-4 text-light'>
                             {/* <Button 
                                 style={{borderWidth:2}}
                                 className="bg-light rounded-pill text-dark border-warning px-5" 
@@ -67,10 +71,13 @@ const ThisPatientInterventions=({intervention})=>{
                             </Button> */}
                             <Button 
                                 style={{borderWidth:2}}
-                                className="bg-light rounded-pill text-dark border-warning px-5 mt-4" 
-                                onClick={()=>handleMessages(intervention.requestId)}>Modify this request for intervention
+                                // className="bg-light rounded-pill text-dark border-warning px-5 mt-4" 
+                                // className='nudeButtons'
+                                variant='warning'
+                                className=''
+                                onClick={()=>handleMessages(intervention.requestId)}>Modify
                             </Button>
-                        </div>
+                        </Row>
 
                 {openedMoreInterventInfo.indexOf(intervention.requestId)!==-1&&
                     <Card className='border-light bg-warning text-dark'>
