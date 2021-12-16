@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import { Card,Button } from 'react-bootstrap'
 import { addIntervention } from '../utilities/fetches.js'
-// import { getListOfInterventions } from '../utilities/fetches.js'
+import { getListOfInterventions } from '../utilities/fetches.js'
 
 const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,currentUser,setCurrentUser})=>{
-    // useEffect(() => {
-    //     // getListOfInterventions(setRequests)
-    // }, [])
+    useEffect(() => {
+        getListOfInterventions({setRequests})
+    }, [])
 
     const offerYourService=(interventionId)=>{
         // setOfferedServices(prevRequests=>[...prevRequests,request])

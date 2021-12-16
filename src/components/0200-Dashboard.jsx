@@ -45,14 +45,14 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                                 You have not yet offered your services, consult the list of service requests below and click reply
                             </div>
                             :
-                            <div>
+                            <Row className='container-fluid mx-5'>
                                 {currentUser&&currentUser.InterventionsTakenInCharge.map((intervention)=>(
                                 <InterventionsTakenInCharge 
                                     intervention={intervention} 
                                     currentUser={currentUser} 
                                     setCurrentUser={setCurrentUser}/>
                                 ))}
-                            </div>
+                            </Row>
                         :
                             (currentUser.published.length===0)
                             ?

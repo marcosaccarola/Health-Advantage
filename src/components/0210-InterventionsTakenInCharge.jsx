@@ -37,8 +37,8 @@ const InterventionsTakenInCharge=({intervention,currentUser,setCurrentUser})=>{
             {/* {offeredServices.map((reply)=>( */}
                 <Card 
                     key={intervention.requestId} 
-                    style={{ width: '70rem', borderWidth:2 }} 
-                    className='border-muted text-light mx-auto mb-5'
+                    style={{ width: '70rem'}} 
+                    className='border-muted text-light mx-auto mb-4'
                     >
                     <Card.Body>
                     {/* <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
