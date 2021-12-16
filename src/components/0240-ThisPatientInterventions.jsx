@@ -63,12 +63,13 @@ const ThisPatientInterventions=({intervention})=>{
                             </Col>
                         </Row>
 
+
                         <Row className='container-fluid justify-content-end mx-4 mt-3 mb-4'>
                             {/* <Button 
                                 style={{borderWidth:2}}
                                 className="bg-light rounded-pill text-dark border-warning px-5" 
                                 onClick={()=>handleInterventInfo(intervention.requestId)}>
-                                    More info
+                                More info
                             </Button> */}
                             <Button 
                                 // style={{borderWidth:2}}
@@ -80,6 +81,24 @@ const ThisPatientInterventions=({intervention})=>{
                             </Button>
                         </Row>
 
+                        <Row className='container-fluid mx-4'>
+                            <Col className='my-1'>
+                                <Card.Title className='text-muted font-weight-normal row justify-content-start'>
+                                    Answers</Card.Title>
+                                {intervention.answers.length!==0&&intervention.answers.map((a)=>
+                                <div className='container-fluid'>
+                                    <Card.Title className=' font-weight-normal row justify-content-start ml-2'>
+                                        {a.profession} {a.firstName} {a.lastName}</Card.Title>
+                                    <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
+                                        {a.educationalQualification}</Card.Title>
+                                    <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
+                                        {a.medicalBoard}</Card.Title>
+                                    <Card.Title className=' font-weight-normal row justify-content-start ml-2'>
+                                        {a.email}</Card.Title>
+                                </div>
+                                )}
+                            </Col>
+                        </Row>
 
                 {openedMoreInterventInfo.indexOf(intervention.requestId)!==-1&&
                     <Card className='border-light bg-warning text-dark'>
