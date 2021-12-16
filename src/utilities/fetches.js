@@ -124,7 +124,7 @@ export const getListOfInterventions=async({setRequests})=>{
     }
 }
 
-// *_____________________________________________ ADD INTERVENTION TO PRACTITIONER
+// *_____________________________________________ ADD INTERVENTION TO PRACTITIONER (AND PRATICTIONER ID TO ANSWERS)
 export const addIntervention=async({interventionId,userId,setCurrentUser})=>{
     try {
         const responseAddIntervention=await fetch(PRACTITIONERS_URL+'/'+userId+'/addIntervention/'+interventionId,
@@ -134,8 +134,26 @@ export const addIntervention=async({interventionId,userId,setCurrentUser})=>{
         if(responseAddIntervention.ok){
             let practitionerWithInterventions=await responseAddIntervention.json()
             setCurrentUser(practitionerWithInterventions)
+            addAnswer({interventionId,userId})
+
         }else{
             console.log('Intervention not added.')
+        }
+    } catch (error) {
+        throw error
+    }
+}
+const addAnswer=async({interventionId,userId})=>{
+    try {
+        const responseAddAnswerToIntervention=await fetch(INTERVENTIONS_URL+'/'+interventionId+'/'+userId,
+        {
+            method:'POST',
+        })
+        if(responseAddAnswerToIntervention.ok){
+            let intervention=await responseAddAnswerToIntervention.json()
+            console.log('INTERVENTION: ',intervention)
+        }else{
+            console.log('Service not offered.')
         }
     } catch (error) {
         throw error
