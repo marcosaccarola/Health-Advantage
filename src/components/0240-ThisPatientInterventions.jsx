@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Card,Button } from "react-bootstrap"
+import { Card,Button, Row, Col } from "react-bootstrap"
 // import MoreInterventionInfo from "./0211-MoreInterventionInfo"
 import Messages from "./0212-Messages"
 
@@ -28,35 +28,35 @@ const ThisPatientInterventions=({intervention})=>{
             {/* {requests&&requests.filter(r=>r.userId===currentUser.userId).map((reply)=>( */}
             {/* {currentUser&&currentUser.published.map((intervention)=>( */}
             {/* , backgroundColor:'#E9ECEF' */}
-                <Card 
+                {/* <Card 
                     key={intervention.requestId} 
                     style={{ width: '50rem', borderWidth:2, backgroundColor:'#E9ECEF' }} 
                     className='border-muted text-light mx-auto my-3'>
-                    <Card.Body>
+                    <Card.Body> */}
                         {/* <div className='row mx-4'>
                         </div> */}
-                        <div className='row justify-content-between mx-5'>
-                            <div className='my-1'>
+                        <Row className='container-fluid mx-5 border border-success'>
+                            <Col className='my-1 ml-auto'>
                                 <Card.Title className='text-muted font-weight-normal row justify-content-start'>
                                     Intervention requested</Card.Title>
-                                <Card.Title className='text-dark row justify-content-start ml-2'>
+                                <Card.Title className='text-dark row justify-content-start'>
                                     {intervention.interventionRequested}</Card.Title>
-                            </div>
-                            <div className='my-1'>
-                                <Card.Title className='text-muted font-weight-normal row justify-content-start'>
+                            </Col>
+                            <Col className='my-1'>
+                                <Card.Title className='text-muted font-weight-normal row justify-content-end'>
                                     Intervention's location</Card.Title>
                                 <Card.Title className='text-dark row justify-content-end'>
                                     {intervention.zipcode}</Card.Title>
-                            </div>
-                        </div>
-                        <div className='row mx-5'>
+                            </Col>
+                        </Row>
+                        <Row className='row mx-5'>
                             <div className='my-1'>
                                 <Card.Title className='text-muted font-weight-normal row justify-content-start'>
                                     Info</Card.Title>
                                 <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
                                     {intervention.moreInfo}</Card.Title>
                             </div>
-                        </div>
+                        </Row>
 
                         <div className='row justify-content-end mx-5 mt-3 text-light'>
                             {/* <Button 
@@ -86,8 +86,8 @@ const ThisPatientInterventions=({intervention})=>{
                     <Messages intervention={intervention} />
                 
                 }
-                    </Card.Body>
-                </Card>
+                    {/* </Card.Body>
+                </Card> */}
             {/* ))} */}
         </>
     )

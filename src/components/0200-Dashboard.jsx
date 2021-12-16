@@ -30,10 +30,10 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                 <Card.Body>
 
                     <Card.Text>
-                        
+
                     <UserInfoCard currentUser={currentUser} />
 
-                    {/* <Row className='container-fluid'>
+                    <Row className='container-fluid'>
 
 
                         {currentUser.role==='Practitioner'
@@ -56,18 +56,18 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                         :
                             (currentUser.published.length===0)
                             ?
-                            <div className='row justify-content-start mx-5 mb-4 text-muted'>
+                            <div className='mx-5 mb-4 text-muted'>
                                 <hr className='mx-5 mb-5' />
                                 you have not yet published a request for home health care, click publish
                             </div>
                             :
-                            <div>
+                            <Row className='container-fluid'>
                                 {currentUser&&currentUser.published.map((intervention)=>(
                                     <ThisPatientInterventions intervention={intervention}/>
                                 ))}
-                            </div>
+                            </Row>
                         }
-                    </Row> */}
+                    </Row>
                     </Card.Text>
                 </Card.Body>
             </Card>
