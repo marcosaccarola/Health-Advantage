@@ -45,7 +45,7 @@ const PublishForm=({currentUser,setCurrentUser,requests,setRequests})=>{
     return(
         <div>
             <Button
-                style={{borderWidth:4}}
+                // style={{borderWidth:4}}
                 className="border-warning rounded-pill bg-light text-dark px-5 my-4" 
                 onClick={handleForm}
                 >{formIsOpen===false?'Publish a request':'Cancel'}
@@ -84,7 +84,7 @@ const PublishForm=({currentUser,setCurrentUser,requests,setRequests})=>{
 
 
                         <Button
-                            style={{borderWidth:4}}
+                            // style={{borderWidth:4}}
                             className="border-warning rounded-pill bg-light text-dark px-5 my-4" 
                             onClick={sendRequest}
                             >Publish

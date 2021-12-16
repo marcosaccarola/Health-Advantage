@@ -62,7 +62,7 @@ const ThisPatientInterventions=({intervention})=>{
                             </Col>
                         </Row>
 
-                        <Row className='container-fluid justify-content-end mx-4 mt-3 mb-4 text-light'>
+                        <Row className='container-fluid justify-content-end mx-4 mt-3 mb-4'>
                             {/* <Button 
                                 style={{borderWidth:2}}
                                 className="bg-light rounded-pill text-dark border-warning px-5" 
@@ -70,11 +70,11 @@ const ThisPatientInterventions=({intervention})=>{
                                     More info
                             </Button> */}
                             <Button 
-                                style={{borderWidth:2}}
+                                // style={{borderWidth:2}}
                                 // className="bg-light rounded-pill text-dark border-warning px-5 mt-4" 
                                 // className='nudeButtons'
-                                variant='warning'
-                                className=''
+                                // variant='warning'
+                                className='rounded-pill bg-light text-dark border-warning px-5'
                                 onClick={()=>handleMessages(intervention.requestId)}>Modify
                             </Button>
                         </Row>
