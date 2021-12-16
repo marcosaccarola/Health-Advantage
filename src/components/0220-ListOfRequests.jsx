@@ -20,7 +20,7 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,c
     return(
         // <div className='mt-5'>
             <Card
-                style={{ borderWidth:8 ,backgroundColor:'#E9ECEF' }} 
+                style={{backgroundColor:'#E9ECEF' }} 
                 className='border-info text-light mx-auto my-5'>
                 <div className='mt-4 mb-5'></div>
             {requests&&requests.map((intervention)=>               

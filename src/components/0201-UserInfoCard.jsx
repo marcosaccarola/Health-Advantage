@@ -10,7 +10,9 @@ const UserInfoCard=({currentUser})=>{
         {currentUser.role==='Practitioner'
         ?
         // *_____________________________________ PRACTITIONER INFO
-            <div className='row justify-content-between mx-5 mt-4 mb-4'>
+            <div className='row justify-content-between mx-5 mt-4 mb-4'
+                // style={{backgroundColor:'#E9ECEF' }} 
+                >
                 <Image src={currentUser.photo} 
                     style={{width:100,height:100,objectFit:'cover',borderRadius:'50%'}}
                     className='mr-5'
