@@ -24,13 +24,13 @@ const ThisPatientInterventions=({intervention})=>{
     }
 
     return(
-        <div>
+        <>
             {/* {requests&&requests.filter(r=>r.userId===currentUser.userId).map((reply)=>( */}
             {/* {currentUser&&currentUser.published.map((intervention)=>( */}
             {/* , backgroundColor:'#E9ECEF' */}
                 <Card 
                     key={intervention.requestId} 
-                    style={{ width: '70rem', borderWidth:2, backgroundColor:'#E9ECEF' }} 
+                    style={{ width: '50rem', borderWidth:2, backgroundColor:'#E9ECEF' }} 
                     className='border-muted text-light mx-auto my-3'>
                     <Card.Body>
                         {/* <div className='row mx-4'>
@@ -89,7 +89,7 @@ const ThisPatientInterventions=({intervention})=>{
                     </Card.Body>
                 </Card>
             {/* ))} */}
-        </div>
+        </>
     )
 }
 

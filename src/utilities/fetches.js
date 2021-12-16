@@ -15,6 +15,7 @@ export const registerPatient=async({reqBody,setCurrentUser})=>{
             if(responseRegister.ok){
                 let patient=await responseRegister.json()
                 postIntervention({reqBody,patient,setCurrentUser})
+                console.log(patient)
             }else{
                 console.log('Something went wrong.')
             }
@@ -34,6 +35,7 @@ export const postIntervention=async({reqBody,patient,setCurrentUser})=>{
             if(responsePostIntervention.ok){
                 let intervention=await responsePostIntervention.json()
                 getPatient({reqBody,setCurrentUser})
+                console.log(intervention)
             }else{
                 console.log('Something went wrong.')
             }

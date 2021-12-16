@@ -13,6 +13,7 @@ import HomeForm from "./0010-HomeForm"
 import NewDashboard from "./1000-Dashboard"
 import './0000-Home.css'
 import { getUser } from '../utilities/fetches';
+import Dashboard from './0200-Dashboard';
 
 
 const Home=()=>{
@@ -227,7 +228,7 @@ const Home=()=>{
             {currentUser&&
     // ? CURRENT USER ? DASHBOARD : LANDIN INTERFACE
     // ?
-                <NewDashboard currentUser={currentUser} setCurrentUser={setCurrentUser} />
+                <Dashboard currentUser={currentUser} setCurrentUser={setCurrentUser} />
                 // :<LandingInterface setCurrentUser={setCurrentUser} currentUser={currentUser} />
             }
         </div>

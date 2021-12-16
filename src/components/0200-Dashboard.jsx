@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Card } from "react-bootstrap"
+import { Card, Row } from "react-bootstrap"
 import UserInfoCard from "./0201-UserInfoCard"
 import InterventionsTakenInCharge from "./0210-InterventionsTakenInCharge"
 import ListOfRequests from "./0220-ListOfRequests"
@@ -19,55 +19,57 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
     }, [])
 
     return(
-        <div 
-            // style={{width:'100%',minHeight:'100vh', background:'#FEEBEA'}}
-            >
+        <div  className='container-fluid body min-vh-100 my-5'>
+                       
             <Card 
-                style={{ width: '80rem', borderWidth:8 ,backgroundColor:'#E9ECEF' }} 
+                style={{ width: '80rem' }} 
                 className={currentUser.role==='Practitioner'
-                    ?'text-dark border-info mx-auto'
+                    ?'text-dark bg-light border-info mx-auto'
                     :'text-dark bg-light border-warning mx-auto'}
                 >
-            <Card.Body>
+                <Card.Body>
 
-                <UserInfoCard currentUser={currentUser} />
+                    <Card.Text>
+                        
+                    <UserInfoCard currentUser={currentUser} />
 
-                <Card.Text>
-                    {currentUser.role==='Practitioner'
-                    ?
-                        (currentUser&&currentUser.InterventionsTakenInCharge.length===0)
+                    {/* <Row className='container-fluid'>
+
+
+                        {currentUser.role==='Practitioner'
                         ?
-                        <div className='row justify-content-start mx-5 mb-4 text-muted'>
-                            <hr className='mx-5 mb-5' />
-                            You have not yet offered your services, consult the list of service requests below and click reply
-                        </div>
+                            (currentUser&&currentUser.InterventionsTakenInCharge.length===0)
+                            ?
+                            <div className='row justify-content-start mx-5 mb-4 text-muted'>
+                                <hr className='mx-5 mb-5' />
+                                You have not yet offered your services, consult the list of service requests below and click reply
+                            </div>
+                            :
+                            <div>
+                                {currentUser&&currentUser.InterventionsTakenInCharge.map((intervention)=>(
+                                <InterventionsTakenInCharge 
+                                    intervention={intervention} 
+                                    currentUser={currentUser} 
+                                    setCurrentUser={setCurrentUser}/>
+                                ))}
+                            </div>
                         :
-                        <div>
-                            {/* {offeredServices.map((intervention)=>( */}
-                            {currentUser&&currentUser.InterventionsTakenInCharge.map((intervention)=>(
-                            <InterventionsTakenInCharge 
-                                intervention={intervention} 
-                                currentUser={currentUser} 
-                                setCurrentUser={setCurrentUser}/>
-                            ))}
-                        </div>
-                    :
-                        // requests&&(requests.indexOf(e=>e.userId===currentUser.userId)!==-1)
-                        (currentUser.published.length===0)
-                        ?
-                        <div className='row justify-content-start mx-5 mb-4 text-muted'>
-                            <hr className='mx-5 mb-5' />
-                            you have not yet published a request for home health care, click publish
-                        </div>
-                        :
-                        <div>
-                            {currentUser&&currentUser.published.map((intervention)=>(
-                                <ThisPatientInterventions intervention={intervention}/>
-                            ))}
-                        </div>
-                    }
-                </Card.Text>
-            </Card.Body>
+                            (currentUser.published.length===0)
+                            ?
+                            <div className='row justify-content-start mx-5 mb-4 text-muted'>
+                                <hr className='mx-5 mb-5' />
+                                you have not yet published a request for home health care, click publish
+                            </div>
+                            :
+                            <div>
+                                {currentUser&&currentUser.published.map((intervention)=>(
+                                    <ThisPatientInterventions intervention={intervention}/>
+                                ))}
+                            </div>
+                        }
+                    </Row> */}
+                    </Card.Text>
+                </Card.Body>
             </Card>
 
             {currentUser.role==='Practitioner'&&
