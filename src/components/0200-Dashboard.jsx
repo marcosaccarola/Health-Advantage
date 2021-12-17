@@ -10,14 +10,8 @@ import { IoMdLogOut } from "react-icons/io";
 
 const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
     const[offeredServices,setOfferedServices]=useState([])
-    // const[requestedServices,setRequestedServices]=useState([])
     useEffect(() => {
-        // if(requests){
-        //     let userRequests=requests.filter(r=>r.userId===currentUser.userId)
-        //     if(userRequests){
-        //         setRequestedServices(userRequests)
-        //     }
-        // }
+
     }, [])
     const logout=()=>{
         setCurrentUser()
@@ -35,10 +29,6 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                         <Container>
                         <Navbar.Brand >Health Advantage</Navbar.Brand>
                         <Nav className="me-auto">
-                        {/* <Nav.Link >Demo</Nav.Link>
-                        <Nav.Link ></Nav.Link>
-                        <Nav.Link >Sign in</Nav.Link>
-                        <Nav.Link ></Nav.Link> */}
                         <Nav.Link onClick={logout} >Log out</Nav.Link>
                         </Nav>
                         </Container>
@@ -51,20 +41,16 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                        
             <Card 
                 style={{ width: '80rem',backgroundColor:'#E9ECEF' }} 
-                // style={{backgroundColor:'#E9ECEF' }} 
-
                 className={currentUser.role==='Practitioner'
                     ?'text-dark border-info mx-auto'
                     :'text-dark bg-light border mx-auto'}
                 >
                 <Card.Body>
-
                     <Card.Text>
 
-                    <UserInfoCard currentUser={currentUser} />
+                        <UserInfoCard currentUser={currentUser} />
 
                     <Row className=''>
-
 
                         {currentUser.role==='Practitioner'
                         ?

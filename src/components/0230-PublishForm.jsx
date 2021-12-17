@@ -13,23 +13,6 @@ const PublishForm=({currentUser,setCurrentUser,requests,setRequests})=>{
     const[intervention,setIntervention]=useState()
     const[info,setInfo]=useState()
 
-    // *_________________________________________ ONLY-FE ver.
-    // const sendRequest=()=>{
-    //     const requestObj={
-    //         "requestId":"example6666",
-    //         "userId":currentUser.userId,
-    //         "zipcode":zipcode,
-    //         "interventionRequested":intervention,
-    //         "moreInfo":info,
-    //         "answers":[],
-    //         "addedAt":new Date(),
-    //         "updatedAt":new Date()
-    //     }
-    //     setRequests(prevState=>[...prevState,requestObj])
-    //     handleForm()
-    //     alert('Request sent!')
-    // }
-
     const sendRequest=()=>{
         const requestObj={
             "userId":currentUser._id,
@@ -45,7 +28,6 @@ const PublishForm=({currentUser,setCurrentUser,requests,setRequests})=>{
     return(
         <div>
             <Button
-                // style={{borderWidth:4}}
                 className="border-warning rounded-pill bg-light text-dark px-5 my-4" 
                 onClick={handleForm}
                 >{formIsOpen===false?'Publish a request':'Cancel'}
@@ -84,7 +66,6 @@ const PublishForm=({currentUser,setCurrentUser,requests,setRequests})=>{
 
 
                         <Button
-                            // style={{borderWidth:4}}
                             className="border-warning rounded-pill bg-light text-dark px-5 my-4" 
                             onClick={sendRequest}
                             >Publish

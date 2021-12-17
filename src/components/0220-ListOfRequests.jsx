@@ -18,7 +18,7 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,c
     }
 
     return(
-        // <div className='mt-5'>
+
             <Card
                 style={{backgroundColor:'#E9ECEF',width: '80rem' }} 
                 className='border-info text-light mx-auto my-5'>
@@ -28,12 +28,7 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,c
                 style={{ width: '70rem', borderWidth:2 }} 
                 className='border-muted text-light mx-auto mb-5'>
                     <Card.Body>
-                        {/* <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
-                            <Card.Title className='text-info'>{request.zipcode}</Card.Title>
-                        </div>
-                        <Card.Text className='row justify-content-start text-info mx-5'>
-                            {request.interventionRequested}
-                        </Card.Text> */}
+
                         <div className='row justify-content-between mx-5'>
                             <div className='my-1'>
                                 <Card.Title className='text-muted font-weight-normal row justify-content-start'>
@@ -57,19 +52,6 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,c
                             </div>
                         </div>
 
-                        <div className='row justify-content-end mx-5 mt-3 text-light'>
-                            {/* <Button 
-                                style={{borderWidth:2}}
-                                className="bg-light rounded-pill text-dark border-warning px-5" 
-                                onClick={()=>handleInterventInfo(intervention.requestId)}>
-                                    More info
-                            </Button> */}
-                            {/* <Button 
-                                style={{borderWidth:2}}
-                                className="bg-light rounded-pill text-dark border-warning px-5 mt-4" 
-                                onClick={()=>handleMessages(intervention.requestId)}>Modify this request for intervention
-                            </Button> */}
-                        </div>
                             {
                                 (offeredServices.indexOf(intervention)===-1)
                                 ?(

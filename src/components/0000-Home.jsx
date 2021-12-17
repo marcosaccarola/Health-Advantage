@@ -1,4 +1,3 @@
-// import LandingInterface from "./0100-LandingInterface"
 import {useEffect, useState} from 'react'
 // import Dashboard from "./0200-Dashboard"
 import {Button,Card, Col, Container, Form, Modal, Nav, Navbar, Row} from "react-bootstrap"
@@ -55,14 +54,6 @@ const Home=()=>{
                 <Modal.Body>
                     <LoginRegisterForm setCurrentUser={setCurrentUser} handleLoginModal={handleLoginModal} />
                 </Modal.Body>
-                {/* <Modal.Footer>
-                <Button variant="secondary" onClick={handleLoginModal}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={handleLoginModal}>
-                    Save Changes
-                </Button>
-                </Modal.Footer> */}
             </Modal>
 
             {!currentUser&&

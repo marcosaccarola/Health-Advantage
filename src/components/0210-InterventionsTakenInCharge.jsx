@@ -34,39 +34,13 @@ const InterventionsTakenInCharge=({intervention,currentUser,setCurrentUser})=>{
 
     return(
         <div>
-            {/* {offeredServices.map((reply)=>( */}
                 <Card 
                     key={intervention.requestId} 
                     style={{ width: '70rem'}} 
                     className='border-muted text-light mx-auto mb-4'
                     >
                     <Card.Body>
-                    {/* <div className='row justify-content-between mx-5 mt-4 mb-5 text-light'>
-                        <Card.Title className='text-info'>{intervention.position}</Card.Title>
-                    </div>
-                    <div className='row justify-content-between mx-5 mt-4 mb-3 text-light'>
-                        <Button 
-                            variant="info rounded-pill text-dark px-5" 
-                            onClick={()=>handleInterventInfo(intervention.requestId)}>
-                            <Card.Title>
-                                Intervent info:<div className='text-light'>{intervention.interventionRequested}</div>
-                            </Card.Title>
-                        </Button>
-                        <Button 
-                            variant="info rounded-pill text-dark" 
-                            onClick={()=>handleMessages(intervention.requestId)}>Send a message to patient
-                        </Button>
-                    </div> */}
-                    
 
-                    {/* <div className='row justify-content-between mx-5'>
-                        <div className='my-1'>
-                            <Card.Title className='text-muted font-weight-normal row justify-content-start'>
-                                Name: {intervention.email}</Card.Title>
-                            <Card.Title className='text-dark row justify-content-start ml-2'>
-                                {intervention.interventionRequested}</Card.Title>
-                        </div>
-                    </div> */}
                     <div className='row justify-content-between mx-5'>
                         <div className='my-1'>
                             <Card.Title className='text-muted font-weight-normal row justify-content-start'>
@@ -96,25 +70,8 @@ const InterventionsTakenInCharge=({intervention,currentUser,setCurrentUser})=>{
                             onClick={()=>withdraw(intervention._id)}>Remove
                         </Button>
                     </div>
-
-                {/* {openedMoreInterventInfo.indexOf(intervention.requestId)!==-1&&
-                    <Card className='border-info bg-info text-dark'>
-                        <Card.Body>
-                            <Card.Title className='text-left'>Intervent type: </Card.Title>
-                            <Card.Title className='text-left text-light mx-4'>{intervention.interventionRequested}</Card.Title>
-                            <Card.Title className='text-left mt-5'>Info:</Card.Title>
-                            <Card.Title className='text-left mx-4'>{intervention.moreInfo}</Card.Title>
-                        </Card.Body>
-                    </Card>
-                } */}
-
-                {/* {(messagesIsOpen.indexOf(intervention.requestId)!==-1)&&
-                    <Messages intervention={intervention} currentUser={currentUser} />
-                
-                } */}
                     </Card.Body>
                 </Card>
-            {/* ))} */}
         </div>
     )
 }
