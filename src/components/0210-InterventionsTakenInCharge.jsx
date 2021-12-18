@@ -6,7 +6,7 @@ import Messages from "./0212-Messages"
 
 const InterventionsTakenInCharge=({intervention,currentUser,setCurrentUser})=>{
     useEffect(() => {
-
+        console.log(intervention)
     }, [])
 
     // const[openedMoreInterventInfo,setOpenedMoreInterventInfo]=useState([])
@@ -50,9 +50,9 @@ const InterventionsTakenInCharge=({intervention,currentUser,setCurrentUser})=>{
                         </div>
                         <div className='my-1'>
                             <Card.Title className='text-muted font-weight-normal row justify-content-start'>
-                                Intervention's location</Card.Title>
+                                Last update</Card.Title>
                             <Card.Title className='text-dark row justify-content-end'>
-                                {intervention.zipcode}</Card.Title>
+                                {new Date(intervention.updatedAt).toLocaleDateString()}</Card.Title>
                         </div>
                     </div>
                     <div className='row mx-5'>

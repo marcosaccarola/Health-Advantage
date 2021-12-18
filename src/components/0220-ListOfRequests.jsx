@@ -16,14 +16,6 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,c
     const withdrawYourService=(intervention)=>{
         // setOfferedServices(offeredServices.filter((r)=>r!==request))
     }
-    // const interventionDate=(d)=>{
-    //     // const year=d.toString.getFullYear()
-    //     // console.log(year)
-
-    //     // console.log(d)
-    //     const yeah=d.toISOString()
-    //     console.log(yeah)
-    // }
 
     return(
 
