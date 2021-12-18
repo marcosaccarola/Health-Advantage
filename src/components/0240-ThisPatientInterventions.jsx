@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Card,Button, Row, Col,Image } from "react-bootstrap"
 // import MoreInterventionInfo from "./0211-MoreInterventionInfo"
 import Messages from "./0212-Messages"
@@ -26,16 +26,6 @@ const ThisPatientInterventions=({intervention})=>{
 
     return(
         <>
-            {/* {requests&&requests.filter(r=>r.userId===currentUser.userId).map((reply)=>( */}
-            {/* {currentUser&&currentUser.published.map((intervention)=>( */}
-            {/* , backgroundColor:'#E9ECEF' */}
-                {/* <Card 
-                    key={intervention.requestId} 
-                    style={{ width: '50rem', borderWidth:2, backgroundColor:'#E9ECEF' }} 
-                    className='border-muted text-light mx-auto my-3'>
-                    <Card.Body> */}
-                        {/* <div className='row mx-4'>
-                        </div> */}
                     <Row className='container-fluid border rounded mb-4'>
 
                         <Row className='container-fluid mx-4 mt-4'>
@@ -58,24 +48,14 @@ const ThisPatientInterventions=({intervention})=>{
                             <Col className='my-1'>
                                 <Card.Title className='text-muted font-weight-normal row justify-content-start'>
                                     Info</Card.Title>
-                                <Card.Title className='text-muted font-weight-normal row justify-content-start ml-2'>
+                                <Card.Title className='font-weight-normal row justify-content-start ml-2'>
                                     {intervention.moreInfo}</Card.Title>
                             </Col>
                         </Row>
 
 
                         <Row className='container-fluid justify-content-end mx-4 mt-3 mb-4'>
-                            {/* <Button 
-                                style={{borderWidth:2}}
-                                className="bg-light rounded-pill text-dark border-warning px-5" 
-                                onClick={()=>handleInterventInfo(intervention.requestId)}>
-                                More info
-                            </Button> */}
                             <Button 
-                                // style={{borderWidth:2}}
-                                // className="bg-light rounded-pill text-dark border-warning px-5 mt-4" 
-                                // className='nudeButtons'
-                                // variant='warning'
                                 className='rounded-pill bg-light text-dark border-warning px-5'
                                 onClick={()=>handleMessages(intervention.requestId)}>Modify
                             </Button>
@@ -126,6 +106,7 @@ const ThisPatientInterventions=({intervention})=>{
                             <Card.Title className='text-left mx-4'>{intervention.moreInfo}</Card.Title>
                         </Card.Body>
                     </Card>
+                    
                 }
                 {(messagesIsOpen.indexOf(intervention.requestId)!==-1)&&
                     <Messages intervention={intervention} />
@@ -133,9 +114,6 @@ const ThisPatientInterventions=({intervention})=>{
                 }
 
                 </Row>
-                    {/* </Card.Body>
-                </Card> */}
-            {/* ))} */}
         </>
     )
 }
