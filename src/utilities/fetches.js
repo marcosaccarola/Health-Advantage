@@ -1,6 +1,6 @@
-const PRACTITIONERS_URL='http://localhost:3001/practitioner'
-const PATIENTS_URL='http://localhost:3001/patient'
-const INTERVENTIONS_URL='http://localhost:3001/intervention'
+const PRACTITIONERS_URL='https://health-advantage.herokuapp.com//practitioner'
+const PATIENTS_URL='https://health-advantage.herokuapp.com//patient'
+const INTERVENTIONS_URL='https://health-advantage.herokuapp.com//intervention'
 
 // *_____________________________________________ REGISTER PATIENT & SUBMIT FIRST INTERVENTION
 export const registerPatient=async({reqBody,setCurrentUser})=>{
