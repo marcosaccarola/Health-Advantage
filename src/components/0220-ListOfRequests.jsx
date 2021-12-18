@@ -16,6 +16,14 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,c
     const withdrawYourService=(intervention)=>{
         // setOfferedServices(offeredServices.filter((r)=>r!==request))
     }
+    // const interventionDate=(d)=>{
+    //     // const year=d.toString.getFullYear()
+    //     // console.log(year)
+
+    //     // console.log(d)
+    //     const yeah=d.toISOString()
+    //     console.log(yeah)
+    // }
 
     return(
 
@@ -38,9 +46,9 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,c
                             </div>
                             <div className='my-1'>
                                 <Card.Title className='text-muted font-weight-normal row justify-content-start'>
-                                    Intervention's location</Card.Title>
+                                    Last Update</Card.Title>
                                 <Card.Title className='text-dark row justify-content-end'>
-                                    {intervention.zipcode}</Card.Title>
+                                    {new Date(intervention.updatedAt).toLocaleDateString()}</Card.Title>
                             </div>
                         </div>
                         <div className='row mx-5'>

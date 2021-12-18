@@ -32,7 +32,7 @@ const ThisPatientInterventions=({intervention})=>{
                             <Col className='my-1 ml-auto'>
                                 <Card.Title className='text-muted font-weight-normal row justify-content-start'>
                                     Intervention requested</Card.Title>
-                                <Card.Title className='text-dark row justify-content-start'>
+                                <Card.Title className='text-dark row justify-content-start ml-2'>
                                     {intervention.interventionRequested}</Card.Title>
                             </Col>
                             <Col className='my-1'>
@@ -44,7 +44,7 @@ const ThisPatientInterventions=({intervention})=>{
                         </Row>
 
 
-                        <Row className='container-fluid mx-4'>
+                        <Row className='container-fluid mx-4 mt-4'>
                             <Col className='my-1'>
                                 <Card.Title className='text-muted font-weight-normal row justify-content-start'>
                                     Info</Card.Title>

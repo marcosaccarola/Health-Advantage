@@ -68,7 +68,7 @@ const Home=()=>{
                             <Container>
                             <Navbar.Brand onClick={featureUnderDevelopment}>Health Advantage</Navbar.Brand>
                             <Nav className="me-auto">
-                            <Nav.Link onClick={featureUnderDevelopment}>Demo</Nav.Link>
+                            {/* <Nav.Link onClick={featureUnderDevelopment}>About me</Nav.Link> */}
                             <Nav.Link ></Nav.Link>
                             <Nav.Link onClick={featureUnderDevelopment}>Sign in</Nav.Link>
                             <Nav.Link ></Nav.Link>
