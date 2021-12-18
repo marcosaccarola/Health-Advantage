@@ -30,14 +30,17 @@ const HomeForm=({setCurrentUser})=>{
         setReqBody({'intervention':intervention,'email':email,'zipcode':zipCode,'firstName':name,'password':pw})
         isModalOpen===false?setIsModalOpen(true):setIsModalOpen(false)
     }
-    const[info,setInfo]=useState()
+    // const[info,setInfo]=useState()
     const handleChangeInfo=(e)=>{
-        setInfo(e.target.value)
+        // setInfo(e.target.value)
+        setReqBody({'intervention':intervention,'email':email,'zipcode':zipCode,'firstName':name,'password':pw,'info':e.target.value})
     }
     const registerUserAndIntervention=()=>{
-        setReqBody({'intervention':intervention,'email':email,'zipcode':zipCode,'firstName':name,'password':pw,'moreInfo':info})
+        // sendRequest()
         registerPatient({reqBody,setCurrentUser})
     }
+    // const sendRequest=()=>{
+    // }
     
     return(
         <>

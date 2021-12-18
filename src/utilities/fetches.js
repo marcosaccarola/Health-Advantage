@@ -24,7 +24,8 @@ export const registerPatient=async({reqBody,setCurrentUser})=>{
     }
 }
 export const postIntervention=async({reqBody,patient,setCurrentUser})=>{
-    const interventionBody={'userId':patient._id,'interventionRequested':reqBody.intervention,'zipcode':reqBody.zipcode,'moreInfo':reqBody.moreInfo}
+    const interventionBody={'userId':patient._id,'interventionRequested':reqBody.intervention,'zipcode':reqBody.zipcode,'moreInfo':reqBody.info}
+    console.log('FROM FETCH: ',interventionBody)
     try {
         const responsePostIntervention=await fetch(INTERVENTIONS_URL,
             {
