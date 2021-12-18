@@ -30,12 +30,55 @@ const HomeForm=({setCurrentUser})=>{
         setReqBody({'intervention':intervention,'email':email,'zipcode':zipCode,'firstName':name,'password':pw})
         isModalOpen===false?setIsModalOpen(true):setIsModalOpen(false)
     }
+    const[info,setInfo]=useState()
+    const handleChangeInfo=(e)=>{
+        setInfo(e.target.value)
+    }
     const registerUserAndIntervention=()=>{
+        setReqBody({'intervention':intervention,'email':email,'zipcode':zipCode,'firstName':name,'password':pw,'moreInfo':info})
         registerPatient({reqBody,setCurrentUser})
     }
-
+    
     return(
         <>
+            {reqBody&&
+            <Modal 
+                show={isModalOpen} 
+                onHide={handleModal}
+                className='mt-5'
+                >
+                <Modal.Header className='justify-content-center'>
+                    <Modal.Title>Checking acceptance form</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Intervent type: {reqBody.intervention}</Modal.Body>
+                <Modal.Body>Name: {reqBody.firstName}</Modal.Body>
+                <Modal.Body>Email: {reqBody.email}</Modal.Body>
+                <Modal.Body>Zip Code: {reqBody.zipcode}</Modal.Body>
+                <Modal.Body>Please check if everything is right or click Back.</Modal.Body>
+                <Modal.Footer>
+                    <Modal.Body>
+                        <Form>
+                            <Form.Group className="" controlId="formBasicEmail">
+                                <Form.Label>Before confirming, add some detail:</Form.Label>
+                                <Form.Text className="text-muted">
+                                    Here you can add information that will help the practitioner help you.
+                                </Form.Text>
+                                <Form.Control type="text" placeholder="ex: from Monday to Friday, at 6pm" onChange={(e)=>handleChangeInfo(e)} />
+                            </Form.Group>
+                        </Form>
+                    </Modal.Body>
+                </Modal.Footer>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleModal}>
+                    Back
+                    </Button>
+                    <Button variant="primary" onClick={registerUserAndIntervention}>
+                    Submit
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+            }
+
             <Form className='my-3'>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -140,29 +183,6 @@ const HomeForm=({setCurrentUser})=>{
 
             </Form>
 
-            {reqBody&&
-            <Modal 
-                show={isModalOpen} 
-                onHide={handleModal}
-                >
-                <Modal.Header className='justify-content-center'>
-                    <Modal.Title>Checking acceptance form</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Intervent type: {reqBody.intervention}</Modal.Body>
-                <Modal.Body>Name: {reqBody.firstName}</Modal.Body>
-                <Modal.Body>Email: {reqBody.email}</Modal.Body>
-                <Modal.Body>Zip Code: {reqBody.zipcode}</Modal.Body>
-                <Modal.Body>Please check if everything is right or click Back.</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleModal}>
-                    Back
-                    </Button>
-                    <Button variant="primary" onClick={registerUserAndIntervention}>
-                    Submit
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-            }
         </>
     )
 }
