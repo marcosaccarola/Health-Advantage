@@ -63,7 +63,8 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                             :
                             <Row className='container-fluid mx-5'>
                                 {currentUser&&currentUser.InterventionsTakenInCharge.map((intervention)=>(
-                                <InterventionsTakenInCharge 
+                                <InterventionsTakenInCharge
+                                    key={intervention._id}
                                     intervention={intervention} 
                                     currentUser={currentUser} 
                                     setCurrentUser={setCurrentUser}/>
@@ -79,7 +80,9 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                             :
                             <Row className='container-fluid mx-5'>
                                 {currentUser&&currentUser.published.map((intervention)=>(
-                                    <ThisPatientInterventions intervention={intervention}/>
+                                    <ThisPatientInterventions 
+                                        key={intervention._id}
+                                        intervention={intervention}/>
                                 ))}
                             </Row>
                         }

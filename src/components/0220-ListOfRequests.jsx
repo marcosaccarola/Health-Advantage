@@ -25,8 +25,9 @@ const ListOfRequests=({requests,setRequests,offeredServices,setOfferedServices,c
                 <div className='mt-4 mb-5'></div>
             {requests&&requests.slice(0).reverse().map((intervention)=>               
                 <Card 
-                style={{ width: '70rem', borderWidth:2 }} 
-                className='border-muted text-light mx-auto mb-5'>
+                    key={intervention._id}
+                    style={{ width: '70rem', borderWidth:2 }} 
+                    className='border-muted text-light mx-auto mb-5'>
                     <Card.Body>
 
                         <div className='row justify-content-between mx-5'>
