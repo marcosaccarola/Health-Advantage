@@ -14,6 +14,7 @@ import './0000-Home.css'
 import { getListOfInterventions, getUser } from '../utilities/fetches';
 import Dashboard from './0200-Dashboard';
 import LoginRegisterForm from './0110-LoginRegisterForm';
+import SignInForm from './0111-SignInForm';
 
 
 const Home=()=>{
@@ -66,7 +67,7 @@ const Home=()=>{
                 <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    
+                    <SignInForm setCurrentUser={setCurrentUser} handleLoginModal={handleLoginModal} />
                 </Modal.Body>
             </Modal>
 
