@@ -45,7 +45,7 @@ export const signInPractitioner=async({reqBody,setCurrentUser})=>{
         'profession':reqBody.profession,
         'educationalQualification':reqBody.educationalQualification,
         'medicalBoard':reqBody.medicalBoard,
-        'specializations':reqBody.specialization,
+        'specializations':reqBody.specializations,
         'InterventionsTakenInCharge':[]}
     try {
         const responseSignInPractitioner=await fetch(PRACTITIONERS_URL,
@@ -56,6 +56,7 @@ export const signInPractitioner=async({reqBody,setCurrentUser})=>{
             })
             if(responseSignInPractitioner.ok){
                 let practitioner=await responseSignInPractitioner.json()
+                console.log(practitioner)
                 setCurrentUser(practitioner)
             }else{
                 console.log('Patient not registered.')
