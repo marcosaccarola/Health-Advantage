@@ -71,7 +71,7 @@ const Dashboard=({currentUser,setCurrentUser,requests,setRequests})=>{
                                 ))}
                             </Row>
                         :
-                            (currentUser.published.length===0)
+                            (currentUser&&currentUser.published.length===0)
                             ?
                             <div className='mx-5 mb-4 text-muted'>
                                 <hr className='mx-5 mb-5' />

@@ -64,16 +64,16 @@ const Home=()=>{
 
             <Modal show={signInModal} onHide={handleSignInModal}>
                 <Modal.Header>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>Sign in:</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <SignInForm setCurrentUser={setCurrentUser} handleLoginModal={handleLoginModal} />
+                    <SignInForm setCurrentUser={setCurrentUser} handleSignInModal={handleSignInModal} />
                 </Modal.Body>
             </Modal>
 
             <Modal show={openModal} onHide={handleLoginModal}>
                 <Modal.Header>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>Log in:</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <LoginRegisterForm setCurrentUser={setCurrentUser} handleLoginModal={handleLoginModal} />

@@ -4,7 +4,7 @@ const INTERVENTIONS_URL='https://health-advantage.herokuapp.com/intervention'
 
 // *_____________________________________________ SIGN IN PATIENT
 export const signInPatient=async({reqBody,setCurrentUser})=>{
-    const patientBody={'email':reqBody.email,'password':reqBody.pw,'zipcode':reqBody.zipcode,'role':'Patient','firstName':reqBody.firstName,'lastName':reqBody.lastName,'bio':reqBody.bio,'photo':reqBody.photo}
+    const patientBody={'email':reqBody.email,'password':reqBody.password,'zipcode':reqBody.zipcode,'role':'Patient','firstName':reqBody.firstName,'lastName':reqBody.lastName,'bio':reqBody.bio,'photo':reqBody.photo,'published':[]}
     try {
         const responseSignInPatient=await fetch(PATIENTS_URL,
             {

@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Form,Button, Row } from "react-bootstrap"
-import { getUser } from "../utilities/fetches.js"
+import { signInPatient } from "../utilities/fetches.js"
 
-const SignInForm=({setCurrentUser,handleLoginModal})=>{
+const SignInForm=({setCurrentUser,handleSignInModal})=>{
 
     const[email,setEmail]=useState('')
     const handleChangeEmail=(e)=>{
@@ -34,8 +34,8 @@ const SignInForm=({setCurrentUser,handleLoginModal})=>{
     }
     const signInUser=()=>{
         const reqBody={'email':email,'password':pw,'zipcode':zipcode,'role':'Patient','firstName':firstName,'lastName':lastName,'bio':bio,'photo':photo}
-        getUser({reqBody,setCurrentUser})
-        handleLoginModal()
+        signInPatient({reqBody,setCurrentUser})
+        handleSignInModal()
 
     }
 
