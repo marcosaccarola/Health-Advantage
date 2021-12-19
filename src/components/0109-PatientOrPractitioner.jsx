@@ -1,8 +1,9 @@
 import { useState } from "react"
+import { Button, Modal } from "react-bootstrap"
 import SignInForm from "./0111-SignInForm"
 
 const PatientOrPractitioner=({setCurrentUser,handleSignInModal})=>{
-    const[role,setRole]=useState('')
+    const[role,setRole]=useState()
     const handleSetRolePatient=()=>{
         setRole('Patient')
     }
@@ -12,7 +13,17 @@ const PatientOrPractitioner=({setCurrentUser,handleSignInModal})=>{
 
     return(
         <>
-            <SignInForm setCurrentUser={setCurrentUser} handleLoginModal={handleSignInModal} role={role} />
+            <Modal.Dialog>
+                <Modal.Body className='mx-auto'>Are you a patient or a professional?</Modal.Body>
+            <Modal.Footer>
+                <Button variant="warning" className='mr-auto' onClick={handleSetRolePatient}>Patient</Button>
+                <Button variant="warning" onClick={handleSetRolePractitioner}>Professional</Button>
+            </Modal.Footer>
+            </Modal.Dialog>
+            
+            {role&&
+                <SignInForm setCurrentUser={setCurrentUser} handleLoginModal={handleSignInModal} role={role} />
+            }
         </>
     )
 }

@@ -64,7 +64,7 @@ const Home=()=>{
 
             <Modal show={signInModal} onHide={handleSignInModal}>
                 <Modal.Header>
-                <Modal.Title>Sign in:</Modal.Title>
+                <Modal.Title>Sign in</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <PatientOrPractitioner setCurrentUser={setCurrentUser} handleSignInModal={handleSignInModal} />
