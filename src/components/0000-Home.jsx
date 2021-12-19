@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 // import Dashboard from "./0200-Dashboard"
-import {Button,Card, Col, Container, Modal, Nav, Navbar, Row} from "react-bootstrap"
+import {Button,Card, Col, Container, Modal, Nav, Navbar, Row,Image} from "react-bootstrap"
 //! import { getListOfInterventions } from "../utilities/fetches"
 import doctor from '../assets/banner-img.png'
 import { AiOutlineEyeInvisible,AiOutlineLock,AiOutlineSmile } from "react-icons/ai";
@@ -9,9 +9,9 @@ import { IoMdLogIn } from "react-icons/io";
 import elderlyWithNurse from '../assets/nurse2.jpg'
 import marco from '../assets/parrot1.png'
 import HomeForm from "./0010-HomeForm"
-import NewDashboard from "./1000-Dashboard"
+// import NewDashboard from "./1000-Dashboard"
 import './0000-Home.css'
-import { getListOfInterventions, getUser } from '../utilities/fetches';
+import { getListOfInterventions, getListOfPractitioners } from '../utilities/fetches';
 import Dashboard from './0200-Dashboard';
 import LoginRegisterForm from './0110-LoginRegisterForm';
 import PatientOrPractitioner from './0109-PatientOrPractitioner';
@@ -34,7 +34,12 @@ const Home=()=>{
             // {"_id":{"$oid":"61b148b616145441832aedce"},"email":"pat","password":"$2b$10$e/5Vp.0HTPtMyAOU/g370uxocIwNM1ruwjDOvRTd6wahBrCvH79WW","zipcode":{"$numberInt":"30174"},"role":"Patient","firstName":"Gustavo","lastName":"Merenda","bio":"I'm patient zero.","photo":"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80","published":[{"$oid":"61b28982ae791b1d6cc63669"},{"$oid":"61b2899eae791b1d6cc6366d"}],"createdAt":{"$date":{"$numberLong":"1639008438264"}},"updatedAt":{"$date":{"$numberLong":"1639090590530"}},"__v":{"$numberInt":"0"}}
             // )
         }
-        
+    const[listOfPractitioners,setListOfPractitioners]=useState()
+    const[listOfPractitionersModal,setListOfPractitionersModal]=useState(false)
+    const handleListOfPractitioners=()=>{
+        getListOfPractitioners({setListOfPractitioners})
+        listOfPractitionersModal==false?setListOfPractitionersModal(true):setListOfPractitionersModal(false)
+    }
     const[signInModal,setSignInModal]=useState(false)
     const handleSignInModal=()=>{
         signInModal==false?setSignInModal(true):setSignInModal(false)
@@ -61,6 +66,94 @@ const Home=()=>{
 
     return (
         <div className='container-fluid body'>
+
+            <Modal show={listOfPractitionersModal} onHide={handleListOfPractitioners} style={{minWidth:'100vw'}}>
+                <Modal.Header>
+                <Modal.Title>List of our Practitioners</Modal.Title>
+                </Modal.Header>
+                {listOfPractitioners&&listOfPractitioners.map(p=>
+                    <Modal.Body key={p._id}>
+
+                        <Row className=' justify-content-between container'>  
+                            <Col sm={12} className='row mx-auto'>                            
+                                <Image src={p.photo} 
+                                    style={{width:150,height:150,objectFit:'cover',borderRadius:'50%'}}
+                                    className=' mb-4 mx-auto'
+                                    />
+                            </Col>
+                            {/* <Col className='row container-fluid'>
+                                <Col sm={8} className=''>
+                                    <Card.Title className='my-2 justify-content-start font-weight-normal justify-content-bottom'>
+                                        Email link
+                                    </Card.Title>                            
+                                </Col>  
+                                <Col sm={8} className=''>
+                                    <Card.Title className='my-2 justify-content-start'>
+                                        {p.email}
+                                    </Card.Title>                            
+                                </Col> 
+                            </Col> */}
+                            <Col sm={4}>
+                                <Card.Title className='my-2 justify-content-start font-weight-normal'>
+                                    {p.role}
+                                </Card.Title>          
+                                <Card.Title className='my-2 justify-content-start font-weight-normal'>
+                                    Role
+                                </Card.Title>
+                                <Card.Title className='my-2 justify-content-start font-weight-normal'>
+                                    Location
+                                </Card.Title>
+                            </Col>
+                            <Col sm={8}>
+                                <Card.Title className='my-2 justify-content-start'>
+                                    {p.firstName} {p.lastName}
+                                </Card.Title>
+                                <Card.Title className='my-2 justify-content-start'>
+                                    {p.profession} 
+                                </Card.Title>
+                                <Card.Title className='my-2 justify-content-start'>
+                                    {p.zipcode}
+                                </Card.Title>
+                            </Col>
+                            <Col sm={4}>                                
+                                <Card.Title className='my-2 justify-content-start font-weight-normal'>
+                                    Education
+                                </Card.Title>
+                                <Card.Title className='my-2 justify-content-start font-weight-normal'>
+                                    Board
+                                </Card.Title>
+                                <Card.Title className='my-2 justify-content-start font-weight-normal'>
+                                    Specializations
+                                </Card.Title>
+                            </Col> 
+                            <Col sm={8}>
+                                <Card.Title className='my-2 justify-content-start'>
+                                    {p.educationalQualification}
+                                </Card.Title>
+                                <Card.Title className='my-2 justify-content-start'>
+                                    {p.medicalBoard} 
+                                </Card.Title>
+                                <Card.Title className='my-2 justify-content-start'>
+                                    {p.specializations}
+                                </Card.Title>
+                            </Col>
+                            <Col sm={4} className='my-4'>
+                                <Card.Title className='my-2 justify-content-start font-weight-normal'>
+                                    Email link
+                                </Card.Title>                            
+                            </Col>  
+                            <Col sm={8} className='my-4'>
+                                <Card.Title className='my-2 justify-content-start'>
+                                    {p.email}
+                                </Card.Title>                            
+                            </Col>  
+                        </Row>
+                        <hr/>
+
+                    </Modal.Body>
+                )}
+                
+            </Modal>
 
             <Modal show={signInModal} onHide={handleSignInModal}>
                 {/* <Modal.Header>
@@ -101,7 +194,7 @@ const Home=()=>{
                             <Container>
                             <Navbar.Brand onClick={featureUnderDevelopment}>Health Advantage</Navbar.Brand>
                             <Nav className="me-auto">
-                            {/* <Nav.Link onClick={featureUnderDevelopment}>About me</Nav.Link> */}
+                            <Nav.Link onClick={handleListOfPractitioners}>List of Practitioners</Nav.Link>
                             <Nav.Link ></Nav.Link>
                             <Nav.Link onClick={handleSignInModal}>Sign in</Nav.Link>
                             <Nav.Link ></Nav.Link>

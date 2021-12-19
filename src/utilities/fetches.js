@@ -31,6 +31,25 @@ export const signInPatient=async({reqBody,setCurrentUser})=>{
         throw error
     }
 }
+// *_____________________________________________ LIST OF PRACTITIONERS
+export const getListOfPractitioners=async({setListOfPractitioners})=>{
+    try {
+        const responseListOfPractitioners=await fetch(PRACTITIONERS_URL,
+            {
+                method:'GET'
+            })
+            if(responseListOfPractitioners.ok){
+                let practitioners=await responseListOfPractitioners.json()
+                console.log(practitioners)
+                setListOfPractitioners(practitioners)
+            }else{
+                console.log('Practitioners not found.')
+            }
+    } catch (error) {
+        throw error
+    }
+}
+
 // *_____________________________________________ SIGN IN PRACTITIONER
 export const signInPractitioner=async({reqBody,setCurrentUser})=>{
     const patientBody={
