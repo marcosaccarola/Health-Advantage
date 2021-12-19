@@ -41,7 +41,14 @@ const Home=()=>{
         
     const featureUnderDevelopment=()=>{
         alert('Feature under development.')
+    }
 
+    const[firstRequestModal,setFirstRequestModal]=useState(false)
+    const handleFirstRequestModal=()=>{
+        firstRequestModal==false?setFirstRequestModal(true):setFirstRequestModal(false)
+        // e.preventDefault()
+        // handleFirstRequestModal()
+        window.scrollTo(0,1550)
     }
 
     return (
@@ -54,6 +61,12 @@ const Home=()=>{
                 <Modal.Body>
                     <LoginRegisterForm setCurrentUser={setCurrentUser} handleLoginModal={handleLoginModal} />
                 </Modal.Body>
+            </Modal>
+
+            <Modal show={firstRequestModal} onHide={handleFirstRequestModal} className='mt-5'>
+                <Modal.Header>
+                <Modal.Title className='mx-auto'>Enter your first request here</Modal.Title>
+                </Modal.Header>
             </Modal>
 
             {!currentUser&&
@@ -94,7 +107,11 @@ const Home=()=>{
                         <Row style={{height:'6vh'}}></Row>
                         <Row className='row justify-content-center mt-5'>                                                       
                             <Button className='rounded nudeButtons mx-auto' 
-                                onClick={featureUnderDevelopment}
+                                onClick={(e)=>{
+                                    e.preventDefault()
+                                    // handleFirstRequestModal()
+                                    window.scrollTo(0,1550)
+                                }}                                
                                 >                               
                                 Looking for assistance
                             </Button>
@@ -156,7 +173,7 @@ const Home=()=>{
                 </Card>
             </Row>
 
-            <Row className='container-fluid nude vw80 mx-auto rounded border border-white'>
+            <Row className='container-fluid nude vw80 mx-auto rounded border border-white' id='homeForm'>
                 <Col sm={6}>
                     <Row className='submegaTitle2 pink justify-content-center mx-4 my-5 rounded border border-white'>
                         Enter your first request for home health care           
