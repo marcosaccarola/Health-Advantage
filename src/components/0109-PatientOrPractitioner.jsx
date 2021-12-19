@@ -16,13 +16,13 @@ const PatientOrPractitioner=({setCurrentUser,handleSignInModal})=>{
             <Modal.Dialog>
                 <Modal.Body className='mx-auto'>Are you a patient or a professional?</Modal.Body>
             <Modal.Footer>
-                <Button variant="warning" className='mr-auto' onClick={handleSetRolePatient}>Patient</Button>
-                <Button variant="warning" onClick={handleSetRolePractitioner}>Professional</Button>
+                <Button variant="warning text-muted" className='mr-auto btn-warning' onClick={handleSetRolePatient}>Patient</Button>
+                <Button variant="warning text-muted" onClick={handleSetRolePractitioner}>Professional</Button>
             </Modal.Footer>
             </Modal.Dialog>
             
             {role&&
-                <SignInForm setCurrentUser={setCurrentUser} handleLoginModal={handleSignInModal} role={role} />
+                <SignInForm setCurrentUser={setCurrentUser} handleSignInModal={handleSignInModal} role={role} />
             }
         </>
     )

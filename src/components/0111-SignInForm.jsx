@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Form,Button, Row } from "react-bootstrap"
-import { signInPatient } from "../utilities/fetches.js"
+import { signInPatient, signInPractitioner } from "../utilities/fetches.js"
 
 const SignInForm=({setCurrentUser,handleSignInModal,role})=>{
 
@@ -32,10 +32,54 @@ const SignInForm=({setCurrentUser,handleSignInModal,role})=>{
     const handleChangePhoto=(e)=>{
         setPhoto(e.target.value)
     }
+    const[profession,setProfession]=useState('')
+    const handleChangeProfession=(e)=>{
+        setProfession(e.target.value)
+    }
+    const[educationalQualification,setEducationalQualification]=useState('')
+    const handleChangeEducationalQualification=(e)=>{
+        setEducationalQualification(e.target.value)
+    }
+    const[medicalBoard,setMedicalBoard]=useState('')
+    const handleChangeMedicalBoard=(e)=>{
+        setMedicalBoard(e.target.value)
+    }
+    const[specialization,setSpecialization]=useState('')
+    const handleChangeSpecialization=(e)=>{
+        setSpecialization(e.target.value)
+    }
     const signInUser=()=>{
-        const reqBody={'email':email,'password':pw,'zipcode':zipcode,'role':role,'firstName':firstName,'lastName':lastName,'bio':bio,'photo':photo}
-        signInPatient({reqBody,setCurrentUser})
         handleSignInModal()
+        let reqBody={}
+        role=='Patient'
+        ?
+        reqBody={
+            'email':email,
+            'password':pw,
+            'zipcode':zipcode,
+            'role':role,
+            'firstName':firstName,
+            'lastName':lastName,
+            'bio':bio,
+            'photo':photo
+        }
+        :
+        reqBody={
+            'email':email,
+            'password':pw,
+            'zipcode':zipcode,
+            'role':role,
+            'firstName':firstName,
+            'lastName':lastName,
+            'bio':bio,
+            'photo':photo,
+            'profession':profession,
+            'educationalQualification':educationalQualification,
+            'medicalBoard':medicalBoard,
+            'specializations':specialization
+        }
+        role=='Patient'?signInPatient({reqBody,setCurrentUser}):signInPractitioner({reqBody,setCurrentUser})
+        
 
     }
 
@@ -90,6 +134,39 @@ const SignInForm=({setCurrentUser,handleSignInModal,role})=>{
                     value={photo}
                     onChange={(e)=>handleChangePhoto(e)}
                     placeholder="Your photo" />
+
+                {role==='Practitioner'&&
+                <>                
+                <br />
+                <Form.Control
+                    className='bg-light text-secondary border-info'
+                    size="lg" type="text"
+                    value={profession}
+                    onChange={(e)=>handleChangeProfession(e)}
+                    placeholder="Profession" />
+                <br />
+                <Form.Control
+                    className='bg-light text-secondary border-info'
+                    size="lg" type="text"
+                    value={educationalQualification}
+                    onChange={(e)=>handleChangeEducationalQualification(e)}
+                    placeholder="Educational qualification" />
+                <br />
+                <Form.Control
+                    className='bg-light text-secondary border-info'
+                    size="lg" type="text"
+                    value={medicalBoard}
+                    onChange={(e)=>handleChangeMedicalBoard(e)}
+                    placeholder="Medical board" />
+                <br />
+                <Form.Control
+                    className='bg-light text-secondary border-info'
+                    size="lg" type="text"
+                    value={specialization}
+                    onChange={(e)=>handleChangeSpecialization(e)}
+                    placeholder="Specializations" />
+                </>
+                }
                 <Row className='mx-auto'>
                     <Button 
                         className='btn-warning text-muted border-info btn-lg mt-4 ml-auto'

@@ -4,7 +4,16 @@ const INTERVENTIONS_URL='https://health-advantage.herokuapp.com/intervention'
 
 // *_____________________________________________ SIGN IN PATIENT
 export const signInPatient=async({reqBody,setCurrentUser})=>{
-    const patientBody={'email':reqBody.email,'password':reqBody.password,'zipcode':reqBody.zipcode,'role':'Patient','firstName':reqBody.firstName,'lastName':reqBody.lastName,'bio':reqBody.bio,'photo':reqBody.photo,'published':[]}
+    const patientBody={
+        'email':reqBody.email,
+        'password':reqBody.password,
+        'zipcode':reqBody.zipcode,
+        'role':'Patient',
+        'firstName':reqBody.firstName,
+        'lastName':reqBody.lastName,
+        'bio':reqBody.bio,
+        'photo':reqBody.photo,
+        'published':[]}
     try {
         const responseSignInPatient=await fetch(PATIENTS_URL,
             {
@@ -15,6 +24,39 @@ export const signInPatient=async({reqBody,setCurrentUser})=>{
             if(responseSignInPatient.ok){
                 let patient=await responseSignInPatient.json()
                 setCurrentUser(patient)
+            }else{
+                console.log('Patient not registered.')
+            }
+    } catch (error) {
+        throw error
+    }
+}
+// *_____________________________________________ SIGN IN PRACTITIONER
+export const signInPractitioner=async({reqBody,setCurrentUser})=>{
+    const patientBody={
+        'email':reqBody.email,
+        'password':reqBody.password,
+        'zipcode':reqBody.zipcode,
+        'role':'Practitioner',
+        'firstName':reqBody.firstName,
+        'lastName':reqBody.lastName,
+        'bio':reqBody.bio,
+        'photo':reqBody.photo,
+        'profession':reqBody.profession,
+        'educationalQualification':reqBody.educationalQualification,
+        'medicalBoard':reqBody.medicalBoard,
+        'specializations':reqBody.specialization,
+        'InterventionsTakenInCharge':[]}
+    try {
+        const responseSignInPractitioner=await fetch(PRACTITIONERS_URL,
+            {
+                method:'POST',
+                body:JSON.stringify(patientBody),
+                headers:{'Content-Type':'application/json'}
+            })
+            if(responseSignInPractitioner.ok){
+                let practitioner=await responseSignInPractitioner.json()
+                setCurrentUser(practitioner)
             }else{
                 console.log('Patient not registered.')
             }

@@ -63,9 +63,9 @@ const Home=()=>{
         <div className='container-fluid body'>
 
             <Modal show={signInModal} onHide={handleSignInModal}>
-                <Modal.Header>
+                {/* <Modal.Header>
                 <Modal.Title>Sign in</Modal.Title>
-                </Modal.Header>
+                </Modal.Header> */}
                 <Modal.Body>
                     <PatientOrPractitioner setCurrentUser={setCurrentUser} handleSignInModal={handleSignInModal} />
                 </Modal.Body>
