@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Form,Button, Row } from "react-bootstrap"
 import { signInPatient } from "../utilities/fetches.js"
 
-const SignInForm=({setCurrentUser,handleSignInModal})=>{
+const SignInForm=({setCurrentUser,handleSignInModal,role})=>{
 
     const[email,setEmail]=useState('')
     const handleChangeEmail=(e)=>{
@@ -33,7 +33,7 @@ const SignInForm=({setCurrentUser,handleSignInModal})=>{
         setPhoto(e.target.value)
     }
     const signInUser=()=>{
-        const reqBody={'email':email,'password':pw,'zipcode':zipcode,'role':'Patient','firstName':firstName,'lastName':lastName,'bio':bio,'photo':photo}
+        const reqBody={'email':email,'password':pw,'zipcode':zipcode,'role':role,'firstName':firstName,'lastName':lastName,'bio':bio,'photo':photo}
         signInPatient({reqBody,setCurrentUser})
         handleSignInModal()
 
