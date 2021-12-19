@@ -2,6 +2,27 @@ const PRACTITIONERS_URL='https://health-advantage.herokuapp.com/practitioner'
 const PATIENTS_URL='https://health-advantage.herokuapp.com/patient'
 const INTERVENTIONS_URL='https://health-advantage.herokuapp.com/intervention'
 
+// *_____________________________________________ SIGN IN PATIENT
+export const signInPatient=async({reqBody,setCurrentUser})=>{
+    const patientBody={'email':reqBody.email,'password':reqBody.pw,'zipcode':reqBody.zipcode,'role':'Patient','firstName':reqBody.firstName,'lastName':reqBody.lastName,'bio':reqBody.bio,'photo':reqBody.photo}
+    try {
+        const responseSignInPatient=await fetch(PATIENTS_URL,
+            {
+                method:'POST',
+                body:JSON.stringify(patientBody),
+                headers:{'Content-Type':'application/json'}
+            })
+            if(responseSignInPatient.ok){
+                let patient=await responseSignInPatient.json()
+                setCurrentUser(patient)
+            }else{
+                console.log('Patient not registered.')
+            }
+    } catch (error) {
+        throw error
+    }
+}
+
 // *_____________________________________________ REGISTER PATIENT & SUBMIT FIRST INTERVENTION
 export const registerPatient=async({reqBody,setCurrentUser})=>{
     const patientBody={'firstName':reqBody.firstName,'email':reqBody.email,'password':reqBody.password,'zipcode':reqBody.zipcode,'role':'Patient'}

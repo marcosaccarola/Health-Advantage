@@ -32,8 +32,8 @@ const SignInForm=({setCurrentUser,handleLoginModal})=>{
     const handleChangePhoto=(e)=>{
         setPhoto(e.target.value)
     }
-    const loginUser=()=>{
-        const reqBody={'email':email,'password':pw}
+    const signInUser=()=>{
+        const reqBody={'email':email,'password':pw,'zipcode':zipcode,'role':'Patient','firstName':firstName,'lastName':lastName,'bio':bio,'photo':photo}
         getUser({reqBody,setCurrentUser})
         handleLoginModal()
 
@@ -93,8 +93,8 @@ const SignInForm=({setCurrentUser,handleLoginModal})=>{
                 <Row className='mx-auto'>
                     <Button 
                         className='btn-warning text-muted border-info btn-lg mt-4 ml-auto'
-                        onClick={loginUser}>
-                            <span className='row justify-text-start mx-2'>Log in</span>
+                        onClick={signInUser}>
+                            <span className='row justify-text-start mx-2'>Sign in</span>
                     </Button>
                 </Row>
             </Form.Group>
