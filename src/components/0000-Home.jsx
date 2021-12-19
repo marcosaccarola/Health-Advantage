@@ -43,13 +43,15 @@ const Home=()=>{
         alert('Feature under development.')
     }
 
-    const[firstRequestModal,setFirstRequestModal]=useState(false)
-    const handleFirstRequestModal=()=>{
-        firstRequestModal==false?setFirstRequestModal(true):setFirstRequestModal(false)
-        // e.preventDefault()
-        // handleFirstRequestModal()
+    // const[firstRequestModal,setFirstRequestModal]=useState(false)
+    const handleFirstRequestModal=(e)=>{
         window.scrollTo(0,1550)
+        // e.preventDefault();
+        // firstRequestModal==false?setFirstRequestModal(true):setFirstRequestModal(false)
     }
+    // const scrollDown=(e)=>{
+    //     handleFirstRequestModal(e)
+    // }
 
     return (
         <div className='container-fluid body'>
@@ -63,11 +65,14 @@ const Home=()=>{
                 </Modal.Body>
             </Modal>
 
-            <Modal show={firstRequestModal} onHide={handleFirstRequestModal} className='mt-5'>
+            {/* <Modal show={firstRequestModal} onHide={handleFirstRequestModal} className='mt-5'>
                 <Modal.Header>
-                <Modal.Title className='mx-auto'>Enter your first request here</Modal.Title>
+                <Modal.Title className='mx-auto'>Fill the form to send first request</Modal.Title>
                 </Modal.Header>
-            </Modal>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={(e)=>{scrollDown(e)}}>Ok</Button>
+                </Modal.Footer>
+            </Modal> */}
 
             {!currentUser&&
             <>
@@ -109,8 +114,8 @@ const Home=()=>{
                             <Button className='rounded nudeButtons mx-auto' 
                                 onClick={(e)=>{
                                     e.preventDefault()
-                                    // handleFirstRequestModal()
-                                    window.scrollTo(0,1550)
+                                    handleFirstRequestModal(e)
+                                    // window.scrollTo(0,1550)
                                 }}                                
                                 >                               
                                 Looking for assistance
