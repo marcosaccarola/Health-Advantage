@@ -40,6 +40,9 @@ const Home=()=>{
         getListOfPractitioners({setListOfPractitioners})
         listOfPractitionersModal==false?setListOfPractitionersModal(true):setListOfPractitionersModal(false)
     }
+    const mailto=()=>{
+        alert('Email feature is under development.')
+    }
     const[signInModal,setSignInModal]=useState(false)
     const handleSignInModal=()=>{
         signInModal==false?setSignInModal(true):setSignInModal(false)
@@ -69,7 +72,7 @@ const Home=()=>{
 
             <Modal show={listOfPractitionersModal} onHide={handleListOfPractitioners} style={{minWidth:'100vw'}}>
                 <Modal.Header>
-                <Modal.Title>List of our Practitioners</Modal.Title>
+                <Modal.Title>List of Practitioners</Modal.Title>
                 </Modal.Header>
                 {listOfPractitioners&&listOfPractitioners.map(p=>
                     <Modal.Body key={p._id}>
@@ -78,7 +81,7 @@ const Home=()=>{
                             <Col sm={12} className='row mx-auto'>                            
                                 <Image src={p.photo} 
                                     style={{width:150,height:150,objectFit:'cover',borderRadius:'50%'}}
-                                    className=' mb-4 mx-auto'
+                                    className='mb-2 mx-auto'
                                     />
                             </Col>
                             {/* <Col className='row container-fluid'>
@@ -137,14 +140,14 @@ const Home=()=>{
                                     {p.specializations}
                                 </Card.Title>
                             </Col>
-                            <Col sm={4} className='my-4'>
-                                <Card.Title className='my-2 justify-content-start font-weight-normal'>
+                            <Col sm={4} className='my-3'>
+                                <Card.Title className='mt-1 justify-content-start font-weight-normal'>
                                     Email link
                                 </Card.Title>                            
                             </Col>  
-                            <Col sm={8} className='my-4'>
-                                <Card.Title className='my-2 justify-content-start'>
-                                    {p.email}
+                            <Col sm={8} className='my-3'>
+                                <Card.Title className='mt-1 justify-content-start' onClick={e=>mailto(p.email)}>
+                                    <a href=''>{p.email}</a>
                                 </Card.Title>                            
                             </Col>  
                         </Row>
