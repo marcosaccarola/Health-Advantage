@@ -13,7 +13,7 @@ import NewDashboard from "./1000-Dashboard"
 import './0000-Home.css'
 import { getListOfInterventions, getUser } from '../utilities/fetches';
 import Dashboard from './0200-Dashboard';
-import LoginRegisterForm from './0110-LoginForm';
+import LoginRegisterForm from './0110-LoginRegisterForm';
 
 
 const Home=()=>{
@@ -33,7 +33,11 @@ const Home=()=>{
             // {"_id":{"$oid":"61b148b616145441832aedce"},"email":"pat","password":"$2b$10$e/5Vp.0HTPtMyAOU/g370uxocIwNM1ruwjDOvRTd6wahBrCvH79WW","zipcode":{"$numberInt":"30174"},"role":"Patient","firstName":"Gustavo","lastName":"Merenda","bio":"I'm patient zero.","photo":"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80","published":[{"$oid":"61b28982ae791b1d6cc63669"},{"$oid":"61b2899eae791b1d6cc6366d"}],"createdAt":{"$date":{"$numberLong":"1639008438264"}},"updatedAt":{"$date":{"$numberLong":"1639090590530"}},"__v":{"$numberInt":"0"}}
             // )
         }
-    
+        
+    const[signInModal,setSignInModal]=useState(false)
+    const handleSignInModal=()=>{
+        signInModal==false?setSignInModal(true):setSignInModal(false)
+    }
     const[openModal,setOpenModal]=useState(false)
     const handleLoginModal=()=>{
         openModal===false?setOpenModal(true):setOpenModal(false)
@@ -42,6 +46,7 @@ const Home=()=>{
     const featureUnderDevelopment=()=>{
         alert('Feature under development.')
     }
+
 
     // const[firstRequestModal,setFirstRequestModal]=useState(false)
     const handleFirstRequestModal=(e)=>{
@@ -55,6 +60,15 @@ const Home=()=>{
 
     return (
         <div className='container-fluid body'>
+
+            <Modal show={signInModal} onHide={handleSignInModal}>
+                <Modal.Header>
+                <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    
+                </Modal.Body>
+            </Modal>
 
             <Modal show={openModal} onHide={handleLoginModal}>
                 <Modal.Header>
@@ -88,7 +102,7 @@ const Home=()=>{
                             <Nav className="me-auto">
                             {/* <Nav.Link onClick={featureUnderDevelopment}>About me</Nav.Link> */}
                             <Nav.Link ></Nav.Link>
-                            <Nav.Link onClick={featureUnderDevelopment}>Sign in</Nav.Link>
+                            <Nav.Link onClick={handleSignInModal}>Sign in</Nav.Link>
                             <Nav.Link ></Nav.Link>
                             <Nav.Link onClick={handleLoginModal}>Log in</Nav.Link>
                             </Nav>
