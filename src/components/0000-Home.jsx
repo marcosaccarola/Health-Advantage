@@ -207,7 +207,7 @@ const Home=()=>{
                         </Navbar>
                     </Col>
                     <Col sm={1} className='megaTitle '>                        
-                        <IoMdLogIn onClick={featureUnderDevelopment} />
+                        <IoMdLogIn onClick={handleLoginModal} />
                     </Col>
                 </Row>
 

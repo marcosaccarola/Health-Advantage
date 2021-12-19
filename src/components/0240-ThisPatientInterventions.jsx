@@ -24,6 +24,10 @@ const ThisPatientInterventions=({intervention})=>{
         alert(`message sent at ${intervention.userId}`)
     }
 
+    const mailto=()=>{
+        alert('Email feature is under development.')
+    }
+
     return(
         <>
                     <Row className='container-fluid border rounded mb-4'>
@@ -81,7 +85,7 @@ const ThisPatientInterventions=({intervention})=>{
                                     <Card.Title className=' font-weight-bold row justify-content-start ml-2'>
                                         {a.profession} {a.firstName} {a.lastName}</Card.Title>
 
-                                    <Card.Title className=' font-weight-bold row justify-content-start ml-2'>
+                                    <Card.Title className=' font-weight-bold row justify-content-start ml-2' onClick={mailto}>
                                         <a href=''>{a.email}</a></Card.Title>
                                 </Col>
                                 <Col sm={5} className='mt-3 mb-2'>
